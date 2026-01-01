@@ -77,8 +77,7 @@
     - [Closure](#closure)
     - [Difference between callback function, recursion and closure](#difference-between-callback-function-recursion-and-closure)
     - [Pure and Impure functions:](#pure-and-impure-functions)
-  - [Problem Soling: Function](#problem-soling-function)
-  - [Problem Soling: Recursion](#problem-soling-recursion)
+  - [Problem Soling: Function and Recursion](#problem-soling-function-and-recursion)
   - [string](#string)
     - [Strings are immutable:](#strings-are-immutable)
     - [Quotes:](#quotes)
@@ -92,7 +91,7 @@
       - [Others:](#others)
     - [Common Property / Methods for string / array:](#common-property--methods-for-string--array-1)
   - [Problem Solving: Array](#problem-solving-array)
-  - [Objects:](#objects)
+  - [Objects](#objects)
     - [Dot Notation VS Bracket Notation:](#dot-notation-vs-bracket-notation)
     - [Objects References and cloning and marging:](#objects-references-and-cloning-and-marging)
       - [Cloning and merging:](#cloning-and-merging)
@@ -117,7 +116,7 @@
     - [Getting \& Checking Values](#getting--checking-values)
     - [Deleting \& Clearing](#deleting--clearing)
     - [Iterating Over a Map](#iterating-over-a-map)
-  - [Error Handling:](#error-handling)
+  - [Error Handling](#error-handling)
     - [Common JS Errors:](#common-js-errors)
       - [ReferenceError](#referenceerror)
       - [TypeError](#typeerror)
@@ -137,6 +136,8 @@
         - [Chaining Promises:](#chaining-promises)
         - [async/await:](#asyncawait)
         - [fetch](#fetch)
+  - [RegEx](#regex)
+    - [Flags:](#flags)
 - [Part 2: DOM](#part-2-dom)
   - [Introduction To the DOM](#introduction-to-the-dom)
     - [DOM Collection:](#dom-collection)
@@ -6271,8 +6272,7 @@ function addToTotal(num) {
 }
 ```
 
-## Problem Soling: Function
-## Problem Soling: Recursion
+## Problem Soling: Function and Recursion
 
 ## string
 
@@ -7183,7 +7183,7 @@ console.log(numbers.at(-1));  // 40 (last item)
 
 ## Problem Solving: Array
 
-## Objects:
+## Objects
 
 An object is a collection of key-value pairs (property). where key is a string or symbol, and value can be anything.
 
@@ -8260,7 +8260,7 @@ person.forEach((value, key) => {
 ```
 
 
-## Error Handling:
+## Error Handling
 
 try...catch is used to handle errors in JavaScript so your code doesn't crash. Instead of stopping the program when an error happens, you can catch the error and respond gracefully.
 
@@ -9341,6 +9341,65 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
 ![](images/Asynchronous-and-Synchronous-JavaScript-images/fetch-ouput-3.png)
 
 
+
+## RegEx
+RegEx (Regular Expression) is a pattern used to match character combinations in strings.
+    
+Syntax:
+
+```js
+const regex = /patterns/flags;
+```
+
+### Flags: 
+Flags modify how a pattern behaves.
+
+- g (global flag):
+Finds all matches, not just the first one
+
+```js
+const text = "cat dog cat dog";
+const regex = /cat/g;
+
+const result = text.match(regex);
+console.log(result); ["cat", "cat"]
+```
+
+- i (ignore case flag):
+Makes the pattern case-insensitive
+
+```js
+const text = "JavaScript is FUN";
+const regex = /fun/i;
+
+console.log(regex.test(text)); // true
+```
+
+- m (Multiline Flag):
+Makes ^ and $ work line by line in a multiline string.
+   - ^ → start of each line
+   - $ → end of each line
+
+```js
+const text = `Hello world
+Hello JavaScript`;
+
+const regex = /^Hello/gm;
+const result = text.match(regex);
+
+console.log(result); // ["Hello", "Hello"]
+```
+
+- s (DotAll Flag):
+Allows . to match newline characters (\n)
+
+```js
+const text = `Hello
+World`;
+
+const regex = /Hello.World/s;
+console.log(regex.test(text)); // true
+```
 
 # Part 2: DOM
 ## Introduction To the DOM
