@@ -140,6 +140,7 @@
     - [Flags:](#flags)
     - [Methods:](#methods)
     - [Character Classes \[ \]:](#character-classes--)
+    - [Metacharacters:](#metacharacters)
 - [Part 2: DOM](#part-2-dom)
   - [Introduction To the DOM](#introduction-to-the-dom)
     - [DOM Collection:](#dom-collection)
@@ -9475,6 +9476,41 @@ console.log(/[^0-9]/.test("a")); // true
 console.log(/[^0-9]/.test("5")); // false
 console.log(/[a-z]/.test("g")); // true
 console.log(/[0-9]/.test("5")); // true
+```
+
+### Metacharacters:
+Regex metacharacters are special characters that give extra meaning to a pattern,
+
+- \d	Matches Digits
+- \D	Matches None Digits
+- \w	Matches alphanumeric Word characters
+- \W	Matches None alphanumeric Word characters
+- \s	Matches Spaces
+- \S	Matches None Spaces
+
+Note: Alpahnumeric work characters: a-z, A-Z, 0-9, including _ (underscore).
+
+example:
+
+```js
+console.log(/\d+/.test("123")); // true
+console.log(/\s/.test(" "));   // true
+```
+
+```js
+let text = "Give 100%!";
+const pattern = /\D/g;
+
+let result = text.match(pattern);
+console.log(result) // ['G', 'i', 'v', 'e', ' ', '%', '!']
+```
+
+```js
+let text = "Give 100%!";
+const pattern = /\W/g;
+
+let result = text.match(pattern);
+console.log(result) // [ ' ', '%', '!' ]
 ```
 
 # Part 2: DOM

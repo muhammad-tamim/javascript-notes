@@ -1,4 +1,5 @@
-const regex = /c.t/;
+let text = "Give 100%!";
+const pattern = /\W/g;
 
-console.log("cat".match(regex)[0]); // ["cat"]
-console.log("c.t".match(regex));  // null
+let result = text.match(pattern);
+console.log(result) // ['G', 'i', 'v', 'e', ' ', '%', '!']

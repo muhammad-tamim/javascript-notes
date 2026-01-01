@@ -1,23 +1,3 @@
-## 8. Predefined Character Sets
-
-| Pattern | Description                       |
-| ------- | --------------------------------- |
-| \d      | Digit (0‑9)                       |
-| \D      | Non‑digit                         |
-| \w      | Word character (a‑z, A‑Z, 0‑9, _) |
-| \W      | Non‑word character                |
-| \s      | Whitespace                        |
-| \S      | Non‑whitespace                    |
-
-Examples:
-
-```js
-/\d+/.test("123"); // true
-/\s/.test(" ");   // true
-```
-
----
-
 ## 9. Quantifiers
 
 Quantifiers specify **how many times** a character or group should appear.
