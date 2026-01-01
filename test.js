@@ -1,5 +1,1 @@
-const text = "cat dog cat dog";
-const regex = /cat/g;
-
-const result = text.match(regex);
-console.log(result); 
+console.log("one two three".split(/\s+/)); // [ 'one', 'two', 'three' ]

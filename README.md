@@ -138,6 +138,7 @@
         - [fetch](#fetch)
   - [RegEx](#regex)
     - [Flags:](#flags)
+    - [Methods:](#methods)
 - [Part 2: DOM](#part-2-dom)
   - [Introduction To the DOM](#introduction-to-the-dom)
     - [DOM Collection:](#dom-collection)
@@ -161,7 +162,7 @@
     - [querySelectorAll():](#queryselectorall)
     - [Examples:](#examples)
   - [DOM Properties and Methods:](#dom-properties-and-methods)
-    - [Methods:](#methods)
+    - [Methods:](#methods-1)
       - [getAttribute(), setAttribute(), removeAttribute() and hasAttribute():](#getattribute-setattribute-removeattribute-and-hasattribute)
     - [properties:](#properties)
       - [id, className, classList:](#id-classname-classlist)
@@ -9400,6 +9401,54 @@ World`;
 const regex = /Hello.World/s;
 console.log(regex.test(text)); // true
 ```
+
+
+### Methods:
+
+- test():
+Checks whether a pattern exists in a string
+
+```js
+/hello/.test("hello world"); // true
+/hello/.test("hi world"); // false
+```
+
+- match():
+Returns the matched value(s)
+
+```js
+console.log("hello world".match(/hello/));
+console.log("hello hello world hello".match(/hello/g));
+
+// [ 'hello', index: 0, input: 'hello world', groups: undefined ]
+// [ 'hello', 'hello', 'hello' ]
+```
+
+- search():
+Returns the index of the first match
+
+```js
+console.log("hello world".search(/world/)); // 6
+console.log("hello world".search(/hi/)); // -1
+```
+
+- replace():
+Replaces matched text
+
+```js
+console.log("hello world".replace(/world/, "JavaScript")); // hello JavaScript
+console.log("aaa".replace(/a/g, "b")); // bbb
+```
+
+- split():
+Splits a string using a pattern
+
+```js
+console.log("one two three".split(/\s+/)); // [ 'one', 'two', 'three' ]
+```
+  - \s → whitespace
+  - + → one or more
+
 
 # Part 2: DOM
 ## Introduction To the DOM
