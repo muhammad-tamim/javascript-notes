@@ -139,6 +139,7 @@
   - [RegEx](#regex)
     - [Flags:](#flags)
     - [Methods:](#methods)
+    - [Character Classes \[ \]:](#character-classes--)
 - [Part 2: DOM](#part-2-dom)
   - [Introduction To the DOM](#introduction-to-the-dom)
     - [DOM Collection:](#dom-collection)
@@ -1156,7 +1157,6 @@ How lexicographical algorithm works:
 - Strings are compared character by character from left to right.
 - Each character is compared based on its Unicode value.
 - The first difference determines the result.
-- If all characters are equal and lengths differ, the shorter string is considered smaller.
 
 ```js
 console.log('B' > 'A'); // true
@@ -6285,7 +6285,6 @@ Strings are not objects by default, but when we use object-like features (such a
 
 ### Strings are immutable:
 
-That's mean you can't change characters directly:
 
 ```js
 let str = "Hello";
@@ -6406,7 +6405,6 @@ let result = str.replace("-color", "");
 console.log(result); // "purple"
 
 /*
-We replaced "-color" with an empty string"" →  An empty string "" is not " " (a space), or any characters. empty string means nothing.
  
 So we’re left with only "purple".
 */
@@ -6473,7 +6471,6 @@ console.log(String.fromCodePoint(97)); // Output: 'a'
 ```js
 // String
 const str = "JavaScript";
-console.log(str.length); // 10 → total characters
 
 // Array
 const arr = [10, 20, 30, 40];
@@ -7074,7 +7071,6 @@ console.log(arr); // [10, 20, 30]
 ```js
 // String
 const str = "JavaScript";
-console.log(str.length); // 10 → total characters
 
 // Array
 const arr = [10, 20, 30, 40];
@@ -9392,7 +9388,6 @@ console.log(result); // ["Hello", "Hello"]
 ```
 
 - s (DotAll Flag):
-Allows . to match newline characters (\n)
 
 ```js
 const text = `Hello
@@ -9449,6 +9444,38 @@ console.log("one two three".split(/\s+/)); // [ 'one', 'two', 'three' ]
   - \s → whitespace
   - + → one or more
 
+
+
+
+
+
+
+
+
+
+
+### Character Classes [ ]:
+A character class matches any character from a set within brackets:
+
+- [a]	 Matches the character between the brackets
+- [^a]   Matches all characters NOT between the brackets
+- [abc]	 Matches all characters between the brackets
+- [^abc] Matches all characters NOT between the brackets
+- [a-z]	 Matches all characters in the range from a to z
+- [^a-z] Matches all characters NOT in the range from a to z
+- [0-9]	 Matches all characters in the range from 0 to 9
+- [^0-9] Matches all characters NOT in the range from 0 to 9
+
+examples:
+
+```js
+console.log(/[abc]/.test("a")); // true
+console.log(/[abc]/.test("d")); // false
+console.log(/[^0-9]/.test("a")); // true
+console.log(/[^0-9]/.test("5")); // false
+console.log(/[a-z]/.test("g")); // true
+console.log(/[0-9]/.test("5")); // true
+```
 
 # Part 2: DOM
 ## Introduction To the DOM
