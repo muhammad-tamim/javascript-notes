@@ -44,7 +44,6 @@
       - [Nullish Coalescing operator (??):](#nullish-coalescing-operator-)
       - [|| vs ??:](#-vs-)
     - [Operator Precedence:](#operator-precedence)
-  - [Problem solving: Variables, Data Types and Operators:](#problem-solving-variables-data-types-and-operators)
   - [Loops](#loops)
     - [for loop:](#for-loop)
     - [while loop:](#while-loop)
@@ -62,7 +61,6 @@
       - [Enumeration:](#enumeration)
         - [Behind the scenes of for...in loop:](#behind-the-scenes-of-forin-loop)
       - [Why for...in is not recommended for arrays:](#why-forin-is-not-recommended-for-arrays)
-  - [Problem Solving: Loops](#problem-solving-loops)
   - [function](#function)
     - [What is the difference between return and no return in a function?](#what-is-the-difference-between-return-and-no-return-in-a-function)
     - [Default Parameter:](#default-parameter)
@@ -77,20 +75,17 @@
     - [Closure](#closure)
     - [Difference between callback function, recursion and closure](#difference-between-callback-function-recursion-and-closure)
     - [Pure and Impure functions:](#pure-and-impure-functions)
-  - [Problem Soling: Function and Recursion](#problem-soling-function-and-recursion)
   - [string](#string)
     - [Strings are immutable:](#strings-are-immutable)
     - [Quotes:](#quotes)
     - [String Methods:](#string-methods)
     - [Common Property / Methods for string / array:](#common-property--methods-for-string--array)
-  - [Problem Solving: String](#problem-solving-string)
   - [array](#array)
     - [Array Methods:](#array-methods)
       - [Adding / Removing Elements:](#adding--removing-elements)
       - [Iteration / Transformation (Higher-order functions):](#iteration--transformation-higher-order-functions)
       - [Others:](#others)
     - [Common Property / Methods for string / array:](#common-property--methods-for-string--array-1)
-  - [Problem Solving: Array](#problem-solving-array)
   - [Objects](#objects)
     - [Dot Notation VS Bracket Notation:](#dot-notation-vs-bracket-notation)
     - [Objects References and cloning and marging:](#objects-references-and-cloning-and-marging)
@@ -102,7 +97,6 @@
     - [Optional Chaining (?)](#optional-chaining-)
     - [Date Object:](#date-object)
     - [Math Object:](#math-object)
-  - [Problem Solving: Object](#problem-solving-object)
   - [Destructuring](#destructuring)
   - [set](#set)
     - [creating a set](#creating-a-set)
@@ -224,6 +218,67 @@
     - [Polymorphism:](#polymorphism)
       - [Using Methods Overriding:](#using-methods-overriding)
       - [Using Duck Typing:](#using-duck-typing)
+- [Part 4: Problem Solving:](#part-4-problem-solving)
+  - [Variables, Data Types and Operators:](#variables-data-types-and-operators)
+      - [Say Hello to JS:](#say-hello-to-js)
+      - [Basic Data Types:](#basic-data-types)
+      - [Simple Calculator:](#simple-calculator)
+      - [Difference:](#difference)
+      - [Area of a Circle:](#area-of-a-circle)
+      - [Summation from 1 to N:](#summation-from-1-to-n)
+      - [Two Numbers:](#two-numbers)
+      - [Welcome for you with conditions:](#welcome-for-you-with-conditions)
+      - [Multiples:](#multiples)
+      - [Max and Min:](#max-and-min)
+      - [The Brothers:](#the-brothers)
+      - [Capital or Small Or Digit:](#capital-or-small-or-digit)
+      - [Char:](#char)
+      - [Calculator:](#calculator)
+      - [Digits Summation:](#digits-summation)
+      - [First Digit:](#first-digit)
+      - [The Last 2 Digits:](#the-last-2-digits)
+      - [Coordinated of a Point:](#coordinated-of-a-point)
+      - [Age in Days:](#age-in-days)
+      - [Interval:](#interval)
+      - [Two Intervals:](#two-intervals)
+      - [Sort Numbers:](#sort-numbers)
+      - [Float or Int:](#float-or-int)
+      - [Mathematical Expression:](#mathematical-expression)
+      - [Comparison:](#comparison)
+      - [Hard Compare:](#hard-compare)
+      - [Winter Sale:](#winter-sale)
+      - [Memo and Momo:](#memo-and-momo)
+      - [Next Alphabet:](#next-alphabet)
+      - [Ali Baba and Puzzles:](#ali-baba-and-puzzles)
+      - [Interval Sweep:](#interval-sweep)
+      - [Katryoshka:](#katryoshka)
+      - [Lucky Numbers:](#lucky-numbers)
+  - [Loops](#loops-1)
+      - [1 to N:](#1-to-n)
+      - [Even Numbers:](#even-numbers)
+      - [Even, Odd, Positive and Negative:](#even-odd-positive-and-negative)
+      - [Fixed Password:](#fixed-password)
+      - [Max:](#max)
+      - [Multiplication table:](#multiplication-table)
+      - [Factorial:](#factorial)
+      - [One Prime:](#one-prime)
+      - [Primes from 1 to n:](#primes-from-1-to-n)
+      - [Palindrome:](#palindrome)
+      - [Divisors:](#divisors)
+      - [GCD and LCM:](#gcd-and-lcm)
+      - [Lucky Numbers:](#lucky-numbers-1)
+      - [Numbers Histogram:](#numbers-histogram)
+      - [Shape 1:](#shape-1)
+      - [Shape2:](#shape2)
+      - [Shape 3:](#shape-3)
+      - [Digits:](#digits)
+      - [Sequence of Numbers and Sum:](#sequence-of-numbers-and-sum)
+      - [Sum of Consecutive Odd Numbers:](#sum-of-consecutive-odd-numbers)
+      - [Some Sums:](#some-sums)
+      - [PUM:](#pum)
+      - [Convert To Decimal 2:](#convert-to-decimal-2)
+      - [Easy Fibonacci:](#easy-fibonacci)
+      - [Three Numbers:](#three-numbers)
 
 ---
 
@@ -1539,1859 +1594,6 @@ console.log(4 + 2 - 2 * 4 / 2) //  2
 ```
 
 
-## Problem solving: Variables, Data Types and Operators:
-
-**1. Say Hello to JS:**
-
-Given a name S. Print "Hello, (name)" without parentheses.
-
-| Input      | Output            |
-| ---------- | ----------------- |
-| programmer | Hello, programmer |
-
-
-My Solution: 
-
-```js
-const s = "programmer"
-console.log("Hello,", s); // Hello, programmer
-console.log(`hello, ${s}`); // Hello, programmer
-```
-
-**2. Basic Data Types:**
-
-You are given four numbers and one string in a single line of input. Your task is to print each value on a new line, in the same order as the input.
-
-However:
-- The second number should be treated as a BigInt (because it’s very large).
-- The last number (the fifth value) must be printed with exactly one digit after the decimal point.
-
-| Input                                        | Output         |
-| -------------------------------------------- | -------------- |
-| 3 12345123451234512345n a 334.23 14049.30493 | 3              |
-|                                              | 12345678912345 |
-|                                              | a              |
-|                                              | 334.23         |
-|                                              | 14049.3        |
-
-
-
-My Solution: 
-
-```js
-const input = "3 12345123451234512345n a 334.23 14049.30493";
-const inputArray = input.split(" ");
-
-const secondElement = inputArray[1]
-const secondElementArray = secondElement.split("")
-secondElementArray.pop(secondElementArray.length - 1)
-const secondElementArrayToString = secondElementArray.join("")
-inputArray[1] = secondElementArrayToString
-
-inputArray[4] = Number(inputArray[4]).toFixed(1)
-
-for (const singleInput of inputArray) {
-    console.log(singleInput)
-}
-
-/*
-3
-12345123451234512345
-a
-334.23
-14049.3
-*/
-```
-
-Better Solution:
-
-```js
-const input = "3 12345123451234512345n a 334.23 14049.30493";
-const inputArray = input.split(" ");
-
-// Convert BigInt string to BigInt → then to string (removes "n")
-inputArray[1] = BigInt(inputArray[1].replace("n", "")).toString();
-
-// Format the last number to 1 decimal place
-inputArray[4] = Number(inputArray[4]).toFixed(1);
-
-// Print all
-for (const value of inputArray) {
-    console.log(value);
-}
-
-/*
-3
-12345123451234512345
-a
-334.23
-14049.3
-*/
-```
-
-```js
-const input = "3 12345123451234512345n a 334.23 14049.30493";
-const [intVal, bigIntVal, charVal, floatVal, doubleVal] = input.split(" ");
-
-console.log(intVal);
-console.log(BigInt(bigIntVal.replace("n", "")).toString());
-console.log(charVal);
-console.log(floatVal);
-console.log(Number(doubleVal).toFixed(1));
-
-/*
-3
-12345123451234512345
-a
-334.23
-14049.3
-*/
-```
-
-**3. Simple Calculator:**
-
-Given two numbers X and Y. Print the summation and multiplication and subtraction of these 2 numbers.
-
-| Input | Output      |
-| ----- | ----------- |
-| 5 10  | 5 + 10 = 15 |
-|       | 5 * 10 = 50 |
-|       | 5 - 10 = -5 |
-
-
-My Solution: 
-
-```jsx
-const num1 = 5;
-const num2 = 10;
-
-console.log(`${num1} + ${num2} = ${num1 + num2}`)
-console.log(`${num1} * ${num2} = ${num1 * num2}`)
-console.log(`${num1} - ${num2} = ${num1 - num2}`)
-
-/*
-5 + 10 = 15
-5 * 10 = 50
-5 - 10 = -5
-*/
-```
-
-**4. Difference:**
-
-Given four numbers A, B, C and D. Print the result of the following equation:
-
-X = (A * B) - (C * D).
-
-| Input | Output           |
-| ----- | ---------------- |
-| 1234  | Difference = -10 |
-| 2345  | Difference = -14 |
-| 4523  | Difference = 14  |
-
-
-My Solution: 
-
-```js
-function calculateEquation(a, b, c, d) {
-    const equation = a * b - c * d
-    return equation
-}
-
-const equationResult = calculateEquation(1, 2, 3, 4);
-console.log(equationResult) // -10
-```
-
-**5. Area of a Circle:**
-
-Given a number R calculate the area of a circle using the following formula:
-
-Area = π * R²
-
-Note: consider π = 3.141592653.
-
-| Input | Output       |
-| ----- | ------------ |
-| 2.00  | 12.566370612 |
-
-
-My Solution: 
-
-```js
-function AreaOfACircle(pi, R) {
-    // return equation = pi * Math.pow(R, 2)
-    return equation = pi * (R ** 2)
-}
-
-const result = AreaOfACircle(3.141592653, 2.00);
-console.log(result) // 12.566370612
-```
-
-
-
-**6. Summation from 1 to N:**
-
-Given a number N. Print the summation of the numbers that is between 1 and N (inclusive).
-
-| Input | Output |
-| ----- | ------ |
-| 3     | 6      |
-| 10    | 55     |
-
-My Solution: 
-
-```js
-function summationFrom1toN(N) {
-    let sum = 0;
-    for (let i = 1; i <= N; i++) {
-        sum += i;
-    }
-    return sum;
-}
-
-console.log(summationFrom1toN(3)); // 6
-```
-
-Better Solution:
-
-```js
-function summationFrom1toN(N) {
-  return (N * (N + 1)) / 2;
-}
-
-console.log(summationFrom1toN(3));  // 6
-
-// Note: sum of all numbers from 1 to N using the formula: N*(N+1)/2
-```
-
-**7. Two Numbers**
-
-Given 2 numbers A and B. Print floor, ceil and round of A/B
-
-| Input | Output           |
-| ----- | ---------------- |
-| 10 3  | floor 10 / 3 = 3 |
-|       | ceil 10 / 3 = 4  |
-|       | round 10 / 3 = 3 |
-| 10 4  | floor 10 / 4 = 2 |
-|       | ceil 10 / 4 = 3  |
-|       | round 10 / 4 = 3 |
-| 10 6  | floor 10 / 6 = 1 |
-|       | ceil 10 / 6 = 2  |
-|       | round 10 / 6 = 2 |
-
-
-My Solution: 
-
-```js
-function divisionOfAB(A, B) {
-
-    console.log(`floor ${A} / ${B} = ${Math.floor(A / B)}`)
-    console.log(`ceil ${A} / ${B} = ${Math.ceil(A / B)}`)
-    console.log(`round ${A} / ${B} = ${Math.round(A / B)}`)
-
-}
-
-divisionOfAB(10, 3);
-
-/*
-floor 10 / 3 = 3
-ceil 10 / 3 = 4
-round 10 / 3 = 3
- */
-```
-
-**8. Welcome for you with conditions:**
-
-Given two numbers A and B. Print "Yes" if A is greater than or equal to B. Otherwise print "No".
-
-| Input | Output |
-| ----- | ------ |
-| 10 9  | Yes    |
-| 5 5   | Yes    |
-| 5 7   | No     |
-
-
-My Solution: 
-
-```js
-function greaterThanOrEqual(A, B) {
-    if (A >= B) {
-        console.log("Yes")
-    }
-    else {
-        console.log("No")
-    }
-}
-
-greaterThanOrEqual(10, 9);
-```
-
-**9. Multiples:**
-
-Given two numbers A and B. Print "Multiples" if A is multiple of B or vice versa. Otherwise print "No Multiples".
-
-Note: 
-- A is Multiple of B if: A % B == 0; 12 % 3 == 0  // true → 12 is a multiple of 3
-- B is Multiple of A if: B % A == 0; 3 % 12 == 0  // false → 3 is NOT a multiple of 12
-
-
-| Input | Output       |
-| ----- | ------------ |
-| 9 3   | Multiples    |
-| 6 24  | Multiples    |
-| 12 5  | No Multiples |
-
-My Solution: 
-
-```js
-function findMultiplesOrNot(A, B) {
-    if (A % B === 0 || B % A === 0) {
-        console.log("Multiples")
-    }
-    else {
-        console.log("No Multiples")
-    }
-}
-
-findMultiplesOrNot(9, 3); // Multiples
-```
-
-**10. Max and Min:**
-
-Given 3 numbers A, B and C, Print the minimum and the maximum numbers.
-
-| Input    | Output |
-| -------- | ------ |
-| 1 2 3    | 1 3    |
-| -1 -2 -3 | -3 -1  |
-| 10 20 -5 | -5 20  |
-
-My Solution: 
-
-```js
-function findMaxAndMin(A, B, C) {
-    const max = findMax(A, B, C)
-    const min = findMin(A, B, C)
-
-    console.log(min, max)
-}
-function findMax(A, B, C) {
-    if (A >= B && A >= C) {
-        return A;
-    }
-    else if (B >= A && B >= C) {
-        return B;
-    }
-    else {
-        return C;
-    }
-}
-function findMin(A, B, C) {
-    if (A <= B && A <= C) {
-        return A;
-    }
-    else if (B <= A && B <= C) {
-        return B;
-    }
-    else {
-        return C;
-    }
-}
-
-findMaxAndMin(1, 2, 3); // 1 2 3
-```
-
-Better Solution: 
-
-```js
-function findMaxAndMin(A, B, C) {
-  const max = Math.max(A, B, C);
-  const min = Math.min(A, B, C);
-  console.log(min, max);
-}
-
-findMaxAndMin(1, 2, 3);     // 1 3
-```
-
-**11. The Brothers:**
-
-Given two person names. Each person has {"the first name" + "the second name"}. Determine whether they are brothers or not.
-
-Note: The two persons are brothers if they share the same second name.
-
-| Input          | Output       |
-| -------------- | ------------ |
-| bassam ramadan | ARE Brothers |
-| ayman salah    |              |
-| ali salah      | ARE Brothers |
-| ahmed ramadan  |              |
-| ali kamel      | NOT          |
-| ali salah      |              |
-
-My Solution: 
-
-```js
-function findBrothersOrNot(person1, person2) {
-    const person1LastName = person1.split(" ").slice(-1).join("")
-    const person2LastName = person2.split(" ").slice(-1).join("")
-    /*
-    const person1LastName = person1.split(" ").slice(-1)[0];
-    const person2LastName = person2.split(" ").slice(-1)[0];
-    */
-    if (person1LastName === person2LastName) {
-        console.log("ARE Brothers")
-    }
-    else {
-        console.log("NOT")
-    }
-}
-
-const person1 = "bassam ramadan";
-const person2 = "ahmed ramadan";
-
-findBrothersOrNot(person1, person2); // ARE Brothers
-```
-
-Better Solution: 
-
-```js
-function findBrothersOrNot(person1, person2) {
-  const [, lastName1] = person1.split(" ");
-  const [, lastName2] = person2.split(" ");
-  
-  console.log(lastName1 === lastName2 ? "ARE Brothers" : "NOT");
-}
-
-findBrothersOrNot("bassam ramadan", "ahmed ramadan"); // ARE Brothers
-findBrothersOrNot("ali kamel", "ali salah");  // NOT
-```
-
-```jsx
-function findBrothersOrNot(person1, person2) {
-  const lastName1 = person1.split(" ").at(-1);
-  const lastName2 = person2.split(" ").at(-1);
-  
-  console.log(lastName1 === lastName2 ? "ARE Brothers" : "NOT");
-}
-
-findBrothersOrNot("bassam ramadan", "ahmed ramadan"); // ARE Brothers
-findBrothersOrNot("ali kamel", "ali salah");  // NOT
-
-// Note: .at(-1) method can directly access the last element of an array.
-```
-
-**12. Capital or Small Or Digit:**
-
-Given a letter X. Determine whether X is Digit or Alphabet and if it is Alphabet determine if it is Capital Case or Small Case.
-
-Note:
-
-Digits in ASCII '0' = 48,'9' = 57 
-Capital letters in ASCII 'A' = 65, 'Z' = 90
-Small letters in ASCII 'a' = 97,'z' = 122
-
-| Input | Output     |
-| ----- | ---------- |
-| A     | ALPHA      |
-|       | IS CAPITAL |
-| 9     | IS DIGIT   |
-| a     | ALPHA      |
-|       | IS SMALL   |
-
-
-My Solution: 
-
-```js
-function findCapitalSmallOrDigit(X) {
-
-    let letter = X;
-
-    if (X >= 1 && X <= 9) {
-        letter = X.toString()
-    }
-
-    const asciiValue = letter.charCodeAt(0)
-
-    if (asciiValue >= 48 && asciiValue <= 57) {
-        console.log("IS DIGIT")
-    }
-    else if (asciiValue >= 65 && asciiValue <= 90) {
-        console.log("ALPHA\nIS CAPITAL")
-    }
-    else if (asciiValue >= 97 && asciiValue <= 122) {
-        console.log(`ALPHA
-IS SMALL`)
-    }
-}
-
-findCapitalSmallOrDigit("A");
-findCapitalSmallOrDigit(9);
-findCapitalSmallOrDigit("a");
-
-/*
-ALPHA
-IS CAPITAL
-IS DIGIT
-ALPHA
-IS SMALL
-*/
-```
-
-Better Solutions: 
-
-```js
-function findCapitalSmallOrDigit(X) {
-  const ascii = X.toString().charCodeAt(0);
-
-  if (ascii >= 48 && ascii <= 57) {
-    console.log("IS DIGIT");
-  } 
-  else if (ascii >= 65 && ascii <= 90) {
-    console.log("ALPHA\nIS CAPITAL");
-  } 
-  else if (ascii >= 97 && ascii <= 122) {
-    console.log("ALPHA\nIS SMALL");
-  } 
-}
-
-findCapitalSmallOrDigit("A");
-findCapitalSmallOrDigit(9);
-findCapitalSmallOrDigit("a");
-```
-
-```js
-function findCapitalSmallOrDigit(X) {
-
- const value = X.toString();
-
-  if (/[0-9]/.test(value)) {
-    console.log("IS DIGIT");
-  } 
-  else if (/[A-Z]/.test(value)) {
-    console.log("ALPHA\nIS CAPITAL");
-  } 
-  else if (/[a-z]/.test(value)) {
-    console.log("ALPHA\nIS SMALL");
-  }
-}
-
-findCapitalSmallOrDigit("A");
-findCapitalSmallOrDigit(9);
-findCapitalSmallOrDigit("a");
-```
-
-```js
-function findCapitalSmallOrDigit(X) {
-
- const value = X.toString();
-
-  if (!isNaN(value)) {
-    console.log("IS DIGIT");
-  } 
-  else if (value === value.toUpperCase()) {
-    console.log("ALPHA\nIS CAPITAL");
-  } 
-  else {
-    console.log("ALPHA\nIS SMALL");
-  }
-}
-  
-findCapitalSmallOrDigit("A");
-findCapitalSmallOrDigit(9);
-findCapitalSmallOrDigit("a");
-```
-
-**13. Char:**
-
-Given a letter X. If the letter is lowercase print the letter after converting it from lowercase letter to uppercase letter. Otherwise print the letter after converting it from uppercase letter to lowercase letter
-
-Note : difference between 'a' and 'A' in ASCII is 32 .
-
-| Input | Output |
-| ----- | ------ |
-| a     | A      |
-| A     | a      |
-
-My Solution: 
-
-```js
-function convertingLowercaseOrUppercase(X) {
-    const ascii = X.charCodeAt(0)
-
-    if (/[A-Z]/.test(X)) {
-        const sum = ascii + 32;
-        const asciiToAlpha = String.fromCharCode(sum);
-        console.log(asciiToAlpha)
-    }
-    else {
-        const sub = ascii - 32;
-        const asciiToAlpha = String.fromCharCode(sub);
-        console.log(asciiToAlpha)
-    }
-}
-
-convertingLowercaseOrUppercase("a"); // A
-convertingLowercaseOrUppercase("A"); // a
-```
-
-Better Solutions: 
-
-```js
-function toggleCase(X) {
-  if (X === X.toUpperCase()) {
-    console.log(X.toLowerCase());
-  } else {
-    console.log(X.toUpperCase());
-  }
-}
-
-toggleCase("a"); // A
-toggleCase("A"); // a
-```
-
-```js
-```
-
-**14. Calculator:**
-
-Given a mathematical expression. The expression will be one of the following expressions: A+B, A−B, A∗B and A/B. Print the result of the mathematical expression.
-
-Note: For the dividing operation you should print the division without any fractions.
-
-| Input | Output |
-| ----- | ------ |
-| 7+54  | 61     |
-| 17*10 | 170    |
-
-My Solution: 
-
-```js
-function calculateExpression(num1, operator, num2) {
-    switch (operator) {
-        case "+":
-            console.log(num1 + num2)
-            break
-        case "-":
-            console.log(num1 - num2)
-            break
-        case "*":
-            console.log(num1 * num2)
-            break
-        case "/":
-            console.log(Math.floor(num1 / num2))
-            break
-        default:
-            console.log("Unknown operator")
-    }
-}
-
-calculateExpression(7, '+', 54); // 61
-calculateExpression(17, '*', 10); // 170
-```
-
-Better Solutions:
-
-```js
-function calculateExpression(num1, operator, num2) {
-  const operations = {
-    '+': num1 + num2,
-    '-': num1 - num2,
-    '*': num1 * num2,
-    '/': Math.floor(num1 / num2),
-  };
-
-  console.log(operations[operator] ?? "Unknown operator");
-}
-
-calculateExpression(7, '+', 54);  // 61
-calculateExpression(17, '*', 10); // 170
-```
-
-**15. Digits Summation:**
-
-Given two numbers N and M. Print the summation of their last digits.
-
-| Input | Output |
-| ----- | ------ |
-| 13 12 | 5      |
-
-My Solution: 
-
-```js
-function digitsSummation(N, M) {
-    const NLastDigit = parseInt(getLastDigit(N))
-    const MLastDigit = parseInt(getLastDigit(M))
-    return NLastDigit + MLastDigit
-}
-
-function getLastDigit(number) {
-    // const stringNumber = String(number)
-    const stringNumber = number.toString()
-    if (stringNumber.length === 1) {
-        return number;
-    }
-    else {
-        const arrayNumber = stringNumber.split("")
-        const lastIndex = arrayNumber.length - 1;
-        const lastElement = arrayNumber[lastIndex]
-        return lastElement
-    }
-}
-const result = digitsSummation(13, 12);
-console.log(result) // 5
-```
-
-Better Solution: 
-
-```js
-function digitsSummation(N, M) {
-    const lastDigitN = N % 10;
-    const lastDigitM = M % 10;
-    return lastDigitN + lastDigitM;
-}
-
-console.log(digitsSummation(13, 12)); // 5
-
-// Note: for any number, n % 10 gives its last digit. 
-```
-
-```js
-function digitsSummation(N, M) {
-  const lastDigitN = Number(N.toString().slice(-1));
-  const lastDigitM = Number(M.toString().slice(-1));
-  return lastDigitN + lastDigitM;
-}
-
-console.log(digitsSummation(13, 12)); // 5
-```
-
-**16. First Digit:**
-
-Given a number X. Print "EVEN" if the first digit of X is even number. Otherwise print "ODD".
-
-| Input | Output |
-| ----- | ------ |
-| 4569  | EVEN   |
-| 3569  | ODD    |
-
-My Solution: 
-
-```js
-function findFirstDigit(X) {
-    const length = X.toString().length;
-
-    let devisor = "1"
-    for (let i = 1; i < length; i++) {
-        devisor += "0"
-    }
-
-    const firstDigit = X / parseInt(devisor)
-    const firstDigitWithOutFraction = Math.floor(firstDigit)
-
-    if (firstDigitWithOutFraction % 2 === 0) {
-        console.log("EVEN")
-    }
-    else {
-
-        console.log("ODD")
-    }
-
-}
-
-findFirstDigit(4569); // EVEN
-findFirstDigit(3569); // ODD
-
-// first digit formula = N/10^(number of digits - 1) --> n/10^(log10(n))
-```
-
-better Solutions: 
-
-```js
-function findFirstDigit(X) {
-  const firstDigit = Number(X.toString()[0]);
-  console.log(firstDigit % 2 === 0 ? "EVEN" : "ODD");
-}
-
-findFirstDigit(4569); // EVEN
-findFirstDigit(3569); // ODD
-```
-
-```js
-function findFirstDigit(X) {
-  while (X >= 10) {
-    X = Math.floor(X / 10);
-  }
-  console.log(X % 2 === 0 ? "EVEN" : "ODD");
-}
-
-findFirstDigit(4569); // EVEN
-findFirstDigit(3569); // ODD
-```
-
-```js
-function findFirstDigit(X) {
-  const firstDigit = Math.floor(X / Math.pow(10, Math.floor(Math.log10(X))));
-  console.log(firstDigit % 2 === 0 ? "EVEN" : "ODD");
-}
-
-findFirstDigit(4569); // EVEN
-findFirstDigit(3569); // ODD
-```
-
-Note: 
-- $\log_b(x) = y$
-- $\log_{10}(280) = 2.447 = 2$
-- $\log_{10}(100) = 2$
-- $\displaystyle 10^2 = 100$
-
-
-
-**17. The Last 2 Digits:**
-
-Given 4 numbers A, B, C and D. Print the last 2 digits from their Multiplication.
-
-Note: The Multiplication of 4 numbers is 5 * 7 * 2 * 4 = 280 so the answer will be the last 2 digits which are 80.
-
-| Input   | Output |
-| ------- | ------ |
-| 5 7 2 4 | 80     |
-| 3 9 9 9 | 87     |
-
-My Solution: 
-
-```js
-function last2Digits(A, B, C, D) {
-    const multiplication = A * B * C * D;
-    const lastTwoDigits = multiplication % 100;
-
-    console.log(lastTwoDigits)
-}
-
-last2Digits(5, 7, 2, 4); // 80
-last2Digits(3, 9, 9, 9); // 87
-
-// Note: for any number, n % 100 gives its last two digits.
-```
-
-
-**18. Coordinated of a Point:**
-
-Given two numbers X, Y which donate coordinates of a point in 2D plan. Determine in which quarter does it belong.
-
-![image](./images/problemSolving-variablesDataTypesAndOperators/Coordinate-System-1.png)
-
-Note:
-- Print Q1, Q2, Q3, Q4 according to the quarter in which the point belongs to.
-- Print "Origem" (0, 0) If the point is at the origin.
-- Print "Eixo X" (X, 0) If the point is over X axis.
-- Print "Eixo Y" (0, Y) if the point is over Y axis.
-
-| Input    | Output |
-| -------- | ------ |
-| 4.5 -2.2 | Q4     |
-| 0.1 0.1  | Q1     |
-
-My Solution: 
-
-```js
-function FindCoordinates(X, Y) {
-    if (X > 0 && Y > 0) {
-        console.log('Q1')
-    }
-    else if (X < 0 && Y > 0) {
-        console.log('Q2')
-    }
-    else if (X < 0 && Y < 0) {
-        console.log('Q3')
-    }
-    else if (X > 0 && Y < 0) {
-        console.log('Q4')
-    }
-    else if (X > 0 && Y === 0) {
-        console.log("Eixo X")
-    }
-    else if (X === 0 && Y > 0) {
-        console.log("Eixo Y")
-    }
-    else if (X === 0 && Y === 0) {
-        console.log('Origem')
-    }
-
-}
-
-FindCoordinates(4.5, -2.2); // Q4
-FindCoordinates(0.1, 0.1); // Q1
-```
-
-Better Solution: 
-
-```js
-function findCoordinates(X, Y) {
-    if (X === 0 && Y === 0) {
-        console.log("Origem");
-    } 
-    else if (Y === 0) {
-        console.log("Eixo X");
-    } 
-    else if (X === 0) {
-        console.log("Eixo Y");
-    } 
-    else if (X > 0 && Y > 0) {
-        console.log("Q1");
-    } 
-    else if (X < 0 && Y > 0) {
-        console.log("Q2");
-    } 
-    else if (X < 0 && Y < 0) {
-        console.log("Q3");
-    } 
-    else {
-        console.log("Q4");
-    }
-}
-
-findCoordinates(4.5, -2.2); // Q4
-findCoordinates(0.1, 0.1);  // Q1
-```
-
-**19. Age in Days:**
-
-Given a Number N corresponding to a person's age (in days). Print his age in years, months and days, followed by its respective message "years", "months", "days".
-
-Note: consider the whole year has 365 days and 30 days per month.
-
-| Input | Output   |
-| ----- | -------- |
-| 400   | 1 years  |
-|       | 1 months |
-|       | 5 days   |
-| 800   | 2 years  |
-|       | 2 months |
-|       | 10 days  |
-| 30    | 0 years  |
-|       | 1 months |
-|       | 0 days   |
-
-My Solution: 
-
-```js
-function findAgeInDays(N) {
-    let years = 0
-    let months = 0
-    let days = 0;
-
-    if (N >= 365) {
-        years = Math.floor(N / 365);
-        days = N % 365;
-    }
-    else {
-        days = N
-    }
-
-    if (N >= 30) {
-        months = Math.floor(days / 30);
-        days = days % 30
-    }
-
-    console.log(`
-${years} years
-${months} months
-${days} days
-`)
-
-}
-
-findAgeInDays(400);
-
-/*
-1 years
-1 months
-5 days
-*/
-```
-
-**20. Interval:**
-
-Given a number X. Determine in which of the following intervals the number X belongs to:
-
-[0,25], (25,50], (50,75], (75,100]
-
-- if X belongs to any of the above intervals print "Interval " followed by the interval.
-- if X does not belong to any of the above intervals print "Out of Intervals".
-
-Note:
-- The symbol '(' represents greater than.
-- The symbol ')' represents smaller than.
-- The symbol '[' represents greater than or equal.
-- The symbol ']' represents smaller than or equal.
-
-For example:
-
-- [0,25] indicates numbers between 0 and 25.0000, including both.
-- (25,50] indicates numbers greater than 25: (25.00001) up to 50.0000000.
-
-| Input | Output            |
-| ----- | ----------------- |
-| 25.1  | Interval (25,50]  |
-| 25.0  | Interval [0, 25]  |
-| 100.0 | Interval (75,100] |
-| -25.2 | Out of Intervals  |
-
-My Solution: 
-
-```js
-function findInterval(X) {
-    if (X >= 0 && X <= 25) {
-        console.log("Interval [0,25]")
-    }
-    else if (X > 25 && X <= 50) {
-        console.log("Interval (25,50]")
-    }
-    else if (X > 50 && X <= 75) {
-        console.log("Interval (50,75]")
-    }
-    else if (X > 75 && X <= 100) {
-        console.log("Interval (75,100]")
-    }
-    else {
-        console.log("Out of Intervals")
-    }
-}
-
-findInterval(25.1); // Interval (25,50]
-findInterval(25.0); // Interval [0,25]
-findInterval(100.0); // Interval (75,100]
-findInterval(-25.2); // Out of Intervals
-```
-
-**21. Two Intervals:**
-
-Given the boundaries of 2 intervals. Print the boundaries of their intersection.
-
-Note: Boundaries mean the two ends of an interval which are the starting number and the ending number.
-
-![image](./images/problemSolving-variablesDataTypesAndOperators/intersectionOfTwoFoundaries.png)
-
-If there is an intersection between these 2 intervals print its boundaries , otherwise print -1.
-
-| Input     | Output |
-| --------- | ------ |
-| 1 15 5 27 | 5 15   |
-| 5 27 1 15 | 5 15   |
-| 2 5 6 12  | -1     |
-
-My Solution: 
-
-```js
-function findTwoInterval(l1, r1, l2, r2) {
-
-    const interval1Difference = r1 - l1
-    const interval2Difference = r2 - l2
-
-    let highestInterval = []
-    let lowestInterval = []
-
-    if (interval1Difference > interval2Difference) {
-        highestInterval = [l1, r1]
-        lowestInterval = [l2, r2]
-    }
-    else {
-        highestInterval = [l2, r2]
-        lowestInterval = [l1, r1]
-    }
-
-    const highestIntervalLowestValue = highestInterval[0]
-    const lowestIntervalHighestValue = lowestInterval[1]
-
-    if (lowestIntervalHighestValue < highestIntervalLowestValue) {
-        console.log(-1)
-    }
-    else {
-        const boundariesOfTwoIntersections = [highestIntervalLowestValue, lowestIntervalHighestValue]
-        console.log(...boundariesOfTwoIntersections)
-    }
-}
-
-
-findTwoInterval(1, 15, 5, 27); // 5 15
-findTwoInterval(5, 27, 1, 15); // 5 15
-findTwoInterval(2, 5, 6, 12); // -1
-```
-Logic: 
-
-![image](./images/problemSolving-variablesDataTypesAndOperators/twoIntervals.jpg)
-
-Better Solution: 
-
-```js
-function findTwoIntervals(l1, r1, l2, r2) {
-    const left = Math.max(l1, l2);
-    const right = Math.min(r1, r2);
-
-    if (left <= right) {
-        console.log(left, right);
-    } else {
-        console.log(-1);
-    }
-}
-
-findTwoIntervals(1, 15, 5, 27); // 5 15
-findTwoIntervals(5, 27, 1, 15); // 5 15
-findTwoIntervals(2, 5, 6, 12);  // -1
-```
-
-Logic: 
-
-- Left boundary = max(l1, l2)
-- Right boundary = min(r1, r2)
-
-If the left boundary ≤ right boundary → intersection exists
-Otherwise → no intersection (print -1)
-
-**22. Sort Numbers:**
-
-Given three numbers A, B, C. Print these numbers in ascending order followed by a blank line and then the values in the sequence as they were read.
-
-| Input   | Output |
-| ------- | ------ |
-| 3 -2 1  | -2     |
-|         | 1      |
-|         | 3      |
-|         |        |
-|         | 3      |
-|         | -2     |
-|         | 1      |
-| -2 10 0 |        |
-|         | -2     |
-|         | 0      |
-|         | 10     |
-|         |        |
-|         | -2     |
-|         | 10     |
-|         | 0      |
-
-My Solution: 
-
-```js
-function sortNumbers(A, B, C) {
-
-    const numbers = [A, B, C];
-
-    let sortedNumbers = [...numbers];
-
-    for (let i = 0; i < sortedNumbers.length - 1; i++) {
-        for (let j = i + 1; j < sortedNumbers.length; j++) {
-            if (sortedNumbers[i] >= sortedNumbers[j]) {
-                let temp = sortedNumbers[i]
-                sortedNumbers[i] = sortedNumbers[j]
-                sortedNumbers[j] = temp;
-            }
-        }
-    }
-
-    for (let number of sortedNumbers) {
-        console.log(number)
-    }
-
-    console.log("")
-
-    for (let number of numbers) {
-        console.log(number)
-    }
-
-}
-
-sortNumbers(3, -2, 1); 
-
-/*
--2
-1
-3
-
-3
--2
-1
-*/
-```
-
-Better Solution: 
-
-```js
-function sortNumbers(A, B, C) {
-    const numbers = [A, B, C];
-    const sorted = [...numbers].sort((a, b) => a - b);
-    // a - b = ascending sort, b - a = descending sort
-
-    for (let n of sorted) console.log(n);
-    console.log("");
-    for (let n of numbers) console.log(n);
-}
-
-sortNumbers(3, -2, 1);
-
-/*
--2
-1
-3
-
-3
--2
-1
-*/
-```
-
-```js
-// Note: works only for 3 numbers
-
-function sortNumbers(A, B, C) {
-    const min = Math.min(A, B, C);
-    const max = Math.max(A, B, C);
-    const mid = A + B + C - min - max;
-
-    console.log(`${min}\n${mid}\n${max}\n`);
-    console.log(`${A}\n${B}\n${C}`);
-}
-
-sortNumbers(3, -2, 1);
-
-```
-
-**23. Float or Int:**
-
-Given a number N. Determine whether N is float number or integer number.
-
-- If N is integer number then print "int" followed by the integer part separated by space.
-- If N is float number then print "float" followed by the integer part and decimal part separated by space.
-
-| Input   | Output          |
-| ------- | --------------- |
-| 234.000 | int 234         |
-| 534.958 | float 534 0.958 |
-
-My Solution: 
-
-```js
-function FindFloatOrInt(N) {
-
-    const floatValue = N - parseInt(N)
-
-    if (floatValue === 0) {
-        console.log("int", parseInt(N))
-    }
-    else {
-        console.log("float", parseInt(N), parseFloat(floatValue.toFixed(3)))
-    }
-
-    /*
-    Separate decimal(floating) part: 
-    - (floating number - its integer part) 
-    - or (floating number % 1)
-    */
-}
-
-FindFloatOrInt(234.000); // int 234
-FindFloatOrInt(534.958); // float 534 0.958
-```
-
-**24. Mathematical Expression:**
-
-Given a mathematical expression. The expression will be one of the following expressions:
-
-- A + B = C, A - B = C and A * B = C
-
-where A, B, C are three numbers, S is the sign between A and B, and Q the '=' sign
-
-Print "Yes" If the expression is Right , Otherwise print the right answer of the expression.
-
-| Input       | Output |
-| ----------- | ------ |
-| 5 + 10 = 15 | Yes    |
-| 3 - 1 = 2   | Yes    |
-| 2 * 10 = 19 | 20     |
-
-My Solution: 
-
-```js
-function findExpressionRightOrWrong(A, S, B, Q, C) {
-
-    let expressionResult = 0;
-
-    if (S === '+') {
-        expressionResult = A + B
-    }
-    else if (S === '-') {
-        expressionResult = A - B
-    }
-    else if (S === '*') {
-        expressionResult = A * B
-    }
-    else if (S === '/') {
-        expressionResult = A / B
-    }
-
-    if (expressionResult === C) {
-        console.log("Yes")
-    }
-    else {
-        console.log(expressionResult)
-    }
-
-}
-
-findExpressionRightOrWrong(5, '+', 10, '=', 15); // Yes
-findExpressionRightOrWrong(3, '-', 1, '=', 2); // Yes
-findExpressionRightOrWrong(2, '*', 10, '=', 19); // 20
-```
-
-Better Solutions:
-
-```js
-function findExpressionRightOrWrong(A, S, B, Q, C) {
-    let result;
-
-    switch (S) {
-        case '+':
-            result = A + B;
-            break;
-        case '-':
-            result = A - B;
-            break;
-        case '*':
-            result = A * B;
-            break;
-        case '/':
-            result = A / B;
-            break;
-        default:
-            console.log("Invalid operator");
-            return;
-    }
-
-    console.log(result === C ? "Yes" : result);
-}
-
-findExpressionRightOrWrong(5, '+', 10, '=', 15); // Yes
-findExpressionRightOrWrong(3, '-', 1, '=', 2);   // Yes
-findExpressionRightOrWrong(2, '*', 10, '=', 19); // 20
-```
-
-**25. Comparison:**
-
-Given a comparison symbol S between two numbers A and B. Determine whether it is Right or Wrong.
-
-- The comparison is as follows: A < B, A > B, A = B.
-
-Where A, B are two integer numbers and S refers to the sign between them.
-
-| Input | Output |
-| ----- | ------ |
-| 5 > 4 | Right  |
-| 9 < 1 | Wrong  |
-| 4 = 4 | Right  |
-
-My Solution: 
-
-```js
-function comparisonRightOrWrong(A, S, B) {
-
-    if (S === ">") {
-        if (A > B) {
-            console.log("Right")
-        }
-        else {
-            console.log("Wrong")
-        }
-    }
-    else if (S === '<') {
-        if (A < B) {
-            console.log("Right")
-        }
-        else {
-            console.log("Wrong")
-        }
-    }
-    else if (S === '=') {
-        if (A === B) {
-            console.log("Right")
-        }
-        else {
-            console.log("Wrong")
-        }
-    }
-
-}
-
-comparisonRightOrWrong(5, '>', 4); // Right
-comparisonRightOrWrong(9, '<', 1); // Wrong
-comparisonRightOrWrong(4, '=', 4); // Right
-```
-
-Better Solution: 
-
-```js
-function comparisonRightOrWrong(A, S, B) {
-
-    let isRight;
-
-    switch (S) {
-        case '>':
-            isRight = A > B;
-            break
-        case '<':
-            isRight = A < B;
-            break
-        case '=':
-            isRight = A === B;
-            break
-    }
-
-    console.log(isRight ? "Right" : "Wrong")
-
-}
-
-comparisonRightOrWrong(5, '>', 4); // Right
-comparisonRightOrWrong(9, '<', 1); // Wrong
-comparisonRightOrWrong(4, '=', 4); // Right
-```
-
-**26. Hard Compare:**
-
-Given 4 numbers A,B,C and D. If AB > CD print "YES" otherwise, print "NO".
-
-
-| Input   | Output |
-| ------- | ------ |
-| 3 2 5 4 | NO     |
-| 5 2 4 2 | YES    |
-| 5 2 5 2 | NO     |
-
-
-My Solution: 
-
-```js
-function comparison(A, B, C, D) {
-
-    if (A ** B > C ** D) { // (Math.pow(A, B) > Math.pow(C, D))
-        console.log("YES")
-    }
-    else {
-        console.log("NO")
-    }
-
-}
-
-comparison(3, 2, 5, 4); // NO
-comparison(5, 2, 4, 2); // YES
-comparison(5, 2, 5, 2); // NO
-```
-Note: if we calculate hug number using ** (exponentiation), it will overflow or lose precision (since JS numbers are float64, not arbitrary-precision).
-
-Better Solution: 
-
-```js
-function comparison(A, B, C, D) {
-    if (B * Math.log(A) > D * Math.log(C)) {
-        console.log("YES");
-    } else {
-        console.log("NO");
-    }
-}
-
-comparison(3, 2, 5, 4); // NO
-comparison(5, 2, 4, 2); // YES
-comparison(5, 2, 5, 2); // NO
-```
-
-Note: $\log(x^y)$ = y.log(x) = ** = Math.pow()
-
-**27. Winter Sale:**
-
-The winter sale began, and Mrs. Sarah wants to buy a T-shirt for her son. The T-shirt has a ticket that indicates a discount of X% and its price P after the discount. She now wants to know the price before the discount to know if the discount was worthy. Help her!
-
-Print the price of the T-shirt before the discount rounded up to two decimal places.
-
-
-Note: 
-
-**Basic Discount Terminology:**
-- Marked Price (MP): The original price before discount.
-- Discount(%) (D%): The reduction rate applied to the marked price.
-- Discount Amount (DA): The actual amount reduced from the marked price.
-- Selling price (SP): The price after discount 
-
-
-**Primary Formula:**
-- SP = MP - DA 
-- DA = (Discount% / 100) * MP
-- Find Discount Percentage (D%):
-
-we know, SP = MP - DA
-        ==> SP = MP - (D% / 100) * MP
-        ==> SP = MP * (1 - D% /100)
-        ==> SP / MP = 1 - (D% / 100) [Device both sides by MP]
-        ==> (SP / MP) - 1 =  - (D% / 100) 
-        ==> ( -(SP / MP) + 1) * 100 = D%  [multiply both side by -100] 
-        ==> ( 1 -(SP / MP)) * 100 = D%   
-        ==>  D% = ( 1 -(SP / MP)) * 100 
-        ==>  D% = ( (MP / MP) -(SP / MP)) * 100 [Any number ÷ itself = 1]
-        ==>  D% =  ((MP - SP) / MP) * 100 
-
-| Input | Output |
-| ----- | ------ |
-| 20 80 | 100.00 |
-| 15 20 | 23.53  |
-
-My Solution: 
-
-```js
-function getMarkedPrice(X, P) {
-
-    const discountPercentage = X
-    const SellingPrice = P
-    const MarkedPrice = parseFloat((SellingPrice * (100 / (100 - discountPercentage))).toFixed(2))
-    console.log(MarkedPrice)
-
-}
-
-getMarkedPrice(20, 80); // 100
-getMarkedPrice(15, 20); // 23.53
-```
-![image](./images/problemSolving-variablesDataTypesAndOperators/MarkedPrice.jpg)
-
-**28. Memo and Momo:**
-
-Memo and Momo are playing a game. Memo will choose a positive number a, and Momo will choose a positive number b.
-
-Your task is to tell them who will win according to the following rules:
-
-- If both a and b are divisible by k, both of them win and you should print "Both".
-- If a is divisible by k but b isn't, Memo wins and you should print "Memo".
-- If b is divisible by k but a isn't, Momo wins and you should print "Momo".
-- If both a and b are not divisible by k, no one wins and you should print "No One".
-
-| Input   | Output |
-| ------- | ------ |
-| 15 7 3  | Memo   |
-| 22 10 2 | Both   |
-
-My Solution: 
-
-```js
-function findDivisible(a, b, k) {
-
-    if (a % k === 0 && b % k === 0) {
-        console.log("Both")
-    }
-    else if (a % k === 0) {
-        console.log("Memo")
-    }
-    else if (b % k === 0) {
-        console.log("Momo")
-    }
-    else {
-        console.log("No One")
-    }
-
-}
-
-findDivisible(15, 7, 3); // Memo
-findDivisible(22, 10, 2); // Both
-```
-
-**29. Next Alphabet:**
-
-Given a lowercase alphabet character C. You have to print the next character in the alphabet.
-
-Note: The next letter to z is a.
-
-| Input | Output |
-| ----- | ------ |
-| a     | b      |
-
-
-My Solution:
-
-```js
-function findNextAlphabet(C) {
-
-    let asciiValue = C.charCodeAt(0)
-
-
-    if (asciiValue >= 97 && asciiValue < 122) {
-        asciiValue += 1;
-    }
-    if (asciiValue === 122) {
-        asciiValue = 97
-    }
-
-    const letter = String.fromCharCode(asciiValue)
-    console.log(letter)
-}
-
-findNextAlphabet('a'); // b
-```
-
-**30. Ali Baba and Puzzles:**
-
-One day, Ali Baba had an easy puzzle that he couldn't solve. The puzzle consisted of 4 numbers and his task was to check whether he could get the fourth number using arithmetic operators (+,−,×) between the other three numbers; so that each operator is used only once.
-
-a □ b □ c = d
-
-| Input    | Output |
-| -------- | ------ |
-| 3 4 5 23 | YES    |
-| 9 5 3 7  | YES    |
-| 1 2 3 1  | NO     |
-
-My Solution: 
-
-```js
-function findArithmeticResult(a, b, c, d) {
-    if (
-        a + (b - c) === d || a + b - c === d ||
-        (a + b) * c === d || a + b * c === d ||
-        (a - b) + c === d || a - b + c === d ||
-        (a - b) * c === d || a - b * c === d ||
-        a * (b + c) === d || a * b + c === d ||
-        a * (b - c) === d || a * b - c === d
-    ) {
-        console.log("Yes")
-    }
-    else {
-        console.log("NO")
-    }
-
-}
-
-findArithmeticResult(3, 4, 5, 23); // YES
-findArithmeticResult(9, 5, 3, 7); // YES
-findArithmeticResult(1, 2, 3, 1); // NO
-```
-
-Note: 
-- Number of operator combination: For 3 numbers (a, b, c) and two slots (a_b_c): 
-    - $3^2$ = 9
-```
-+ +, + -, + *
-- +, - -, - *
-* +, * -, * *
-```
-- Number of Parentheses: For 3 numbers, there are 2 unique ways to group them:
- 
-```
-(a op b) op c
-a op (b op c)
-```
-
-So , Total Unique Expression:
-  - $3^2$ * 2 = 18  
-
-In our case we just need:
-
-```
-+ -, + *
-- +,  - *
-* +, * -, 
-```
-
-  - $3^2$ * 2 = 18 - 6 (because we can't repeat operator) = 12 
-
-Better Solutions: 
-
-```js
-function findArithmeticResult(a, b, c, d) {
-    const expressions = [
-        a + (b - c), a + b - c,
-        (a + b) * c, a + b * c,
-        (a - b) + c, a - b + c,
-        (a - b) * c, a - b * c,
-        a * (b + c), a * b + c,
-        a * (b - c), a * b - c
-    ]
-
-    console.log(expressions.includes(d) ? "YES" : "NO")
-
-}
-
-findArithmeticResult(3, 4, 5, 23); // YES
-findArithmeticResult(9, 5, 3, 7); // YES
-findArithmeticResult(1, 2, 3, 1); // NO
-```
-
-**31. Interval Sweep:**
-
-Given two numbers a and b. You have to answer with "YES" if there is a non-empty interval consisting of numbers from l to r
-(l,l+1,l+2,...,r) with a odd numbers and b even numbers, or "NO" otherwise.
-
-Input:
-
-Only one line containing two numbers a and b (0≤a,b≤100)the number of odd numbers and the number of even numbers in the interval respectively.
-
-| Input | Output |
-| ----- | ------ |
-| 2 3   | YES    |
-| 3 1   | NO     |
-
-Note: 
-
-Example 1 :
-
-some valid intervale's that contain 2 odd numbers and 3 even numbers can be:
-
-l=6,r=10 contains numbers (6,7,8,9,10)
-
-l=14,r=18 contains numbers (14,15,16,17,18)
-
-My Solution:
-
-```js
-function findInterval(a, b) {
-    if (a === 0 && b === 0) {
-        console.log("NO");
-        return;
-    }
-
-    if (Math.abs(a - b) <= 1) {
-        console.log("YES");
-    } else {
-        console.log("NO");
-    }
-}
-
-findInterval(2, 3); // YES
-findInterval(3, 1); // NO
-
-```
-
-| Interval      | Evens | Odds | a-b |
-| ------------- | ----- | ---- | --- |
-| [1,2]         | 1     | 1    | 0   |
-| [1,2,3]       | 1     | 2    | 1   |
-| [1,2,3,4]     | 2     | 2    | 0   |
-| [1,2,3,4,5]   | 2     | 3    | 1   |
-| [2,3,4,5,6]   | 3     | 2    | 1   |
-| [2,3,4,5,6,7] | 3     | 3    | 0   |
-
-Since consecutive interval alternate between even and odd, the difference between their counts can never exceed 1.
-
-**33. Katryoshka:**
-
-The Egyptian football team will be in Russia for the World Cup. Of course, they all would like to buy souvenirs for their families. Luckily, they met the king of souvenirs Matryoshka who is famous for his masterpiece Katryoshka. He makes it using different wooden pieces: eyes, mouths and bodies. He can form a nice Katryoshka using one of the following combinations:
-
-- Two eyes and one body.
-- Two eyes, one mouth, and one body.
-- One eye, one mouth, and one body.
-
-If the king has n eyes, m mouths and k bodies, what is the largest number of Katryoshkas he can make?
-
-| Input    | Output |
-| -------- | ------ |
-| 1 2 3    | 1      |
-| 0 11 2   | 0      |
-| 90 24 89 | 57     |
-
-My Solution: 
-
-```js
-function findLargestNumberOfKatryoshkas(n, m, k) {
-
-    let eyes = n
-    let mouths = m
-    let bodies = k
-    let katryoshka = 0
-
-    if (eyes > 0 && mouths > 0 && bodies > 0) {
-        const minWoodenPieces = Math.min(eyes, mouths, bodies)
-        eyes -= minWoodenPieces
-        mouths -= minWoodenPieces
-        bodies -= minWoodenPieces
-        katryoshka += minWoodenPieces;
-    }
-    if (eyes >= 2 && bodies > 0) {
-        eyes /= 2;
-        bodies -= eyes;
-        katryoshka += eyes;
-    }
-    if (eyes >= 2 && mouths > 0 && bodies > 0) {
-        eyes /= 2;
-        mouths -= eyes
-        bodies -= eyes
-        katryoshka += eyes
-    }
-
-    console.log(katryoshka)
-}
-
-findLargestNumberOfKatryoshkas(1, 2, 3); // 1
-findLargestNumberOfKatryoshkas(0, 11, 2); // 0
-findLargestNumberOfKatryoshkas(90, 24, 89); // 57
-```
-
-Better Solution: 
-
-```js
-function findLargestNumberOfKatryoshkas(n, m, k) {
-  let count = 0;
-
-  // Step 1: Make as many (2 eyes + 1 mouth + 1 body) as possible
-  let type2 = Math.min(Math.floor(n / 2), m, k);
-  count += type2;
-  n -= type2 * 2;
-  m -= type2;
-  k -= type2;
-
-  // Step 2: Make as many (1 eye + 1 mouth + 1 body) as possible
-  let type3 = Math.min(n, m, k);
-  count += type3;
-  n -= type3;
-  m -= type3;
-  k -= type3;
-
-  // Step 3: Make as many (2 eyes + 1 body) as possible
-  let type1 = Math.min(Math.floor(n / 2), k);
-  count += type1;
-  n -= type1 * 2;
-  k -= type1;
-
-  console.log(count);
-}
-
-findLargestNumberOfKatryoshkas(1, 2, 3);   // 1
-findLargestNumberOfKatryoshkas(0, 11, 2);  // 0
-findLargestNumberOfKatryoshkas(90, 24, 89); // 57
-```
-
-**34. Lucky Numbers:**
-
-A number of two digits is lucky if one of its digits is divisible by the other.
-
-For example, 39, 82, and 55 are lucky, while 79 and 43 are not.
-
-Given a number between 10 and 99, determine whether it is lucky or not.
-
-| Input | Output |
-| ----- | ------ |
-| 39    | YES    |
-| 64    | NO     |
-
-My Solution: 
-
-```
-function findDivisibleOrNot(num) {
-    const firstNum = Math.floor(num / 10);
-    const secondNum = num % 10;
-    if (firstNum % secondNum === 0 || secondNum % firstNum === 0) {
-        console.log("YES")
-    }
-    else {
-        console.log("NO")
-    }
-}
-
-findDivisibleOrNot(39); // YES
-findDivisibleOrNot(64); // NO
-```
-
 ## Loops
 
 ### for loop:
@@ -3804,1906 +2006,6 @@ for (const key in arr) {
     // Possible order: "0" "1" "2" "5" "10" "a" "1.5"
 }
 ```
-
-## Problem Solving: Loops
-
-**1 to N:**
-
-Given a number N. Print numbers from 1 to N in separate lines.
-
-| Input | Output |
-| ----- | ------ |
-| 5     | 1      |
-|       | 2      |
-|       | 3      |
-|       | 4      |
-|       | 5      |
-
-```js
-for (let i = 1; i <= 5; i++) {
-    console.log(i)
-}
-
-/*
-1
-2
-3
-4
-5
-*/
-```
-
-**Even Numbers:**
-
-Given a number N. Print all even numbers between 1 and N inclusive in separate lines.
-
-| Input | Output |
-| ----- | ------ |
-| 10    | 2      |
-|       | 4      |
-|       | 6      |
-|       | 8      |
-|       | 10     |
-| 5     | 2      |
-|       | 4      |
-
-My Solution: 
-
-```js
-const N = 10
-
-for (let i = 1; i <= N; i++) {
-    if (i % 2 === 0) {
-        console.log(i)
-    }
-}
-
-/*
-2
-4
-6
-8
-10
-*/
-```
-
-Better Solution: 
-
-```js
-const N = 10
-
-for (let i = 2; i <= N; i += 2) {
-    console.log(i)
-}
-
-/*
-2
-4
-6
-8
-10
-*/
-```
-
-**Even, Odd, Positive and Negative:**
-
-Given some numbers. Count how many of these values are even, odd, positive and negative.
-
-| Input | Output      |
-| ----- | ----------- |
-| -5    | Even: 3     |
-| 0     | Even : 2    |
-| -3    | Positive: 1 |
-| -4    | Negative: 3 |
-| 12    |             |
-
-My Solution: 
-
-```js
-function countEvenOddPositiveNegative(...numbers) {
-    let even = 0
-    let odd = 0
-    let positive = 0
-    let negative = 0
-
-    for (let number of numbers) {
-        if (number % 2 === 0) {
-            even++;
-        }
-        else {
-            odd++
-        }
-
-        if (number > 0) {
-            positive++
-        }
-        else if (number < 0) {
-            negative++
-        }
-    }
-    console.log("Even:", even)
-    console.log("Odd:", odd)
-    console.log("Positive:", positive)
-    console.log("Negative:", negative)
-}
-
-countEvenOddPositiveNegative(-5, 0, -3, -4, 12)
-
-/*
-Even: 3
-Odd: 2
-Positive: 1
-Negative: 3
-*/
-```
-
-**Fixed Password:**
-
-Given multiple lines each line contains a number X which is a password. Print "Wrong" if the password is incorrect otherwise, print "Correct" and terminate the program.
-
-Note: The "Correct" password is the number 1999.
-
-| Input | Output  |
-| ----- | ------- |
-| 2200  | Wrong   |
-| 1020  | Wrong   |
-| 1999  | Correct |
-| 1000  |         |
-| 9999  |         |
-
-My Solution: 
-
-```js
-function checkPassword(...numbers) {
-    for (let number of numbers) {
-        if (number === 1999) {
-            console.log("Correct")
-            return;
-        }
-        else {
-            console.log("Wrong")
-        }
-    }
-}
-
-checkPassword(2200, 1020, 1999, 1000, 9999)
-
-/*
-Wrong
-Wrong
-Correct
-*/
-```
-
-**Max:**
-
-Given N numbers, find maximum number in these N numbers.
-
-| Input | Output |
-| ----- | ------ |
-| 1     | 8      |
-| 8     |        |
-| 5     |        |
-| 7     |        |
-| 5     |        |
-
-My Solution: 
-
-```js
-function findMax(...numbers) {
-    let max = numbers[0]
-    for (let number of numbers) {
-        if (number >= max) {
-            max = number
-        }
-    }
-    console.log(max)
-}
-
-findMax(1, 8, 5, 7, 5) // 8
-```
-
-Better Solution: 
-
-```js
-function findMax(...numbers) {
-    console.log(Math.max(...numbers))
-}
-
-findMax(1, 8, 5, 7, 5) // 8
-```
-
-**Multiplication table:**
-
-Given a number N. Print the multiplication table of the number from 1 to 12
-
-Input/output: 
-
-```
-2
-
-2 * 1 = 2
-2 * 2 = 4
-2 * 3 = 6
-2 * 4 = 8
-2 * 5 = 10
-2 * 6 = 12
-2 * 7 = 14
-2 * 8 = 16
-2 * 9 = 18
-2 * 10 = 20
-2 * 11 = 22
-2 * 12 = 24
-```
-
-My solution: 
-
-```js
-function generateMultiplicationTable(N) {
-    for (let i = 1; i <= 12; i++) {
-        console.log(`${N} * ${i} = ${N * i}`)
-    }
-}
-
-generateMultiplicationTable(2)
-```
-
-**Factorial:**
-
-Given some numbers. Print the factorial of that numbers.
-
-Note: 
-
-Factorial, in mathematics, the product of all positive integers less than or equal to a given positive integer and denoted by that integer and an exclamation point.
-
-- Thus, factorial seven is written 7!, meaning 1 * 2 * 3 * 4 * 5 * 6 * 7 = 5040 .
-- Factorial zero is defined as equal to 1.
-
-
-| Input | Output |
-| ----- | ------ |
-| 5     | 120    |
-| 3     | 6      |
-
-
-My Solution: 
-
-```js
-function findFactorial(num) {
-
-    let factorialResult = 1;
-
-    for (let i = 1; i <= num; i++) {
-        factorialResult *= i
-    }
-
-    console.log(factorialResult)
-}
-
-findFactorial(5) // 120
-```
-
-
-**One Prime:**
-
-Given a number X. Determine if the number is prime or not.
-
-Note:
-
-A prime number is a number that is greater than 1 and has only two factors which are 1 and itself. Means prime number divisible only by 1 and itself.
-
-Be careful that 1 is not prime
-
-| Input | Output |
-| ----- | ------ |
-| 7     | YES    |
-| 15    | NO     |
-
-My Solution: 
-
-```js
-function findPrimeNumber(num) {
-
-    let isPrime = true;
-
-    for (let i = 2; i < num; i++) {
-        if (num % i === 0) {
-            isPrime = false
-        }
-    }
-
-    console.log(isPrime ? "YES" : "NO")
-}
-
-findPrimeNumber(7) // YES
-findPrimeNumber(15) // NO
-```
-
-Better Solution: 
-
-```js
-function findPrimeNumber(num) {
-  if (num <= 1) return console.log("NO"); 
-
-  for (let i = 2; i * i <= num; i++) { 
-    if (num % i === 0) {
-      console.log("NO");
-      return; 
-    }
-  }
-
-  console.log("YES");
-}
-
-findPrimeNumber(7);  // YES
-findPrimeNumber(15); // NO
-```
-
-here, 
-i * i <= num = checks only up to √num, because factors repeat after √num:
-
-```
-num = 36,
-
-36 = 1 * 36
-36 = 2 * 18
-36 = 3 * 12
-36 = 4 * 9
-36 = 6 * 6 ---(middle point √36 = 6; Factors beyond 6 just repeat the earlier ones in reverse.)
-36 = 9 * 4
-36 = 12 * 3
-36 = 18 * 2
-36 = 36 * 1
-```
-
-**Primes from 1 to n:**
-
-Given a number N. Print all prime numbers between 1 and N inclusive.
-
-| Input | Output     |
-| ----- | ---------- |
-| 10    | 2, 3, 5, 7 |
-
-My Solution: 
-
-```js
-function findPrimeNumbers(num) {
-
-    const primeNumbers = []
-
-    for (let i = 2; i <= num; i++) {
-
-        let isPrime = true;
-
-        for (let j = 2; j * j <= i; j++) {
-            if (i % j === 0) {
-                isPrime = false
-                break
-            }
-        }
-
-        if (isPrime) {
-            primeNumbers.push(i)
-        }
-    }
-
-    console.log(...primeNumbers)
-}
-
-findPrimeNumbers(10); // 2 3 5 7
-```
-
-**Palindrome:**
-
-Given a number N. Print 2 lines that contain the following respectively:
-
-- Print N in a reversed order and not leading zeroes.
-- If N is a palindrome number print "YES" otherwise, print "NO.
-
-Note:
-
-- A palindrome number is a number that reads the same forward or backward. For example: 12321, 101 are palindrome numbers, while 1201, 221 are not.
-
-- A leading zero is any 0 digit that comes before the first nonzero digit in a number for example : numbers (005 , 01 , 0123 , 02 , 000250 ) are leading zeroes but ( 5 , 123 , 20 ,2500 ) not leading zeroes numbers .
-
-| Input | Output |
-| ----- | ------ |
-| 12121 | 12121  |
-|       | YES    |
-| 160   | 61     |
-|       | NO     |
-
-My Solution: 
-
-```js
-function palindromeOrNot(N) {
-    const originalNumbers = N
-    const numbersArray = N.toString().split("")
-
-    const reversedArray = []
-
-    for (let number of numbersArray) {
-        reversedArray.unshift(number)
-    }
-
-    const reversedNumber = parseInt(reversedArray.join(""))
-
-    if (originalNumbers === reversedNumber) {
-        console.log(reversedNumber, "\nYES")
-    }
-    else {
-        console.log(reversedNumber, "\nNO")
-    }
-
-}
-
-palindromeOrNot(12121);
-palindromeOrNot(160);
-
-/*
-12121 
-YES
-61 
-NO
-*/
-```
-
-Better Solutions: 
-
-```js
-function palindromeOrNot(N) {
-    const str = N.toString();
-    const reversed = str.split("").reverse().join("");
-    const reversedNum = parseInt(reversed);
-
-    console.log(reversedNum);
-    console.log(str === reversed ? "YES" : "NO");
-}
-
-palindromeOrNot(12121);
-palindromeOrNot(160);
-```
-
-```js
-function palindromeOrNot(N) {
-    let original = N;
-    let reversed = 0;
-
-    while (N > 0) {
-        reversed = reversed * 10 + (N % 10);
-        N = Math.floor(N / 10);
-    }
-
-    console.log(reversed);
-    console.log(original === reversed ? "YES" : "NO");
-}
-
-palindromeOrNot(12121);
-palindromeOrNot(160);
-```
-
-**Divisors:**
-
-Given a number N. Print all the divisors of N in ascending order.
-
-Note: 
-
-Divisor of Number is A number that divides the integer exactly (no remainder).
-
-Examples:
-- 3 is a divisor of 12, because 12 ÷ 3 = 4 exactly
-- 4 is a divisor of 12, because 12 ÷ 4 = 3 exactly.
-- 5 is not a divisor of 12, because 12 ÷ 5 = 2 with a remainder of 2.
-
-| Input | Output |
-| ----- | ------ |
-| 6     | 1      |
-|       | 2      |
-|       | 3      |
-|       | 4      |
-|       | 5      |
-|       | 6      |
-| 7     | 1      |
-|       | 7      |
-| 4     | 1      |
-|       | 2      |
-|       | 4      |
-
-My Solution: 
-
-```js
-function findDivisors(N) {
-    for (let i = 1; i <= N; i++) {
-        if (N % i === 0) {
-            console.log(i)
-        }
-    }
-}
-
-findDivisors(6);
-
-/*
-1
-2
-3
-6
-*/
-```
-
-Better Solution: 
-
-```js
-function findDivisors(N) {
-    const divisors = [];
-
-    for (let i = 1; i * i <= N; i++) {
-        if (N % i === 0) {
-            divisors.push(i);
-
-            if (i !== N / i) {
-                divisors.push(N / i);
-            }
-        }
-    }
-
-    divisors.sort((a, b) => a - b);
-
-    for (const d of divisors) {
-        console.log(d);
-    }
-}
-
-findDivisors(6);
-```
-
-**GCD and LCM:**
-
-Given two numbers A and B. Print the greatest common divisor and least common multiple between (A, B).
-
-Example: 
-
-GCD(6, 9):
-- divisors of 6 = {1, 2, 3, 6}
-- divisors of 9 = {1, 3, 9}
-common = {1, 3}, largest = 3 ✅
-
-LCM(6, 9): 
-- Multiples of 6 = {6, 12, 18, 24, 30, 36, 42, 48, 54, 60 ....}
-- Multiples of 9 = {9, 18, 27, 36, 45, 54, 63....}
-→ common = {18, 36, 54}, Lowest = 18 ✅
-
-| Input | Output |
-| ----- | ------ |
-| 6 9   | 3 36   |
-| 54 24 |        |
-
-
-My Solution: 
-
-```js
-function findGCDAndLCM(A, B) {
-    const gcd = GCD(A, B)
-    const lcm = LCM(A, B)
-    console.log(gcd, lcm)
-}
-
-function GCD(A, B) {
-
-    const divisorsOfA = []
-    const divisorsOfB = []
-
-    for (let i = 1; i <= A; i++) {
-        if (A % i === 0) {
-            divisorsOfA.push(i)
-        }
-    }
-    for (let i = 1; i <= B; i++) {
-        if (B % i === 0) {
-            divisorsOfB.push(i)
-        }
-    }
-
-    const common = []
-
-    for (let i = 0; i < divisorsOfA.length; i++) {
-        for (let j = 0; j < divisorsOfB.length; j++) {
-            if (divisorsOfA[i] === divisorsOfB[j]) {
-                common.push(divisorsOfA[i])
-            }
-        }
-    }
-
-    const largest = Math.max(...common)
-
-    return largest
-}
-function LCM(A, B) {
-
-    const multiplesOfA = []
-    const multiplesOfB = []
-
-    for (let i = 1; i <= A; i++) {
-        multiplesOfA.push(i * A)
-    }
-    for (let i = 1; i <= B; i++) {
-        multiplesOfB.push(i * B)
-    }
-
-    const common = []
-
-    for (let i = 0; i < multiplesOfA.length; i++) {
-        for (let j = 0; j < multiplesOfB.length; j++) {
-            if (multiplesOfA[i] === multiplesOfB[j]) {
-                common.push(multiplesOfA[i])
-            }
-        }
-    }
-
-    const lowest = Math.min(...common)
-
-    return lowest
-}
-
-findGCDAndLCM(6, 9); // 3 18
-findGCDAndLCM(54, 24); // 6 216
-```
-
-Better Solution: 
-
-Relationship between GCD and LCM:
-
-```
-GCD(a, b) × LCM(a, b) = a × b
-```
-
-```js
-function findGCDAndLCM(A, B) {
-  const gcd = GCD(A, B);
-  const lcm = (A * B) / gcd;
-  console.log(gcd, lcm);
-}
-
-// Euclidean algorithm for GCD
-function GCD(a, b) {
-  while (b !== 0) {
-    const temp = b;
-    b = a % b;
-    a = temp;
-  }
-  return a;
-}
-
-findGCDAndLCM(6, 9);   // 3 18
-findGCDAndLCM(54, 24); // 6 216
-```
-
-**Lucky Numbers:**
-
-Given two numbers A and B. Print all lucky numbers between A and B inclusive.
-
-Note: 
-A lucky number is a number that, contains only the digits 4 and 7
-
-example: 4, 7, 44, 47, 74, 77, 444, 474, 777, 744, ...
-
-| Input | Output |
-| ----- | ------ |
-| 4 20  | 4 7    |
-| 8 15  | -1     |
-
-Solutions: 
-
-```js
-function findLuckyNumber(A, B) {
-    let found = false
-    for (let i = A; i <= B; i++) {
-        const str = i.toString()
-
-        const isLucky = [...str].every(ch => ch === '4' || ch === '7')
-
-        if (isLucky) {
-            console.log(i)
-            found = true
-        }
-    }
-    if (!found) {
-        console.log(-1)
-    }
-}
-
-findLuckyNumber(4, 20); // 4 7
-findLuckyNumber(8, 15); // -1
-```
-
-```jsx
-function findLuckyNumber(A, B) {
-    
-    let found = false
-    
-    for (let i = A; i <= B; i++) {
-        let n = i;
-        let isLucky = true
-
-        while (n > 0) {
-            const digit = n % 10;
-
-            if (digit !== 4 && digit !== 7) {
-                isLucky = false
-                break
-            }
-
-            n = Math.floor(n / 10)
-        }
-
-        if (isLucky) {
-            console.log(i)
-            found = true;
-        }
-    }
-
-    if (!found) {
-        console.log(-1)
-    }
-}
-
-findLuckyNumber(4, 20); // 4 7
-findLuckyNumber(8, 15); // -1
-```
-
-```js
-function findLuckyNumber(A, B) {
-
-    let found = false
-    const luckyPattern = /^[47]+$/; // the entire string must be made up of only 4 and 7
-
-    for (let i = A; i <= B; i++) {
-        if (luckyPattern.test(i.toString())) {
-            console.log(i)
-            found = true
-        }
-    }
-
-    if (!found) {
-        console.log(-1)
-    }
-}
-
-findLuckyNumber(4, 20); // 4 7
-findLuckyNumber(8, 15); // -1
-```
-
-**Numbers Histogram:**
-
-Given 2 lines of input described as follow:
-
-- The first line contains a symbol S can be (+,−,∗,/).
-- The second line contains N numbers.
-
-| Input     | Output  |
-| --------- | ------- |
-| +         | +++++   |
-| 5 2 4 3 7 | ++      |
-|           | ++++    |
-|           | +++     |
-|           | +++++++ |
-
-My Solution: 
-
-```
-function printHistogram(S, N) {
-    for (let i = 0; i < N.length; i++) {
-        let sign = ''
-        for (let j = 1; j <= N[i]; j++) {
-            sign += S
-        }
-        console.log(sign)
-    }
-}
-
-printHistogram('+', [5, 2, 4, 3, 7]);
-
-/*
-+++++
-++
-++++
-+++
-+++++++
- */
-```
-
-Better Solution: 
-
-```js
-function printHistogram(S, N) {
-    for (const num of N) {
-        console.log(S.repeat(num));
-    }
-}
-
-printHistogram('+', [5, 2, 4, 3, 7]);
-```
-
-**Shape 1:**
-
-```
-4
-
-*
-**
-***
-****
-```
-
-My Solution: 
-
-```js
-function printPyramid(N) {
-
-    for (let i = 1; i <= N; i++) {
-        let star = ''
-        for (let j = 1; j <= i; j++) {
-            star += "*"
-        }
-        console.log(star)
-    }
-}
-
-printPyramid(4);
-```
-
-Better Solutions: 
-
-```js
-function printPyramid(N) {
-  for (let i = 1; i <= N; i++) {
-    console.log('*'.repeat(i));
-  }
-}
-
-printPyramid(4);
-```
-
-```
-4
-
-****
-***
-**
-*
-```
-
-My Solutions: 
-
-```js
-function printPyramid(N) {
-
-    for (let i = 1; i <= N; i++) {
-        let star = ""
-        for (let j = N; j >= i; j--) {
-            star += "*"
-        }
-        console.log(star)
-    }
-}
-
-printPyramid(4);
-```
-
-Better Solution: 
-
-```js
-function printPyramid(N) {
-
-    for (let i = N; i >= 1; i--) {
-        console.log("*".repeat(i))
-    }
-}
-
-printPyramid(4);
-```
-
-```
-4
-
-1
-12
-123
-1234
-```
-
-My Solution: 
-
-```js
-function printNumbersShapes(N) {
-
-    for (let i = 1; i <= N; i++) {
-        const numbers = []
-        for (let j = 1; j <= i; j++) {
-            numbers.push(j)
-        }
-        console.log(...numbers)
-    }
-}
-
-printNumbersShapes(4);
-
-```
-
-Better Solutions: 
-
-```js
-function printNumbersShapes(N) {
-    for (let i = 1; i <= N; i++) {
-        let line = ''
-        for (let j = 1; j <= i; j++) {
-            line += j
-        }
-        console.log(line)
-    }
-}
-
-printNumbersShapes(4);
-
-```
-
-```js
-function printNumbersShapes(N) {
-    const base = '123456789';
-    for (let i = 1; i <= N; i++) {
-        console.log(base.slice(0, i));
-    }
-}
-
-printNumbersShapes(4);
-
-```
-
-
-```
-4
-
-1234
-123
-12
-1
-```
-
-My Solution: 
-
-```js
-function printNumbersShapes(N) {
-
-    for (let i = N; i >= 1; i--) {
-        const numbers = []
-        for (let j = 1; j <= i; j++) {
-            numbers.push(j)
-        }
-        console.log(...numbers)
-    }
-}
-
-printNumbersShapes(4);
-```
-
-Better Solutions:
-
-```js
-function printReverseNumbers(N) {
-    for (let i = N; i >= 1; i--) {
-        let line = ''
-        for (let j = 1; j <= i; j++) {
-            line += j
-        }
-        console.log(line)
-    }
-}
-
-printReverseNumbers(4);
-```
-
-```js
-function printReverseNumbers(N) {
-    const base = '123456789';
-    for (let i = N; i >= 1; i--) {
-        console.log(base.slice(0, i));
-    }
-}
-
-printReverseNumbers(4);
-```
-
-```js
-const printReverseNumbers = N =>
-  Array.from({ length: N }, (_, i) => console.log('123456789'.slice(0, N - i)));
-
-printReverseNumbers(4);
-
-/*
-for (let i = 0; i < N; i++) {
-  console.log('123456789'.slice(0, N - i))
-}
-
-Same as: 
-
- Array.from({ length: N }, (_, i) => console.log('123456789'.slice(0, N - i)));
-
-*/
-```
-
-**Shape2:**
-
-```
-4
-
-   *
-  ***
- *****
-*******
-```
-
-![image](./images/problem-solving-loops/shape2-pattern1.png)
-
-My Solution: 
-
-```js
-function printShapes(N) {
-    for (let i = 1; i <= N; i++) {
-
-        let sign = ''
-        let star = ''
-
-        for (let j = i; j <= N - 1; j++) {
-            sign += ' '
-        }
-        for (let j = 1; j <= i * 2 - 1; j++) {
-            star += '*'
-        }
-        console.log(sign + star)
-
-    }
-}
-
-printShapes(4);
-```
-
-Better Solutions: 
-
-```js
-function printShapes(N) {
-  for (let i = 1; i <= N; i++) {
-    const spaces = ' '.repeat(N - i);
-    const stars = '*'.repeat(2 * i - 1);
-    console.log(spaces + stars);
-  }
-}
-
-printShapes(4);
-```
-
-```js
-function printShapes(N) {
-  Array.from({ length: N }, (_, i) =>
-    console.log(' '.repeat(N - i - 1) + '*'.repeat(2 * i + 1))
-  );
-}
-
-printShapes(4);
-```
-
-
-```
-4
-
-*******
- *****
-  ***
-   *
-```
-
-![image](./images/problem-solving-loops/shape2-pattern2.png)
-
-My Solution: 
-
-```js
-function printShapes(N) {
-    for (let i = N; i >= 1; i--) {
-
-        let sign = ''
-        let star = ''
-
-        for (let j = i; j <= N - 1; j++) {
-            sign += ' '
-        }
-        for (let j = i * 2 - 1; j >= 1; j--) {
-            star += '*'
-        }
-        console.log(sign + star)
-
-    }
-}
-
-printShapes(4);
-```
-
-Better Solutions: 
-
-```js
-function printShapes(N) {
-  for (let i = N; i >= 1; i--) {
-    console.log(' '.repeat(N - i) + '*'.repeat(2 * i - 1));
-  }
-}
-
-printShapes(4);
-
-```
-
-```js
-function printShapes(N) {
-  Array.from({ length: N }, (_, i) =>
-    console.log(' '.repeat(i) + '*'.repeat(2 * (N - i) - 1))
-  );
-}
-
-printShapes(4);
-```
-
-
-```
-4
-
-   *
-  ***
- *****
-*******
- *****
-  ***
-   *
-```
-
-![image](./images/problem-solving-loops/shape2-pattern3.png)
-
-My Solution: 
-
-```js
-function printShapes(N) {
-    for (let i = 1; i <= N; i++) {
-
-        let sign = ''
-        let star = ''
-
-        for (let j = i; j <= N - 1; j++) {
-            sign += ' '
-        }
-        for (let j = 1; j <= i * 2 - 1; j++) {
-            star += '*'
-        }
-        console.log(sign + star)
-    }
-
-    for (let i = N - 1; i >= 1; i--) {
-
-        let sign = ''
-        let star = ''
-
-        for (let j = i; j <= N - 1; j++) {
-            sign += ' '
-        }
-        for (let j = i * 2 - 1; j >= 1; j--) {
-            star += '*'
-        }
-        console.log(sign + star)
-
-    }
-}
-
-printShapes(4);
-```
-
-Better Solutions:
-
-```js
-function printShapes(N) {
-    // 🔹 Upper half
-    for (let i = 1; i <= N; i++) {
-        console.log(' '.repeat(N - i) + '*'.repeat(i * 2 - 1));
-    }
-
-    // 🔹 Lower half
-    for (let i = N - 1; i >= 1; i--) {
-        console.log(' '.repeat(N - i) + '*'.repeat(i * 2 - 1));
-    }
-}
-
-printShapes(4);
-```
-
-```js
-function printShapes(N) {
-    for (let row = 1; row <= 2 * N - 1; row++) {
-        let i = row <= N ? row : 2 * N - row; // mirror row number
-        console.log(' '.repeat(N - i) + '*'.repeat(i * 2 - 1));
-    }
-}
-
-printShapes(4);
-```
-
-```js
-function printDiamond(N) {
-  // Top half
-  Array.from({ length: N }, (_, i) =>
-    console.log(' '.repeat(N - i - 1) + '*'.repeat(2 * (i + 1) - 1))
-  );
-
-  // Bottom half
-  Array.from({ length: N - 1 }, (_, i) =>
-    console.log(' '.repeat(i + 1) + '*'.repeat(2 * (N - i - 2) + 1))
-  );
-}
-
-printDiamond(4);
-```
-**Shape 3:**
-
-Some day, an artist wanted to draw an X mark on the wall in a fashionable way. He wanted to do so by grouping snippets of slashes /, backslashes \, asterisks * and a capital X letter in an N×N square as shown in the sample. Can you help him?
-
-Input/Output:
-
-```
-5
-
-\***/
-*\*/*
-**X**
-*/*\*
-/***\
-```
-
-Explanation: 
-
-|       | j = 0 | j = 1 | j = 2 | j = 3 | j = 4 |
-| ----- | ----- | ----- | ----- | ----- | ----- |
-| i = 0 | \     | *     | *     | *     | /     |
-| i = 1 | *     | \     | *     | /     | *     |
-| i = 2 | *     | *     | X     | *     | *     |
-| i = 3 | *     | /     | *     | \     | *     |
-| i = 4 | /     | *     | *     | *     | \     |
-
-X = (i === center && j === center) = (2,2)  
-\ = (i === j) = (0,0) (1,1), (3,3), (4, 4)
-/ = (i + j === n - 1) = (0,4), (1, 3), (3, 1), (4, 0)  
-
-
-Solution: 
-
-```js
-function printDiamondShape(n) {
-    const center = Math.floor(n / 2)
-
-    for (let i = 0; i < n; i++) {
-        let shape = ""
-        for (let j = 0; j < n; j++) {
-
-            if (i === center && j === center) {
-                shape += "X"
-            }
-            else if (i === j) {
-                shape += "\\"
-            }
-            else if (i + j === n - 1) {
-                shape += "/"
-            }
-            else {
-                shape += "*"
-            }
-
-        }
-        console.log(shape)
-    }
-}
-
-printDiamondShape(5)
-```
-
-**Digits:**
-
-Given some numbers. Print the digits of that number from right to left separated by space.
-
-| Input  | Output      |
-| ------ | ----------- |
-| 4      |             |
-| 121    | 1 2 1       |
-| 39     | 9 3         |
-| 123456 | 6 5 4 3 2 1 |
-| 1200   | 0 0 2 1     |
-
-My Solutions: 
-
-```js
-function printDigits(...N) {
-    for (let i = 0; i < N.length; i++) {
-        console.log(N[i].toString().split("").reverse().join(""))
-    }
-}
-
-printDigits(121, 39, 123456, 1200);
-
-/*
-121
-93
-654321
-0021
-*/
-```
-
-```js
-function printDigits(...N) {
-    for (let num of N) {
-
-        let numArray = []
-
-        while (num !== 0) {
-            const remainder = num % 10;
-            numArray.push(remainder)
-            num = Math.floor(num / 10)
-        }
-
-        console.log(numArray.join(" "))
-    }
-
-}
-
-printDigits(121, 39, 123456, 1200);
-
-/*
-1 2 1
-9 3
-6 5 4 3 2 1
-0 0 2 1
-*/
-```
-
-**Sequence of Numbers and Sum:**
-
-Given multiple lines each line contains two numbers N and M. For each line print a single line contains:
-
-- The numbers between N and M inclusive separated by single space.
-- The message " sum =".
-- The summation of all numbers between N and M inclusive.
-
-Note: The program should be TERMINATED as soon as any of these two numbers is less than or equal to zero and don't print any thing.
-
-| Input | Output          |
-| ----- | --------------- |
-| 5 2   | 2 3 4 5 sum =14 |
-| 5 7   | 5 6 7 sum =18   |
-| 5 -1  |                 |
-| 5 2   | 2 3 4 5 sum =14 |
-| 6 3   | 3 4 5 6 sum =18 |
-| 5 0   |                 |
-
-
-My Solution: 
-
-```js
-function sumOfNumbers(numbers) {
-
-    const pairNumbers = []
-
-    for (let i = 0; i < numbers.length; i = i + 2) {
-        if (!(numbers[i] <= 0) && !(numbers[i + 1] <= 0)) {
-            pairNumbers.push([numbers[i], numbers[i + 1]])
-        }
-    }
-
-    for (let pairNumber of pairNumbers) {
-        const max = Math.max(...pairNumber)
-        const min = Math.min(...pairNumber)
-
-        let numberStr = ''
-        let sum = 0
-        for (let i = min; i <= max; i++) {
-            numberStr += ` ${i}`
-            sum += i;
-        }
-        console.log(`${numberStr} sum =${sum}`)
-    }
-
-}
-
-sumOfNumbers([5, 2, 5, 7, 5, -1]);
-
-/*
-2 3 4 5 sum =14
-5 6 7 sum =18
-*/
-```
-
-Better Solutions: 
-
-```js
-function sumOfNumbers(numbers) {
-  for (let i = 0; i < numbers.length; i += 2) {
-    const N = numbers[i];
-    const M = numbers[i + 1];
-
-    if (N <= 0 || M <= 0) break;
-
-    const start = Math.min(N, M);
-    const end = Math.max(N, M);
-
-    let sum = 0;
-    const sequence = [];
-
-    for (let j = start; j <= end; j++) {
-      sequence.push(j);
-      sum += j;
-    }
-
-    console.log(sequence.join(" ") + " sum =" + sum);
-  }
-}
-
-// Test
-sumOfNumbers([5, 2, 5, 7, 5, -1]);
-```
-
-```js
-function sumOfNumbers(numbers) {
-  for (let i = 0; i < numbers.length; i += 2) {
-    const N = numbers[i];
-    const M = numbers[i + 1];
-
-    if (N <= 0 || M <= 0) break;
-
-    const start = Math.min(N, M);
-    const end = Math.max(N, M);
-    const len = end - start + 1;
-
-    const sequence = Array.from({ length: len }, (_, idx) => start + idx);
-    const sum = sequence.reduce((acc, val) => acc + val, 0);
-
-    console.log(sequence.join(" ") + " sum =" + sum);
-  }
-}
-```
-
-**Sum of Consecutive Odd Numbers:**
-
-Given two numbers X and Y. Print the sum of all odd numbers between them, excluding X and Y.
-
-| Input | Output |
-| ----- | ------ |
-| 3     |        |
-| 5 6   | 0      |
-| 10 4  | 21     |
-| 4 9   | 12     |
-
-My Solution: 
-
-```js
-function sumOfOddNumbers(N, ...numbers) {
-
-    for (let i = 0; i < N * 2 - 1; i = i + 2) {
-        let min = Math.min(numbers[i], numbers[i + 1])
-        let max = Math.max(numbers[i], numbers[i + 1])
-        let sum = 0
-
-        for (let j = min + 1; j <= max - 1; j++) {
-            if (j % 2 === 1) {
-                sum += j
-            }
-        }
-        console.log(sum)
-    }
-
-}
-
-sumOfOddNumbers(3, 5, 6, 10, 4, 4, 9);
-
-/*
-0
-21
-12
-*/
-```
-
-**Some Sums:**
-
-Given three numbers N, A, B. Print the summation of the numbers between 1 and N whose sum of digits is between A and B inclusive.
-
-| Input    | Output |
-| -------- | ------ |
-| 20 2 5   | 84     |
-| 10 1 2   | 13     |
-| 100 4 16 | 4554   |
-
-My Solution: 
-
-```js
-function sumOfDigits(N, A, B) {
-
-    let sum = 0
-
-    for (let i = 1; i <= N; i++) {
-        let sumOfDigits = 0;
-
-        let t = i
-
-        while (t !== 0) {
-            sumOfDigits += t % 10
-            t = Math.floor(t / 10)
-        }
-
-
-        for (let j = A; j <= B; j++) {
-            if (sumOfDigits === j) {
-                sum += i
-                break
-            }
-        }
-
-    }
-
-    console.log(sum)
-
-}
-
-sumOfDigits(20, 2, 5); // 84
-```
-
-Better Solution: 
-
-```js
-function sumOfDigits(N, A, B) {
-  let sum = 0;
-
-  for (let i = 1; i <= N; i++) {
-    let digitSum = 0;
-    let t = i;
-
-    while (t !== 0) {
-      digitSum += t % 10;
-      t = Math.floor(t / 10);
-    }
-
-    if (digitSum >= A && digitSum <= B) {
-      sum += i;
-    }
-  }
-
-  console.log(sum);
-}
-
-sumOfDigits(20, 2, 5); // 84
-```
-
-**PUM:**
-
-Given a number N. Print N lines that describes PUM game.
-
-But here’s the pattern:
-
-- The numbers are consecutive.
-- After every 3 numbers, you skip one number (that’s replaced by the word “PUM”).
-
-| Input | Output       |
-| ----- | ------------ |
-| 7     | 1 2 3 PUM    |
-|       | 5 6 7 PUM    |
-|       | 9 10 11 PUM  |
-|       | 13 14 15 PUM |
-|       | 17 18 19 PUM |
-|       | 21 22 23 PUM |
-|       | 25 26 27 PUM |
-| 3     | 1 2 3 PUM    |
-|       | 5 6 7 PUM    |
-|       | 9 10 11 PUM  |
-
-My Solution: 
-
-```js
-function printPum(N) {
-
-    let number = 0;
-
-    for (let i = 0; i < N; i++) {
-
-        const pumAry = []
-
-        for (let j = 1; j <= 4; j++) {
-            number++
-            pumAry.push(number)
-        }
-
-        pumAry[pumAry.length - 1] = "PUM"
-
-        console.log(pumAry.join(" "))
-    }
-}
-
-printPum(7);
-
-/*
-1 2 3 PUM
-5 6 7 PUM
-9 10 11 PUM
-13 14 15 PUM
-17 18 19 PUM
-21 22 23 PUM
-25 26 27 PUM
-*/
-```
-
-Better Solution: 
-
-```js
-function printPum(N) {
-    let num = 1;
-
-    for (let i = 0; i < N; i++) {
-        console.log(`${num} ${num + 1} ${num + 2} PUM`);
-        num += 4; // skip one number (3 printed + 1 skipped)
-    }
-}
-
-printPum(7);
-```
-
-```js
-function printPum(N) {
-  let num = 1;
-
-  for (let i = 0; i < N; i++) {
-    const line = Array.from({ length: 3 }, (_, j) => num + j).join(" ");
-    console.log(`${line} PUM`);
-    num += 4;
-  }
-}
-```
-
-```js
-const printPum = N => {
-  Array.from({ length: N }, (_, i) => {
-    const start = i * 4 + 1;
-    console.log(`${start} ${start + 1} ${start + 2} PUM`);
-  });
-};
-```
-
-**Convert To Decimal 2:**
-
-Given a number N. Print the result of doing the following operation on N:
-
-- Convert N to its binary representation.
-- Count number of ones in the above binary representation.
-- Print the equivalent decimal number that its binary representation has only the number of ones that were counted above. 
-
-For example: (10)decimal = (1010)binary has 2 ones "11", after converting "11" to decimal number it will become 3.
-
-Note: 
-
-Decimal to Binary: 29<sub>10</sub>
-
-![image](./images/problem-solving-loops/decimal-to-binary.png)
-
-Binary to Decimal: 11101<sub>2</sub>
-
-![image](./images/problem-solving-loops/binary-to-decimal.png)
-
-
-| Input | Output |
-| ----- | ------ |
-| 3     |        |
-| 10    | 3      |
-| 7     | 7      |
-| 8     | 1      |
-
-
-My Solution:
-
-```js
-function printDecimal(...numbers) {
-
-    for (let num of numbers) {
-        let temp = num;
-        let binary = []
-        while (temp !== 0) {
-            const remainder = temp % 2;
-            if (remainder === 1) {
-                binary.push(remainder)
-            }
-            temp = Math.floor(temp / 2)
-        }
-
-
-        let power = binary.length - 1
-        let sum = 0
-        for (let b of binary) {
-            sum += 2 ** power
-            power--;
-        }
-        console.log(sum)
-    }
-
-}
-
-printDecimal(10, 7, 8);
-
-/*
-3
-7
-1
-*/
-```
-
-Better Solution: 
-
-```js
-function printDecimal(...numbers) {
-  for (let num of numbers) {
-    const count = num.toString(2).split('1').length - 1; // count '1's
-    const result = parseInt('1'.repeat(count) || '0', 2); // convert back to decimal
-    console.log(result);
-  }
-}
-
-printDecimal(10, 7, 8);
-/*
-3
-7
-1
-*/
-```
-
-| Expression        | Meaning                          | Example Output   |
-| ----------------- | -------------------------------- | ---------------- |
-| `num.toString(2)` | Convert to binary string         | `"1010"`         |
-| `.split('1')`     | Split by `'1'` → removes `'1's`  | `["", "0", "0"]` |
-| `.length - 1`     | Count how many `'1's` were found | `2`              |
-
-
-**Easy Fibonacci:**
-
-Given a number N. Print first N numbers of the Fibonacci sequence.
-
-Note: In order to create the Fibonacci sequence use the following function:
-- fib(1) = 0.
-- fib(2) = 1.
-- Then: fib(n) = fib(n - 1) + fib(n - 2). (fib(3) = fib(3 -1 ) + fib(3 - 2) = fib(2) + fib(1) = 1 + 0 = 1 )
-
-| Input | Output |
-| ----- | ------ |
-| 7     | 0      |
-|       | 1      |
-|       | 1      |
-|       | 2      |
-|       | 3      |
-|       | 5      |
-|       | 8      |
-
-My Solution: 
-
-```js
-function printFibonacci(N) {
-
-    const fib = [0, 1]
-
-    for (let i = 2; i < N; i++) {
-        let fib1 = fib[fib.length - 2]
-        let fib2 = fib[fib.length - 1]
-
-        fib.push(fib2 + fib1)
-    }
-    console.log(fib.join(" "))
-}
-
-printFibonacci(7);
-
-/*
-0 1 1 2 3 5 8
-*/
-
-```
-Better Solution: 
-
-```js
-function printFibonacci(N) {
-  const fib = [0, 1];
-
-  for (let i = 2; i < N; i++) {
-    fib.push(fib[i - 1] + fib[i - 2]);
-  }
-
-  console.log(fib.join(" "));
-}
-
-printFibonacci(7);
-```
-
-```js
-function printFibonacci(N) {
-  let a = 0, b = 1;
-
-  for (let i = 1; i <= N; i++) {
-    console.log(a);
-    const next = a + b;
-    a = b;
-    b = next;
-  }
-}
-
-printFibonacci(7);
-```
-
-**Three Numbers:**
-
-Given two numbers K and S. Determine how many different values of X,Y and Z such that (0 ≤ X,Y,Z ≤ K) and X+Y+Z=S.
-
-| Input | Output |
-| ----- | ------ |
-| 2 1   | 3      |
-| 9 4   | 15     |
-
-
-Solutions: 
-
-```js
-function matchCombinator(k, s) {
-    let count = 0;
-
-    for (let x = 0; x <= k; x++) {
-        for (let y = 0; y <= k; y++) {
-            const z = s - (x + y)
-
-            if (z >= 0 && z <= k) {
-                count++;
-            }
-        }
-    }
-    console.log(count)
-
-}
-
-matchCombinator(2, 1) // 3
-```
-
-Explanation: 
-
-| X (outer loop)    | Y (inner loop) | Z = 1 - (X + Y)  | z >= 0 && z <= k           | count = 0; |
-| ----------------- | -------------- | ---------------- | -------------------------- | ---------- |
-| 0 (1st iteration) | 0              | 1 = 1 - (0 + 0)  | (1 >= 0 && 1 <= 2) count++ | count = 1  |
-|                   | 1              | 0 = 1 - (0 + 1)  | (0 >= 0 && 0 <= 2) count++ | count = 2  |
-|                   | 2              | -1 = 1 - (0 + 2) | (-1 >= 0 && -1 <= 2)       |            |
-|                   |                |                  |                            |            |
-| 1 (2nd iteration) | 0              | 0 = 1 - (1 + 0)  | (0 >= 0 && 0 <= 2) count++ | count = 3  |
-|                   | 1              | -1 = 1 - (1 + 1) | (-1 >= 0 && -1 <= 2)       |            |
-|                   | 2              | -2 = 1 - (1 + 2) | (-2 >= 0 && -2 <= 2)       |            |
-|                   |                |                  |                            |            |
-| 2 (3rd iteration) | 0              | -1 = 1 - (2 + 0) | (-1 >= 0 && -1 <= 2)       |            |
-|                   | 1              | -2 = 1 - (2 + 1) | (-2 >= 0 && -2 <= 2)       |            |
-|                   | 2              | -3 = 1 - (2 + 2) | (-3 >= 0 && -3 <= 2)       |            |
-
-
-```js
-function matchCombinatorTripleLoop(K, S) {
-    let count = 0;
-
-    for (let x = 0; x <= K; x++) {
-        for (let y = 0; y <= K; y++) {
-            for (let z = 0; z <= K; z++) {
-                if (x + y + z === S) count++;
-            }
-        }
-    }
-
-    console.log(count);
-}
-
-matchCombinatorTripleLoop(2, 1); // 3
-```
-
 
 ## function
 
@@ -6277,8 +2579,6 @@ function addToTotal(num) {
 }
 ```
 
-## Problem Soling: Function and Recursion
-
 ## string
 
 A string in JavaScript is a primitive data type that represents text, enclosed in single quotes (''), double quotes (""), or backticks (``). Strings are iterables, which means they can be iterated over because they have a Symbol.iterator method.
@@ -6582,8 +2882,6 @@ console.log(numbers.at(0));   // 10
 console.log(numbers.at(-1));  // 40 (last item)
 ```
 
-
-## Problem Solving: String
 
 ## array 
 An array is a special type of object used to store multiple values of different data types in a single variable, organized as an ordered and indexed collection. That’s why arrays use square bracket notation like `arr[0]` to access elements — this syntax actually comes from object property access: `obj[key]`. In arrays, the variable `arr` is the object, and the index numbers are keys.
@@ -7181,8 +3479,6 @@ const numbers = [10, 20, 30, 40];
 console.log(numbers.at(0));   // 10
 console.log(numbers.at(-1));  // 40 (last item)
 ```
-
-## Problem Solving: Array
 
 ## Objects
 
@@ -7961,8 +4257,6 @@ console.log(Math.floor(Math.random() * 100)); // Random integer between 0 (inclu
 ```
 
 
-
-## Problem Solving: Object
 
 ## Destructuring
 
@@ -13294,3 +9588,3755 @@ startVehicle(car);  // Car starts
 startVehicle(bike); // Bike starts
 ```
 Here, any object with a start method can be passed to startVehicle, demonstrating polymorphism without inheritance
+
+
+# Part 4: Problem Solving:
+
+## Variables, Data Types and Operators:
+
+#### Say Hello to JS:
+
+Given a name S. Print "Hello, (name)" without parentheses.
+
+| Input      | Output            |
+| ---------- | ----------------- |
+| programmer | Hello, programmer |
+
+
+My Solution: 
+
+```js
+const s = "programmer"
+console.log("Hello,", s); // Hello, programmer
+console.log(`hello, ${s}`); // Hello, programmer
+```
+
+#### Basic Data Types:
+
+You are given four numbers and one string in a single line of input. Your task is to print each value on a new line, in the same order as the input.
+
+However:
+- The second number should be treated as a BigInt (because it’s very large).
+- The last number (the fifth value) must be printed with exactly one digit after the decimal point.
+
+| Input                                        | Output         |
+| -------------------------------------------- | -------------- |
+| 3 12345123451234512345n a 334.23 14049.30493 | 3              |
+|                                              | 12345678912345 |
+|                                              | a              |
+|                                              | 334.23         |
+|                                              | 14049.3        |
+
+
+
+My Solution: 
+
+```js
+const input = "3 12345123451234512345n a 334.23 14049.30493";
+const inputArray = input.split(" ");
+
+const secondElement = inputArray[1]
+const secondElementArray = secondElement.split("")
+secondElementArray.pop(secondElementArray.length - 1)
+const secondElementArrayToString = secondElementArray.join("")
+inputArray[1] = secondElementArrayToString
+
+inputArray[4] = Number(inputArray[4]).toFixed(1)
+
+for (const singleInput of inputArray) {
+    console.log(singleInput)
+}
+
+/*
+3
+12345123451234512345
+a
+334.23
+14049.3
+*/
+```
+
+Better Solution:
+
+```js
+const input = "3 12345123451234512345n a 334.23 14049.30493";
+const inputArray = input.split(" ");
+
+// Convert BigInt string to BigInt → then to string (removes "n")
+inputArray[1] = BigInt(inputArray[1].replace("n", "")).toString();
+
+// Format the last number to 1 decimal place
+inputArray[4] = Number(inputArray[4]).toFixed(1);
+
+// Print all
+for (const value of inputArray) {
+    console.log(value);
+}
+
+/*
+3
+12345123451234512345
+a
+334.23
+14049.3
+*/
+```
+
+```js
+const input = "3 12345123451234512345n a 334.23 14049.30493";
+const [intVal, bigIntVal, charVal, floatVal, doubleVal] = input.split(" ");
+
+console.log(intVal);
+console.log(BigInt(bigIntVal.replace("n", "")).toString());
+console.log(charVal);
+console.log(floatVal);
+console.log(Number(doubleVal).toFixed(1));
+
+/*
+3
+12345123451234512345
+a
+334.23
+14049.3
+*/
+```
+
+#### Simple Calculator:
+
+Given two numbers X and Y. Print the summation and multiplication and subtraction of these 2 numbers.
+
+| Input | Output      |
+| ----- | ----------- |
+| 5 10  | 5 + 10 = 15 |
+|       | 5 * 10 = 50 |
+|       | 5 - 10 = -5 |
+
+
+My Solution: 
+
+```jsx
+const num1 = 5;
+const num2 = 10;
+
+console.log(`${num1} + ${num2} = ${num1 + num2}`)
+console.log(`${num1} * ${num2} = ${num1 * num2}`)
+console.log(`${num1} - ${num2} = ${num1 - num2}`)
+
+/*
+5 + 10 = 15
+5 * 10 = 50
+5 - 10 = -5
+*/
+```
+
+#### Difference:
+
+Given four numbers A, B, C and D. Print the result of the following equation:
+
+X = (A * B) - (C * D).
+
+| Input | Output           |
+| ----- | ---------------- |
+| 1234  | Difference = -10 |
+| 2345  | Difference = -14 |
+| 4523  | Difference = 14  |
+
+
+My Solution: 
+
+```js
+function calculateEquation(a, b, c, d) {
+    const equation = a * b - c * d
+    return equation
+}
+
+const equationResult = calculateEquation(1, 2, 3, 4);
+console.log(equationResult) // -10
+```
+
+#### Area of a Circle:
+
+Given a number R calculate the area of a circle using the following formula:
+
+Area = π * R²
+
+Note: consider π = 3.141592653.
+
+| Input | Output       |
+| ----- | ------------ |
+| 2.00  | 12.566370612 |
+
+
+My Solution: 
+
+```js
+function AreaOfACircle(pi, R) {
+    // return equation = pi * Math.pow(R, 2)
+    return equation = pi * (R ** 2)
+}
+
+const result = AreaOfACircle(3.141592653, 2.00);
+console.log(result) // 12.566370612
+```
+
+
+
+#### Summation from 1 to N:
+
+Given a number N. Print the summation of the numbers that is between 1 and N (inclusive).
+
+| Input | Output |
+| ----- | ------ |
+| 3     | 6      |
+| 10    | 55     |
+
+My Solution: 
+
+```js
+function summationFrom1toN(N) {
+    let sum = 0;
+    for (let i = 1; i <= N; i++) {
+        sum += i;
+    }
+    return sum;
+}
+
+console.log(summationFrom1toN(3)); // 6
+```
+
+Better Solution:
+
+```js
+function summationFrom1toN(N) {
+  return (N * (N + 1)) / 2;
+}
+
+console.log(summationFrom1toN(3));  // 6
+
+// Note: sum of all numbers from 1 to N using the formula: N*(N+1)/2
+```
+
+#### Two Numbers:
+
+Given 2 numbers A and B. Print floor, ceil and round of A/B
+
+| Input | Output           |
+| ----- | ---------------- |
+| 10 3  | floor 10 / 3 = 3 |
+|       | ceil 10 / 3 = 4  |
+|       | round 10 / 3 = 3 |
+| 10 4  | floor 10 / 4 = 2 |
+|       | ceil 10 / 4 = 3  |
+|       | round 10 / 4 = 3 |
+| 10 6  | floor 10 / 6 = 1 |
+|       | ceil 10 / 6 = 2  |
+|       | round 10 / 6 = 2 |
+
+
+My Solution: 
+
+```js
+function divisionOfAB(A, B) {
+
+    console.log(`floor ${A} / ${B} = ${Math.floor(A / B)}`)
+    console.log(`ceil ${A} / ${B} = ${Math.ceil(A / B)}`)
+    console.log(`round ${A} / ${B} = ${Math.round(A / B)}`)
+
+}
+
+divisionOfAB(10, 3);
+
+/*
+floor 10 / 3 = 3
+ceil 10 / 3 = 4
+round 10 / 3 = 3
+ */
+```
+
+#### Welcome for you with conditions:
+
+Given two numbers A and B. Print "Yes" if A is greater than or equal to B. Otherwise print "No".
+
+| Input | Output |
+| ----- | ------ |
+| 10 9  | Yes    |
+| 5 5   | Yes    |
+| 5 7   | No     |
+
+
+My Solution: 
+
+```js
+function greaterThanOrEqual(A, B) {
+    if (A >= B) {
+        console.log("Yes")
+    }
+    else {
+        console.log("No")
+    }
+}
+
+greaterThanOrEqual(10, 9);
+```
+
+#### Multiples:
+
+Given two numbers A and B. Print "Multiples" if A is multiple of B or vice versa. Otherwise print "No Multiples".
+
+Note: 
+- A is Multiple of B if: A % B == 0; 12 % 3 == 0  // true → 12 is a multiple of 3
+- B is Multiple of A if: B % A == 0; 3 % 12 == 0  // false → 3 is NOT a multiple of 12
+
+
+| Input | Output       |
+| ----- | ------------ |
+| 9 3   | Multiples    |
+| 6 24  | Multiples    |
+| 12 5  | No Multiples |
+
+My Solution: 
+
+```js
+function findMultiplesOrNot(A, B) {
+    if (A % B === 0 || B % A === 0) {
+        console.log("Multiples")
+    }
+    else {
+        console.log("No Multiples")
+    }
+}
+
+findMultiplesOrNot(9, 3); // Multiples
+```
+
+#### Max and Min:
+
+Given 3 numbers A, B and C, Print the minimum and the maximum numbers.
+
+| Input    | Output |
+| -------- | ------ |
+| 1 2 3    | 1 3    |
+| -1 -2 -3 | -3 -1  |
+| 10 20 -5 | -5 20  |
+
+My Solution: 
+
+```js
+function findMaxAndMin(A, B, C) {
+    const max = findMax(A, B, C)
+    const min = findMin(A, B, C)
+
+    console.log(min, max)
+}
+function findMax(A, B, C) {
+    if (A >= B && A >= C) {
+        return A;
+    }
+    else if (B >= A && B >= C) {
+        return B;
+    }
+    else {
+        return C;
+    }
+}
+function findMin(A, B, C) {
+    if (A <= B && A <= C) {
+        return A;
+    }
+    else if (B <= A && B <= C) {
+        return B;
+    }
+    else {
+        return C;
+    }
+}
+
+findMaxAndMin(1, 2, 3); // 1 2 3
+```
+
+Better Solution: 
+
+```js
+function findMaxAndMin(A, B, C) {
+  const max = Math.max(A, B, C);
+  const min = Math.min(A, B, C);
+  console.log(min, max);
+}
+
+findMaxAndMin(1, 2, 3);     // 1 3
+```
+
+#### The Brothers:
+
+Given two person names. Each person has {"the first name" + "the second name"}. Determine whether they are brothers or not.
+
+Note: The two persons are brothers if they share the same second name.
+
+| Input          | Output       |
+| -------------- | ------------ |
+| bassam ramadan | ARE Brothers |
+| ayman salah    |              |
+| ali salah      | ARE Brothers |
+| ahmed ramadan  |              |
+| ali kamel      | NOT          |
+| ali salah      |              |
+
+My Solution: 
+
+```js
+function findBrothersOrNot(person1, person2) {
+    const person1LastName = person1.split(" ").slice(-1).join("")
+    const person2LastName = person2.split(" ").slice(-1).join("")
+    /*
+    const person1LastName = person1.split(" ").slice(-1)[0];
+    const person2LastName = person2.split(" ").slice(-1)[0];
+    */
+    if (person1LastName === person2LastName) {
+        console.log("ARE Brothers")
+    }
+    else {
+        console.log("NOT")
+    }
+}
+
+const person1 = "bassam ramadan";
+const person2 = "ahmed ramadan";
+
+findBrothersOrNot(person1, person2); // ARE Brothers
+```
+
+Better Solution: 
+
+```js
+function findBrothersOrNot(person1, person2) {
+  const [, lastName1] = person1.split(" ");
+  const [, lastName2] = person2.split(" ");
+  
+  console.log(lastName1 === lastName2 ? "ARE Brothers" : "NOT");
+}
+
+findBrothersOrNot("bassam ramadan", "ahmed ramadan"); // ARE Brothers
+findBrothersOrNot("ali kamel", "ali salah");  // NOT
+```
+
+```jsx
+function findBrothersOrNot(person1, person2) {
+  const lastName1 = person1.split(" ").at(-1);
+  const lastName2 = person2.split(" ").at(-1);
+  
+  console.log(lastName1 === lastName2 ? "ARE Brothers" : "NOT");
+}
+
+findBrothersOrNot("bassam ramadan", "ahmed ramadan"); // ARE Brothers
+findBrothersOrNot("ali kamel", "ali salah");  // NOT
+
+// Note: .at(-1) method can directly access the last element of an array.
+```
+
+#### Capital or Small Or Digit:
+
+Given a letter X. Determine whether X is Digit or Alphabet and if it is Alphabet determine if it is Capital Case or Small Case.
+
+Note:
+
+Digits in ASCII '0' = 48,'9' = 57 
+Capital letters in ASCII 'A' = 65, 'Z' = 90
+Small letters in ASCII 'a' = 97,'z' = 122
+
+| Input | Output     |
+| ----- | ---------- |
+| A     | ALPHA      |
+|       | IS CAPITAL |
+| 9     | IS DIGIT   |
+| a     | ALPHA      |
+|       | IS SMALL   |
+
+
+My Solution: 
+
+```js
+function findCapitalSmallOrDigit(X) {
+
+    let letter = X;
+
+    if (X >= 1 && X <= 9) {
+        letter = X.toString()
+    }
+
+    const asciiValue = letter.charCodeAt(0)
+
+    if (asciiValue >= 48 && asciiValue <= 57) {
+        console.log("IS DIGIT")
+    }
+    else if (asciiValue >= 65 && asciiValue <= 90) {
+        console.log("ALPHA\nIS CAPITAL")
+    }
+    else if (asciiValue >= 97 && asciiValue <= 122) {
+        console.log(`ALPHA
+IS SMALL`)
+    }
+}
+
+findCapitalSmallOrDigit("A");
+findCapitalSmallOrDigit(9);
+findCapitalSmallOrDigit("a");
+
+/*
+ALPHA
+IS CAPITAL
+IS DIGIT
+ALPHA
+IS SMALL
+*/
+```
+
+Better Solutions: 
+
+```js
+function findCapitalSmallOrDigit(X) {
+  const ascii = X.toString().charCodeAt(0);
+
+  if (ascii >= 48 && ascii <= 57) {
+    console.log("IS DIGIT");
+  } 
+  else if (ascii >= 65 && ascii <= 90) {
+    console.log("ALPHA\nIS CAPITAL");
+  } 
+  else if (ascii >= 97 && ascii <= 122) {
+    console.log("ALPHA\nIS SMALL");
+  } 
+}
+
+findCapitalSmallOrDigit("A");
+findCapitalSmallOrDigit(9);
+findCapitalSmallOrDigit("a");
+```
+
+```js
+function findCapitalSmallOrDigit(X) {
+
+ const value = X.toString();
+
+  if (/[0-9]/.test(value)) {
+    console.log("IS DIGIT");
+  } 
+  else if (/[A-Z]/.test(value)) {
+    console.log("ALPHA\nIS CAPITAL");
+  } 
+  else if (/[a-z]/.test(value)) {
+    console.log("ALPHA\nIS SMALL");
+  }
+}
+
+findCapitalSmallOrDigit("A");
+findCapitalSmallOrDigit(9);
+findCapitalSmallOrDigit("a");
+```
+
+```js
+function findCapitalSmallOrDigit(X) {
+
+ const value = X.toString();
+
+  if (!isNaN(value)) {
+    console.log("IS DIGIT");
+  } 
+  else if (value === value.toUpperCase()) {
+    console.log("ALPHA\nIS CAPITAL");
+  } 
+  else {
+    console.log("ALPHA\nIS SMALL");
+  }
+}
+  
+findCapitalSmallOrDigit("A");
+findCapitalSmallOrDigit(9);
+findCapitalSmallOrDigit("a");
+```
+
+#### Char:
+
+Given a letter X. If the letter is lowercase print the letter after converting it from lowercase letter to uppercase letter. Otherwise print the letter after converting it from uppercase letter to lowercase letter
+
+Note : difference between 'a' and 'A' in ASCII is 32 .
+
+| Input | Output |
+| ----- | ------ |
+| a     | A      |
+| A     | a      |
+
+My Solution: 
+
+```js
+function convertingLowercaseOrUppercase(X) {
+    const ascii = X.charCodeAt(0)
+
+    if (/[A-Z]/.test(X)) {
+        const sum = ascii + 32;
+        const asciiToAlpha = String.fromCharCode(sum);
+        console.log(asciiToAlpha)
+    }
+    else {
+        const sub = ascii - 32;
+        const asciiToAlpha = String.fromCharCode(sub);
+        console.log(asciiToAlpha)
+    }
+}
+
+convertingLowercaseOrUppercase("a"); // A
+convertingLowercaseOrUppercase("A"); // a
+```
+
+Better Solutions: 
+
+```js
+function toggleCase(X) {
+  if (X === X.toUpperCase()) {
+    console.log(X.toLowerCase());
+  } else {
+    console.log(X.toUpperCase());
+  }
+}
+
+toggleCase("a"); // A
+toggleCase("A"); // a
+```
+
+#### Calculator:
+
+Given a mathematical expression. The expression will be one of the following expressions: A+B, A−B, A∗B and A/B. Print the result of the mathematical expression.
+
+Note: For the dividing operation you should print the division without any fractions.
+
+| Input | Output |
+| ----- | ------ |
+| 7+54  | 61     |
+| 17*10 | 170    |
+
+My Solution: 
+
+```js
+function calculateExpression(num1, operator, num2) {
+    switch (operator) {
+        case "+":
+            console.log(num1 + num2)
+            break
+        case "-":
+            console.log(num1 - num2)
+            break
+        case "*":
+            console.log(num1 * num2)
+            break
+        case "/":
+            console.log(Math.floor(num1 / num2))
+            break
+        default:
+            console.log("Unknown operator")
+    }
+}
+
+calculateExpression(7, '+', 54); // 61
+calculateExpression(17, '*', 10); // 170
+```
+
+Better Solutions:
+
+```js
+function calculateExpression(num1, operator, num2) {
+  const operations = {
+    '+': num1 + num2,
+    '-': num1 - num2,
+    '*': num1 * num2,
+    '/': Math.floor(num1 / num2),
+  };
+
+  console.log(operations[operator] ?? "Unknown operator");
+}
+
+calculateExpression(7, '+', 54);  // 61
+calculateExpression(17, '*', 10); // 170
+```
+
+#### Digits Summation:
+
+Given two numbers N and M. Print the summation of their last digits.
+
+| Input | Output |
+| ----- | ------ |
+| 13 12 | 5      |
+
+My Solution: 
+
+```js
+function digitsSummation(N, M) {
+    const NLastDigit = parseInt(getLastDigit(N))
+    const MLastDigit = parseInt(getLastDigit(M))
+    return NLastDigit + MLastDigit
+}
+
+function getLastDigit(number) {
+    // const stringNumber = String(number)
+    const stringNumber = number.toString()
+    if (stringNumber.length === 1) {
+        return number;
+    }
+    else {
+        const arrayNumber = stringNumber.split("")
+        const lastIndex = arrayNumber.length - 1;
+        const lastElement = arrayNumber[lastIndex]
+        return lastElement
+    }
+}
+const result = digitsSummation(13, 12);
+console.log(result) // 5
+```
+
+Better Solution: 
+
+```js
+function digitsSummation(N, M) {
+    const lastDigitN = N % 10;
+    const lastDigitM = M % 10;
+    return lastDigitN + lastDigitM;
+}
+
+console.log(digitsSummation(13, 12)); // 5
+
+// Note: for any number, n % 10 gives its last digit. 
+```
+
+```js
+function digitsSummation(N, M) {
+  const lastDigitN = Number(N.toString().slice(-1));
+  const lastDigitM = Number(M.toString().slice(-1));
+  return lastDigitN + lastDigitM;
+}
+
+console.log(digitsSummation(13, 12)); // 5
+```
+
+#### First Digit:
+
+Given a number X. Print "EVEN" if the first digit of X is even number. Otherwise print "ODD".
+
+| Input | Output |
+| ----- | ------ |
+| 4569  | EVEN   |
+| 3569  | ODD    |
+
+My Solution: 
+
+```js
+function findFirstDigit(X) {
+    const length = X.toString().length;
+
+    let devisor = "1"
+    for (let i = 1; i < length; i++) {
+        devisor += "0"
+    }
+
+    const firstDigit = X / parseInt(devisor)
+    const firstDigitWithOutFraction = Math.floor(firstDigit)
+
+    if (firstDigitWithOutFraction % 2 === 0) {
+        console.log("EVEN")
+    }
+    else {
+
+        console.log("ODD")
+    }
+
+}
+
+findFirstDigit(4569); // EVEN
+findFirstDigit(3569); // ODD
+
+// first digit formula = N/10^(number of digits - 1) --> n/10^(log10(n))
+```
+
+better Solutions: 
+
+```js
+function findFirstDigit(X) {
+  const firstDigit = Number(X.toString()[0]);
+  console.log(firstDigit % 2 === 0 ? "EVEN" : "ODD");
+}
+
+findFirstDigit(4569); // EVEN
+findFirstDigit(3569); // ODD
+```
+
+```js
+function findFirstDigit(X) {
+  while (X >= 10) {
+    X = Math.floor(X / 10);
+  }
+  console.log(X % 2 === 0 ? "EVEN" : "ODD");
+}
+
+findFirstDigit(4569); // EVEN
+findFirstDigit(3569); // ODD
+```
+
+```js
+function findFirstDigit(X) {
+  const firstDigit = Math.floor(X / Math.pow(10, Math.floor(Math.log10(X))));
+  console.log(firstDigit % 2 === 0 ? "EVEN" : "ODD");
+}
+
+findFirstDigit(4569); // EVEN
+findFirstDigit(3569); // ODD
+```
+
+Note: 
+- $\log_b(x) = y$
+- $\log_{10}(280) = 2.447 = 2$
+- $\log_{10}(100) = 2$
+- $\displaystyle 10^2 = 100$
+
+
+
+#### The Last 2 Digits:
+
+Given 4 numbers A, B, C and D. Print the last 2 digits from their Multiplication.
+
+Note: The Multiplication of 4 numbers is 5 * 7 * 2 * 4 = 280 so the answer will be the last 2 digits which are 80.
+
+| Input   | Output |
+| ------- | ------ |
+| 5 7 2 4 | 80     |
+| 3 9 9 9 | 87     |
+
+My Solution: 
+
+```js
+function last2Digits(A, B, C, D) {
+    const multiplication = A * B * C * D;
+    const lastTwoDigits = multiplication % 100;
+
+    console.log(lastTwoDigits)
+}
+
+last2Digits(5, 7, 2, 4); // 80
+last2Digits(3, 9, 9, 9); // 87
+
+// Note: for any number, n % 100 gives its last two digits.
+```
+
+
+#### Coordinated of a Point:
+
+Given two numbers X, Y which donate coordinates of a point in 2D plan. Determine in which quarter does it belong.
+
+![image](./images/problemSolving-variablesDataTypesAndOperators/Coordinate-System-1.png)
+
+Note:
+- Print Q1, Q2, Q3, Q4 according to the quarter in which the point belongs to.
+- Print "Origem" (0, 0) If the point is at the origin.
+- Print "Eixo X" (X, 0) If the point is over X axis.
+- Print "Eixo Y" (0, Y) if the point is over Y axis.
+
+| Input    | Output |
+| -------- | ------ |
+| 4.5 -2.2 | Q4     |
+| 0.1 0.1  | Q1     |
+
+My Solution: 
+
+```js
+function FindCoordinates(X, Y) {
+    if (X > 0 && Y > 0) {
+        console.log('Q1')
+    }
+    else if (X < 0 && Y > 0) {
+        console.log('Q2')
+    }
+    else if (X < 0 && Y < 0) {
+        console.log('Q3')
+    }
+    else if (X > 0 && Y < 0) {
+        console.log('Q4')
+    }
+    else if (X > 0 && Y === 0) {
+        console.log("Eixo X")
+    }
+    else if (X === 0 && Y > 0) {
+        console.log("Eixo Y")
+    }
+    else if (X === 0 && Y === 0) {
+        console.log('Origem')
+    }
+
+}
+
+FindCoordinates(4.5, -2.2); // Q4
+FindCoordinates(0.1, 0.1); // Q1
+```
+
+Better Solution: 
+
+```js
+function findCoordinates(X, Y) {
+    if (X === 0 && Y === 0) {
+        console.log("Origem");
+    } 
+    else if (Y === 0) {
+        console.log("Eixo X");
+    } 
+    else if (X === 0) {
+        console.log("Eixo Y");
+    } 
+    else if (X > 0 && Y > 0) {
+        console.log("Q1");
+    } 
+    else if (X < 0 && Y > 0) {
+        console.log("Q2");
+    } 
+    else if (X < 0 && Y < 0) {
+        console.log("Q3");
+    } 
+    else {
+        console.log("Q4");
+    }
+}
+
+findCoordinates(4.5, -2.2); // Q4
+findCoordinates(0.1, 0.1);  // Q1
+```
+
+#### Age in Days:
+
+Given a Number N corresponding to a person's age (in days). Print his age in years, months and days, followed by its respective message "years", "months", "days".
+
+Note: consider the whole year has 365 days and 30 days per month.
+
+| Input | Output   |
+| ----- | -------- |
+| 400   | 1 years  |
+|       | 1 months |
+|       | 5 days   |
+| 800   | 2 years  |
+|       | 2 months |
+|       | 10 days  |
+| 30    | 0 years  |
+|       | 1 months |
+|       | 0 days   |
+
+My Solution: 
+
+```js
+function findAgeInDays(N) {
+    let years = 0
+    let months = 0
+    let days = 0;
+
+    if (N >= 365) {
+        years = Math.floor(N / 365);
+        days = N % 365;
+    }
+    else {
+        days = N
+    }
+
+    if (N >= 30) {
+        months = Math.floor(days / 30);
+        days = days % 30
+    }
+
+    console.log(`
+${years} years
+${months} months
+${days} days
+`)
+
+}
+
+findAgeInDays(400);
+
+/*
+1 years
+1 months
+5 days
+*/
+```
+
+#### Interval:
+
+Given a number X. Determine in which of the following intervals the number X belongs to:
+
+[0,25], (25,50], (50,75], (75,100]
+
+- if X belongs to any of the above intervals print "Interval " followed by the interval.
+- if X does not belong to any of the above intervals print "Out of Intervals".
+
+Note:
+- The symbol '(' represents greater than.
+- The symbol ')' represents smaller than.
+- The symbol '[' represents greater than or equal.
+- The symbol ']' represents smaller than or equal.
+
+For example:
+
+- [0,25] indicates numbers between 0 and 25.0000, including both.
+- (25,50] indicates numbers greater than 25: (25.00001) up to 50.0000000.
+
+| Input | Output            |
+| ----- | ----------------- |
+| 25.1  | Interval (25,50]  |
+| 25.0  | Interval [0, 25]  |
+| 100.0 | Interval (75,100] |
+| -25.2 | Out of Intervals  |
+
+My Solution: 
+
+```js
+function findInterval(X) {
+    if (X >= 0 && X <= 25) {
+        console.log("Interval [0,25]")
+    }
+    else if (X > 25 && X <= 50) {
+        console.log("Interval (25,50]")
+    }
+    else if (X > 50 && X <= 75) {
+        console.log("Interval (50,75]")
+    }
+    else if (X > 75 && X <= 100) {
+        console.log("Interval (75,100]")
+    }
+    else {
+        console.log("Out of Intervals")
+    }
+}
+
+findInterval(25.1); // Interval (25,50]
+findInterval(25.0); // Interval [0,25]
+findInterval(100.0); // Interval (75,100]
+findInterval(-25.2); // Out of Intervals
+```
+
+#### Two Intervals:
+
+Given the boundaries of 2 intervals. Print the boundaries of their intersection.
+
+Note: Boundaries mean the two ends of an interval which are the starting number and the ending number.
+
+![image](./images/problemSolving-variablesDataTypesAndOperators/intersectionOfTwoFoundaries.png)
+
+If there is an intersection between these 2 intervals print its boundaries , otherwise print -1.
+
+| Input     | Output |
+| --------- | ------ |
+| 1 15 5 27 | 5 15   |
+| 5 27 1 15 | 5 15   |
+| 2 5 6 12  | -1     |
+
+My Solution: 
+
+```js
+function findTwoInterval(l1, r1, l2, r2) {
+
+    const interval1Difference = r1 - l1
+    const interval2Difference = r2 - l2
+
+    let highestInterval = []
+    let lowestInterval = []
+
+    if (interval1Difference > interval2Difference) {
+        highestInterval = [l1, r1]
+        lowestInterval = [l2, r2]
+    }
+    else {
+        highestInterval = [l2, r2]
+        lowestInterval = [l1, r1]
+    }
+
+    const highestIntervalLowestValue = highestInterval[0]
+    const lowestIntervalHighestValue = lowestInterval[1]
+
+    if (lowestIntervalHighestValue < highestIntervalLowestValue) {
+        console.log(-1)
+    }
+    else {
+        const boundariesOfTwoIntersections = [highestIntervalLowestValue, lowestIntervalHighestValue]
+        console.log(...boundariesOfTwoIntersections)
+    }
+}
+
+
+findTwoInterval(1, 15, 5, 27); // 5 15
+findTwoInterval(5, 27, 1, 15); // 5 15
+findTwoInterval(2, 5, 6, 12); // -1
+```
+Logic: 
+
+![image](./images/problemSolving-variablesDataTypesAndOperators/twoIntervals.jpg)
+
+Better Solution: 
+
+```js
+function findTwoIntervals(l1, r1, l2, r2) {
+    const left = Math.max(l1, l2);
+    const right = Math.min(r1, r2);
+
+    if (left <= right) {
+        console.log(left, right);
+    } else {
+        console.log(-1);
+    }
+}
+
+findTwoIntervals(1, 15, 5, 27); // 5 15
+findTwoIntervals(5, 27, 1, 15); // 5 15
+findTwoIntervals(2, 5, 6, 12);  // -1
+```
+
+Logic: 
+
+- Left boundary = max(l1, l2)
+- Right boundary = min(r1, r2)
+
+If the left boundary ≤ right boundary → intersection exists
+Otherwise → no intersection (print -1)
+
+#### Sort Numbers:
+
+Given three numbers A, B, C. Print these numbers in ascending order followed by a blank line and then the values in the sequence as they were read.
+
+| Input   | Output |
+| ------- | ------ |
+| 3 -2 1  | -2     |
+|         | 1      |
+|         | 3      |
+|         |        |
+|         | 3      |
+|         | -2     |
+|         | 1      |
+| -2 10 0 |        |
+|         | -2     |
+|         | 0      |
+|         | 10     |
+|         |        |
+|         | -2     |
+|         | 10     |
+|         | 0      |
+
+My Solution: 
+
+```js
+function sortNumbers(A, B, C) {
+
+    const numbers = [A, B, C];
+
+    let sortedNumbers = [...numbers];
+
+    for (let i = 0; i < sortedNumbers.length - 1; i++) {
+        for (let j = i + 1; j < sortedNumbers.length; j++) {
+            if (sortedNumbers[i] >= sortedNumbers[j]) {
+                let temp = sortedNumbers[i]
+                sortedNumbers[i] = sortedNumbers[j]
+                sortedNumbers[j] = temp;
+            }
+        }
+    }
+
+    for (let number of sortedNumbers) {
+        console.log(number)
+    }
+
+    console.log("")
+
+    for (let number of numbers) {
+        console.log(number)
+    }
+
+}
+
+sortNumbers(3, -2, 1); 
+
+/*
+-2
+1
+3
+
+3
+-2
+1
+*/
+```
+
+Better Solution: 
+
+```js
+function sortNumbers(A, B, C) {
+    const numbers = [A, B, C];
+    const sorted = [...numbers].sort((a, b) => a - b);
+    // a - b = ascending sort, b - a = descending sort
+
+    for (let n of sorted) console.log(n);
+    console.log("");
+    for (let n of numbers) console.log(n);
+}
+
+sortNumbers(3, -2, 1);
+
+/*
+-2
+1
+3
+
+3
+-2
+1
+*/
+```
+
+```js
+// Note: works only for 3 numbers
+
+function sortNumbers(A, B, C) {
+    const min = Math.min(A, B, C);
+    const max = Math.max(A, B, C);
+    const mid = A + B + C - min - max;
+
+    console.log(`${min}\n${mid}\n${max}\n`);
+    console.log(`${A}\n${B}\n${C}`);
+}
+
+sortNumbers(3, -2, 1);
+```
+
+#### Float or Int:
+
+Given a number N. Determine whether N is float number or integer number.
+
+- If N is integer number then print "int" followed by the integer part separated by space.
+- If N is float number then print "float" followed by the integer part and decimal part separated by space.
+
+| Input   | Output          |
+| ------- | --------------- |
+| 234.000 | int 234         |
+| 534.958 | float 534 0.958 |
+
+My Solution: 
+
+```js
+function FindFloatOrInt(N) {
+
+    const floatValue = N - parseInt(N)
+
+    if (floatValue === 0) {
+        console.log("int", parseInt(N))
+    }
+    else {
+        console.log("float", parseInt(N), parseFloat(floatValue.toFixed(3)))
+    }
+
+    /*
+    Separate decimal(floating) part: 
+    - (floating number - its integer part) 
+    - or (floating number % 1)
+    */
+}
+
+FindFloatOrInt(234.000); // int 234
+FindFloatOrInt(534.958); // float 534 0.958
+```
+
+#### Mathematical Expression:
+
+Given a mathematical expression. The expression will be one of the following expressions:
+
+- A + B = C, A - B = C and A * B = C
+
+where A, B, C are three numbers, S is the sign between A and B, and Q the '=' sign
+
+Print "Yes" If the expression is Right , Otherwise print the right answer of the expression.
+
+| Input       | Output |
+| ----------- | ------ |
+| 5 + 10 = 15 | Yes    |
+| 3 - 1 = 2   | Yes    |
+| 2 * 10 = 19 | 20     |
+
+My Solution: 
+
+```js
+function findExpressionRightOrWrong(A, S, B, Q, C) {
+
+    let expressionResult = 0;
+
+    if (S === '+') {
+        expressionResult = A + B
+    }
+    else if (S === '-') {
+        expressionResult = A - B
+    }
+    else if (S === '*') {
+        expressionResult = A * B
+    }
+    else if (S === '/') {
+        expressionResult = A / B
+    }
+
+    if (expressionResult === C) {
+        console.log("Yes")
+    }
+    else {
+        console.log(expressionResult)
+    }
+
+}
+
+findExpressionRightOrWrong(5, '+', 10, '=', 15); // Yes
+findExpressionRightOrWrong(3, '-', 1, '=', 2); // Yes
+findExpressionRightOrWrong(2, '*', 10, '=', 19); // 20
+```
+
+Better Solutions:
+
+```js
+function findExpressionRightOrWrong(A, S, B, Q, C) {
+    let result;
+
+    switch (S) {
+        case '+':
+            result = A + B;
+            break;
+        case '-':
+            result = A - B;
+            break;
+        case '*':
+            result = A * B;
+            break;
+        case '/':
+            result = A / B;
+            break;
+        default:
+            console.log("Invalid operator");
+            return;
+    }
+
+    console.log(result === C ? "Yes" : result);
+}
+
+findExpressionRightOrWrong(5, '+', 10, '=', 15); // Yes
+findExpressionRightOrWrong(3, '-', 1, '=', 2);   // Yes
+findExpressionRightOrWrong(2, '*', 10, '=', 19); // 20
+```
+
+#### Comparison:
+
+Given a comparison symbol S between two numbers A and B. Determine whether it is Right or Wrong.
+
+- The comparison is as follows: A < B, A > B, A = B.
+
+Where A, B are two integer numbers and S refers to the sign between them.
+
+| Input | Output |
+| ----- | ------ |
+| 5 > 4 | Right  |
+| 9 < 1 | Wrong  |
+| 4 = 4 | Right  |
+
+My Solution: 
+
+```js
+function comparisonRightOrWrong(A, S, B) {
+
+    if (S === ">") {
+        if (A > B) {
+            console.log("Right")
+        }
+        else {
+            console.log("Wrong")
+        }
+    }
+    else if (S === '<') {
+        if (A < B) {
+            console.log("Right")
+        }
+        else {
+            console.log("Wrong")
+        }
+    }
+    else if (S === '=') {
+        if (A === B) {
+            console.log("Right")
+        }
+        else {
+            console.log("Wrong")
+        }
+    }
+
+}
+
+comparisonRightOrWrong(5, '>', 4); // Right
+comparisonRightOrWrong(9, '<', 1); // Wrong
+comparisonRightOrWrong(4, '=', 4); // Right
+```
+
+Better Solution: 
+
+```js
+function comparisonRightOrWrong(A, S, B) {
+
+    let isRight;
+
+    switch (S) {
+        case '>':
+            isRight = A > B;
+            break
+        case '<':
+            isRight = A < B;
+            break
+        case '=':
+            isRight = A === B;
+            break
+    }
+
+    console.log(isRight ? "Right" : "Wrong")
+
+}
+
+comparisonRightOrWrong(5, '>', 4); // Right
+comparisonRightOrWrong(9, '<', 1); // Wrong
+comparisonRightOrWrong(4, '=', 4); // Right
+```
+
+#### Hard Compare:
+
+Given 4 numbers A,B,C and D. If AB > CD print "YES" otherwise, print "NO".
+
+
+| Input   | Output |
+| ------- | ------ |
+| 3 2 5 4 | NO     |
+| 5 2 4 2 | YES    |
+| 5 2 5 2 | NO     |
+
+
+My Solution: 
+
+```js
+function comparison(A, B, C, D) {
+
+    if (A ** B > C ** D) { // (Math.pow(A, B) > Math.pow(C, D))
+        console.log("YES")
+    }
+    else {
+        console.log("NO")
+    }
+
+}
+
+comparison(3, 2, 5, 4); // NO
+comparison(5, 2, 4, 2); // YES
+comparison(5, 2, 5, 2); // NO
+```
+Note: if we calculate hug number using ** (exponentiation), it will overflow or lose precision (since JS numbers are float64, not arbitrary-precision).
+
+Better Solution: 
+
+```js
+function comparison(A, B, C, D) {
+    if (B * Math.log(A) > D * Math.log(C)) {
+        console.log("YES");
+    } else {
+        console.log("NO");
+    }
+}
+
+comparison(3, 2, 5, 4); // NO
+comparison(5, 2, 4, 2); // YES
+comparison(5, 2, 5, 2); // NO
+```
+
+Note: $\log(x^y)$ = y.log(x) = ** = Math.pow()
+
+#### Winter Sale:
+
+The winter sale began, and Mrs. Sarah wants to buy a T-shirt for her son. The T-shirt has a ticket that indicates a discount of X% and its price P after the discount. She now wants to know the price before the discount to know if the discount was worthy. Help her!
+
+Print the price of the T-shirt before the discount rounded up to two decimal places.
+
+
+Note: 
+
+**Basic Discount Terminology:**
+- Marked Price (MP): The original price before discount.
+- Discount(%) (D%): The reduction rate applied to the marked price.
+- Discount Amount (DA): The actual amount reduced from the marked price.
+- Selling price (SP): The price after discount 
+
+
+**Primary Formula:**
+- SP = MP - DA 
+- DA = (Discount% / 100) * MP
+- Find Discount Percentage (D%):
+
+we know, SP = MP - DA
+        ==> SP = MP - (D% / 100) * MP
+        ==> SP = MP * (1 - D% /100)
+        ==> SP / MP = 1 - (D% / 100) [Device both sides by MP]
+        ==> (SP / MP) - 1 =  - (D% / 100) 
+        ==> ( -(SP / MP) + 1) * 100 = D%  [multiply both side by -100] 
+        ==> ( 1 -(SP / MP)) * 100 = D%   
+        ==>  D% = ( 1 -(SP / MP)) * 100 
+        ==>  D% = ( (MP / MP) -(SP / MP)) * 100 [Any number ÷ itself = 1]
+        ==>  D% =  ((MP - SP) / MP) * 100 
+
+| Input | Output |
+| ----- | ------ |
+| 20 80 | 100.00 |
+| 15 20 | 23.53  |
+
+My Solution: 
+
+```js
+function getMarkedPrice(X, P) {
+
+    const discountPercentage = X
+    const SellingPrice = P
+    const MarkedPrice = parseFloat((SellingPrice * (100 / (100 - discountPercentage))).toFixed(2))
+    console.log(MarkedPrice)
+
+}
+
+getMarkedPrice(20, 80); // 100
+getMarkedPrice(15, 20); // 23.53
+```
+![image](./images/problemSolving-variablesDataTypesAndOperators/MarkedPrice.jpg)
+
+#### Memo and Momo:
+
+Memo and Momo are playing a game. Memo will choose a positive number a, and Momo will choose a positive number b.
+
+Your task is to tell them who will win according to the following rules:
+
+- If both a and b are divisible by k, both of them win and you should print "Both".
+- If a is divisible by k but b isn't, Memo wins and you should print "Memo".
+- If b is divisible by k but a isn't, Momo wins and you should print "Momo".
+- If both a and b are not divisible by k, no one wins and you should print "No One".
+
+| Input   | Output |
+| ------- | ------ |
+| 15 7 3  | Memo   |
+| 22 10 2 | Both   |
+
+My Solution: 
+
+```js
+function findDivisible(a, b, k) {
+
+    if (a % k === 0 && b % k === 0) {
+        console.log("Both")
+    }
+    else if (a % k === 0) {
+        console.log("Memo")
+    }
+    else if (b % k === 0) {
+        console.log("Momo")
+    }
+    else {
+        console.log("No One")
+    }
+
+}
+
+findDivisible(15, 7, 3); // Memo
+findDivisible(22, 10, 2); // Both
+```
+
+#### Next Alphabet:
+
+Given a lowercase alphabet character C. You have to print the next character in the alphabet.
+
+Note: The next letter to z is a.
+
+| Input | Output |
+| ----- | ------ |
+| a     | b      |
+
+
+My Solution:
+
+```js
+function findNextAlphabet(C) {
+
+    let asciiValue = C.charCodeAt(0)
+
+
+    if (asciiValue >= 97 && asciiValue < 122) {
+        asciiValue += 1;
+    }
+    if (asciiValue === 122) {
+        asciiValue = 97
+    }
+
+    const letter = String.fromCharCode(asciiValue)
+    console.log(letter)
+}
+
+findNextAlphabet('a'); // b
+```
+
+#### Ali Baba and Puzzles:
+
+One day, Ali Baba had an easy puzzle that he couldn't solve. The puzzle consisted of 4 numbers and his task was to check whether he could get the fourth number using arithmetic operators (+,−,×) between the other three numbers; so that each operator is used only once.
+
+a □ b □ c = d
+
+| Input    | Output |
+| -------- | ------ |
+| 3 4 5 23 | YES    |
+| 9 5 3 7  | YES    |
+| 1 2 3 1  | NO     |
+
+My Solution: 
+
+```js
+function findArithmeticResult(a, b, c, d) {
+    if (
+        a + (b - c) === d || a + b - c === d ||
+        (a + b) * c === d || a + b * c === d ||
+        (a - b) + c === d || a - b + c === d ||
+        (a - b) * c === d || a - b * c === d ||
+        a * (b + c) === d || a * b + c === d ||
+        a * (b - c) === d || a * b - c === d
+    ) {
+        console.log("Yes")
+    }
+    else {
+        console.log("NO")
+    }
+
+}
+
+findArithmeticResult(3, 4, 5, 23); // YES
+findArithmeticResult(9, 5, 3, 7); // YES
+findArithmeticResult(1, 2, 3, 1); // NO
+```
+
+Note: 
+- Number of operator combination: For 3 numbers (a, b, c) and two slots (a_b_c): 
+    - $3^2$ = 9
+```
++ +, + -, + *
+- +, - -, - *
+* +, * -, * *
+```
+- Number of Parentheses: For 3 numbers, there are 2 unique ways to group them:
+ 
+```
+(a op b) op c
+a op (b op c)
+```
+
+So , Total Unique Expression:
+  - $3^2$ * 2 = 18  
+
+In our case we just need:
+
+```
++ -, + *
+- +,  - *
+* +, * -, 
+```
+
+  - $3^2$ * 2 = 18 - 6 (because we can't repeat operator) = 12 
+
+Better Solutions: 
+
+```js
+function findArithmeticResult(a, b, c, d) {
+    const expressions = [
+        a + (b - c), a + b - c,
+        (a + b) * c, a + b * c,
+        (a - b) + c, a - b + c,
+        (a - b) * c, a - b * c,
+        a * (b + c), a * b + c,
+        a * (b - c), a * b - c
+    ]
+
+    console.log(expressions.includes(d) ? "YES" : "NO")
+
+}
+
+findArithmeticResult(3, 4, 5, 23); // YES
+findArithmeticResult(9, 5, 3, 7); // YES
+findArithmeticResult(1, 2, 3, 1); // NO
+```
+
+#### Interval Sweep:
+
+Given two numbers a and b. You have to answer with "YES" if there is a non-empty interval consisting of numbers from l to r
+(l,l+1,l+2,...,r) with a odd numbers and b even numbers, or "NO" otherwise.
+
+Input:
+
+Only one line containing two numbers a and b (0≤a,b≤100)the number of odd numbers and the number of even numbers in the interval respectively.
+
+| Input | Output |
+| ----- | ------ |
+| 2 3   | YES    |
+| 3 1   | NO     |
+
+Note: 
+
+Example 1 :
+
+some valid intervale's that contain 2 odd numbers and 3 even numbers can be:
+
+l=6,r=10 contains numbers (6,7,8,9,10)
+
+l=14,r=18 contains numbers (14,15,16,17,18)
+
+My Solution:
+
+```js
+function findInterval(a, b) {
+    if (a === 0 && b === 0) {
+        console.log("NO");
+        return;
+    }
+
+    if (Math.abs(a - b) <= 1) {
+        console.log("YES");
+    } else {
+        console.log("NO");
+    }
+}
+
+findInterval(2, 3); // YES
+findInterval(3, 1); // NO
+
+```
+
+| Interval      | Evens | Odds | a-b |
+| ------------- | ----- | ---- | --- |
+| [1,2]         | 1     | 1    | 0   |
+| [1,2,3]       | 1     | 2    | 1   |
+| [1,2,3,4]     | 2     | 2    | 0   |
+| [1,2,3,4,5]   | 2     | 3    | 1   |
+| [2,3,4,5,6]   | 3     | 2    | 1   |
+| [2,3,4,5,6,7] | 3     | 3    | 0   |
+
+Since consecutive interval alternate between even and odd, the difference between their counts can never exceed 1.
+
+#### Katryoshka:
+
+The Egyptian football team will be in Russia for the World Cup. Of course, they all would like to buy souvenirs for their families. Luckily, they met the king of souvenirs Matryoshka who is famous for his masterpiece Katryoshka. He makes it using different wooden pieces: eyes, mouths and bodies. He can form a nice Katryoshka using one of the following combinations:
+
+- Two eyes and one body.
+- Two eyes, one mouth, and one body.
+- One eye, one mouth, and one body.
+
+If the king has n eyes, m mouths and k bodies, what is the largest number of Katryoshkas he can make?
+
+| Input    | Output |
+| -------- | ------ |
+| 1 2 3    | 1      |
+| 0 11 2   | 0      |
+| 90 24 89 | 57     |
+
+My Solution: 
+
+```js
+function findLargestNumberOfKatryoshkas(n, m, k) {
+
+    let eyes = n
+    let mouths = m
+    let bodies = k
+    let katryoshka = 0
+
+    if (eyes > 0 && mouths > 0 && bodies > 0) {
+        const minWoodenPieces = Math.min(eyes, mouths, bodies)
+        eyes -= minWoodenPieces
+        mouths -= minWoodenPieces
+        bodies -= minWoodenPieces
+        katryoshka += minWoodenPieces;
+    }
+    if (eyes >= 2 && bodies > 0) {
+        eyes /= 2;
+        bodies -= eyes;
+        katryoshka += eyes;
+    }
+    if (eyes >= 2 && mouths > 0 && bodies > 0) {
+        eyes /= 2;
+        mouths -= eyes
+        bodies -= eyes
+        katryoshka += eyes
+    }
+
+    console.log(katryoshka)
+}
+
+findLargestNumberOfKatryoshkas(1, 2, 3); // 1
+findLargestNumberOfKatryoshkas(0, 11, 2); // 0
+findLargestNumberOfKatryoshkas(90, 24, 89); // 57
+```
+
+Better Solution: 
+
+```js
+function findLargestNumberOfKatryoshkas(n, m, k) {
+  let count = 0;
+
+  // Step 1: Make as many (2 eyes + 1 mouth + 1 body) as possible
+  let type2 = Math.min(Math.floor(n / 2), m, k);
+  count += type2;
+  n -= type2 * 2;
+  m -= type2;
+  k -= type2;
+
+  // Step 2: Make as many (1 eye + 1 mouth + 1 body) as possible
+  let type3 = Math.min(n, m, k);
+  count += type3;
+  n -= type3;
+  m -= type3;
+  k -= type3;
+
+  // Step 3: Make as many (2 eyes + 1 body) as possible
+  let type1 = Math.min(Math.floor(n / 2), k);
+  count += type1;
+  n -= type1 * 2;
+  k -= type1;
+
+  console.log(count);
+}
+
+findLargestNumberOfKatryoshkas(1, 2, 3);   // 1
+findLargestNumberOfKatryoshkas(0, 11, 2);  // 0
+findLargestNumberOfKatryoshkas(90, 24, 89); // 57
+```
+
+#### Lucky Numbers:
+
+A number of two digits is lucky if one of its digits is divisible by the other.
+
+For example, 39, 82, and 55 are lucky, while 79 and 43 are not.
+
+Given a number between 10 and 99, determine whether it is lucky or not.
+
+| Input | Output |
+| ----- | ------ |
+| 39    | YES    |
+| 64    | NO     |
+
+My Solution: 
+
+```
+function findDivisibleOrNot(num) {
+    const firstNum = Math.floor(num / 10);
+    const secondNum = num % 10;
+    if (firstNum % secondNum === 0 || secondNum % firstNum === 0) {
+        console.log("YES")
+    }
+    else {
+        console.log("NO")
+    }
+}
+
+findDivisibleOrNot(39); // YES
+findDivisibleOrNot(64); // NO
+```
+
+## Loops
+
+#### 1 to N:
+
+Given a number N. Print numbers from 1 to N in separate lines.
+
+| Input | Output |
+| ----- | ------ |
+| 5     | 1      |
+|       | 2      |
+|       | 3      |
+|       | 4      |
+|       | 5      |
+
+```js
+for (let i = 1; i <= 5; i++) {
+    console.log(i)
+}
+
+/*
+1
+2
+3
+4
+5
+*/
+```
+
+#### Even Numbers:
+
+Given a number N. Print all even numbers between 1 and N inclusive in separate lines.
+
+| Input | Output |
+| ----- | ------ |
+| 10    | 2      |
+|       | 4      |
+|       | 6      |
+|       | 8      |
+|       | 10     |
+| 5     | 2      |
+|       | 4      |
+
+My Solution: 
+
+```js
+const N = 10
+
+for (let i = 1; i <= N; i++) {
+    if (i % 2 === 0) {
+        console.log(i)
+    }
+}
+
+/*
+2
+4
+6
+8
+10
+*/
+```
+
+Better Solution: 
+
+```js
+const N = 10
+
+for (let i = 2; i <= N; i += 2) {
+    console.log(i)
+}
+
+/*
+2
+4
+6
+8
+10
+*/
+```
+
+#### Even, Odd, Positive and Negative:
+
+Given some numbers. Count how many of these values are even, odd, positive and negative.
+
+| Input | Output      |
+| ----- | ----------- |
+| -5    | Even: 3     |
+| 0     | Even : 2    |
+| -3    | Positive: 1 |
+| -4    | Negative: 3 |
+| 12    |             |
+
+My Solution: 
+
+```js
+function countEvenOddPositiveNegative(...numbers) {
+    let even = 0
+    let odd = 0
+    let positive = 0
+    let negative = 0
+
+    for (let number of numbers) {
+        if (number % 2 === 0) {
+            even++;
+        }
+        else {
+            odd++
+        }
+
+        if (number > 0) {
+            positive++
+        }
+        else if (number < 0) {
+            negative++
+        }
+    }
+    console.log("Even:", even)
+    console.log("Odd:", odd)
+    console.log("Positive:", positive)
+    console.log("Negative:", negative)
+}
+
+countEvenOddPositiveNegative(-5, 0, -3, -4, 12)
+
+/*
+Even: 3
+Odd: 2
+Positive: 1
+Negative: 3
+*/
+```
+
+#### Fixed Password:
+
+Given multiple lines each line contains a number X which is a password. Print "Wrong" if the password is incorrect otherwise, print "Correct" and terminate the program.
+
+Note: The "Correct" password is the number 1999.
+
+| Input | Output  |
+| ----- | ------- |
+| 2200  | Wrong   |
+| 1020  | Wrong   |
+| 1999  | Correct |
+| 1000  |         |
+| 9999  |         |
+
+My Solution: 
+
+```js
+function checkPassword(...numbers) {
+    for (let number of numbers) {
+        if (number === 1999) {
+            console.log("Correct")
+            return;
+        }
+        else {
+            console.log("Wrong")
+        }
+    }
+}
+
+checkPassword(2200, 1020, 1999, 1000, 9999)
+
+/*
+Wrong
+Wrong
+Correct
+*/
+```
+
+#### Max:
+
+Given N numbers, find maximum number in these N numbers.
+
+| Input | Output |
+| ----- | ------ |
+| 1     | 8      |
+| 8     |        |
+| 5     |        |
+| 7     |        |
+| 5     |        |
+
+My Solution: 
+
+```js
+function findMax(...numbers) {
+    let max = numbers[0]
+    for (let number of numbers) {
+        if (number >= max) {
+            max = number
+        }
+    }
+    console.log(max)
+}
+
+findMax(1, 8, 5, 7, 5) // 8
+```
+
+Better Solution: 
+
+```js
+function findMax(...numbers) {
+    console.log(Math.max(...numbers))
+}
+
+findMax(1, 8, 5, 7, 5) // 8
+```
+
+#### Multiplication table:
+
+Given a number N. Print the multiplication table of the number from 1 to 12
+
+Input/output: 
+
+```
+2
+
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+2 * 11 = 22
+2 * 12 = 24
+```
+
+My solution: 
+
+```js
+function generateMultiplicationTable(N) {
+    for (let i = 1; i <= 12; i++) {
+        console.log(`${N} * ${i} = ${N * i}`)
+    }
+}
+
+generateMultiplicationTable(2)
+```
+
+#### Factorial:
+
+Given some numbers. Print the factorial of that numbers.
+
+Note: 
+
+Factorial, in mathematics, the product of all positive integers less than or equal to a given positive integer and denoted by that integer and an exclamation point.
+
+- Thus, factorial seven is written 7!, meaning 1 * 2 * 3 * 4 * 5 * 6 * 7 = 5040 .
+- Factorial zero is defined as equal to 1.
+
+
+| Input | Output |
+| ----- | ------ |
+| 5     | 120    |
+| 3     | 6      |
+
+
+My Solution: 
+
+```js
+function findFactorial(num) {
+
+    let factorialResult = 1;
+
+    for (let i = 1; i <= num; i++) {
+        factorialResult *= i
+    }
+
+    console.log(factorialResult)
+}
+
+findFactorial(5) // 120
+```
+
+
+#### One Prime:
+
+Given a number X. Determine if the number is prime or not.
+
+Note:
+
+A prime number is a number that is greater than 1 and has only two factors which are 1 and itself. Means prime number divisible only by 1 and itself.
+
+Be careful that 1 is not prime
+
+| Input | Output |
+| ----- | ------ |
+| 7     | YES    |
+| 15    | NO     |
+
+My Solution: 
+
+```js
+function findPrimeNumber(num) {
+
+    let isPrime = true;
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            isPrime = false
+        }
+    }
+
+    console.log(isPrime ? "YES" : "NO")
+}
+
+findPrimeNumber(7) // YES
+findPrimeNumber(15) // NO
+```
+
+Better Solution: 
+
+```js
+function findPrimeNumber(num) {
+  if (num <= 1) return console.log("NO"); 
+
+  for (let i = 2; i * i <= num; i++) { 
+    if (num % i === 0) {
+      console.log("NO");
+      return; 
+    }
+  }
+
+  console.log("YES");
+}
+
+findPrimeNumber(7);  // YES
+findPrimeNumber(15); // NO
+```
+
+here, 
+i * i <= num = checks only up to √num, because factors repeat after √num:
+
+```
+num = 36,
+
+36 = 1 * 36
+36 = 2 * 18
+36 = 3 * 12
+36 = 4 * 9
+36 = 6 * 6 ---(middle point √36 = 6; Factors beyond 6 just repeat the earlier ones in reverse.)
+36 = 9 * 4
+36 = 12 * 3
+36 = 18 * 2
+36 = 36 * 1
+```
+
+#### Primes from 1 to n:
+
+Given a number N. Print all prime numbers between 1 and N inclusive.
+
+| Input | Output     |
+| ----- | ---------- |
+| 10    | 2, 3, 5, 7 |
+
+My Solution: 
+
+```js
+function findPrimeNumbers(num) {
+
+    const primeNumbers = []
+
+    for (let i = 2; i <= num; i++) {
+
+        let isPrime = true;
+
+        for (let j = 2; j * j <= i; j++) {
+            if (i % j === 0) {
+                isPrime = false
+                break
+            }
+        }
+
+        if (isPrime) {
+            primeNumbers.push(i)
+        }
+    }
+
+    console.log(...primeNumbers)
+}
+
+findPrimeNumbers(10); // 2 3 5 7
+```
+
+#### Palindrome:
+
+Given a number N. Print 2 lines that contain the following respectively:
+
+- Print N in a reversed order and not leading zeroes.
+- If N is a palindrome number print "YES" otherwise, print "NO.
+
+Note:
+
+- A palindrome number is a number that reads the same forward or backward. For example: 12321, 101 are palindrome numbers, while 1201, 221 are not.
+
+- A leading zero is any 0 digit that comes before the first nonzero digit in a number for example : numbers (005 , 01 , 0123 , 02 , 000250 ) are leading zeroes but ( 5 , 123 , 20 ,2500 ) not leading zeroes numbers .
+
+| Input | Output |
+| ----- | ------ |
+| 12121 | 12121  |
+|       | YES    |
+| 160   | 61     |
+|       | NO     |
+
+My Solution: 
+
+```js
+function palindromeOrNot(N) {
+    const originalNumbers = N
+    const numbersArray = N.toString().split("")
+
+    const reversedArray = []
+
+    for (let number of numbersArray) {
+        reversedArray.unshift(number)
+    }
+
+    const reversedNumber = parseInt(reversedArray.join(""))
+
+    if (originalNumbers === reversedNumber) {
+        console.log(reversedNumber, "\nYES")
+    }
+    else {
+        console.log(reversedNumber, "\nNO")
+    }
+
+}
+
+palindromeOrNot(12121);
+palindromeOrNot(160);
+
+/*
+12121 
+YES
+61 
+NO
+*/
+```
+
+Better Solutions: 
+
+```js
+function palindromeOrNot(N) {
+    const str = N.toString();
+    const reversed = str.split("").reverse().join("");
+    const reversedNum = parseInt(reversed);
+
+    console.log(reversedNum);
+    console.log(str === reversed ? "YES" : "NO");
+}
+
+palindromeOrNot(12121);
+palindromeOrNot(160);
+```
+
+```js
+function palindromeOrNot(N) {
+    let original = N;
+    let reversed = 0;
+
+    while (N > 0) {
+        reversed = reversed * 10 + (N % 10);
+        N = Math.floor(N / 10);
+    }
+
+    console.log(reversed);
+    console.log(original === reversed ? "YES" : "NO");
+}
+
+palindromeOrNot(12121);
+palindromeOrNot(160);
+```
+
+#### Divisors:
+
+Given a number N. Print all the divisors of N in ascending order.
+
+Note: 
+
+Divisor of Number is A number that divides the integer exactly (no remainder).
+
+Examples:
+- 3 is a divisor of 12, because 12 ÷ 3 = 4 exactly
+- 4 is a divisor of 12, because 12 ÷ 4 = 3 exactly.
+- 5 is not a divisor of 12, because 12 ÷ 5 = 2 with a remainder of 2.
+
+| Input | Output |
+| ----- | ------ |
+| 6     | 1      |
+|       | 2      |
+|       | 3      |
+|       | 4      |
+|       | 5      |
+|       | 6      |
+| 7     | 1      |
+|       | 7      |
+| 4     | 1      |
+|       | 2      |
+|       | 4      |
+
+My Solution: 
+
+```js
+function findDivisors(N) {
+    for (let i = 1; i <= N; i++) {
+        if (N % i === 0) {
+            console.log(i)
+        }
+    }
+}
+
+findDivisors(6);
+
+/*
+1
+2
+3
+6
+*/
+```
+
+Better Solution: 
+
+```js
+function findDivisors(N) {
+    const divisors = [];
+
+    for (let i = 1; i * i <= N; i++) {
+        if (N % i === 0) {
+            divisors.push(i);
+
+            if (i !== N / i) {
+                divisors.push(N / i);
+            }
+        }
+    }
+
+    divisors.sort((a, b) => a - b);
+
+    for (const d of divisors) {
+        console.log(d);
+    }
+}
+
+findDivisors(6);
+```
+
+#### GCD and LCM:
+
+Given two numbers A and B. Print the greatest common divisor and least common multiple between (A, B).
+
+Example: 
+
+GCD(6, 9):
+- divisors of 6 = {1, 2, 3, 6}
+- divisors of 9 = {1, 3, 9}
+common = {1, 3}, largest = 3 ✅
+
+LCM(6, 9): 
+- Multiples of 6 = {6, 12, 18, 24, 30, 36, 42, 48, 54, 60 ....}
+- Multiples of 9 = {9, 18, 27, 36, 45, 54, 63....}
+→ common = {18, 36, 54}, Lowest = 18 ✅
+
+| Input | Output |
+| ----- | ------ |
+| 6 9   | 3 36   |
+| 54 24 |        |
+
+
+My Solution: 
+
+```js
+function findGCDAndLCM(A, B) {
+    const gcd = GCD(A, B)
+    const lcm = LCM(A, B)
+    console.log(gcd, lcm)
+}
+
+function GCD(A, B) {
+
+    const divisorsOfA = []
+    const divisorsOfB = []
+
+    for (let i = 1; i <= A; i++) {
+        if (A % i === 0) {
+            divisorsOfA.push(i)
+        }
+    }
+    for (let i = 1; i <= B; i++) {
+        if (B % i === 0) {
+            divisorsOfB.push(i)
+        }
+    }
+
+    const common = []
+
+    for (let i = 0; i < divisorsOfA.length; i++) {
+        for (let j = 0; j < divisorsOfB.length; j++) {
+            if (divisorsOfA[i] === divisorsOfB[j]) {
+                common.push(divisorsOfA[i])
+            }
+        }
+    }
+
+    const largest = Math.max(...common)
+
+    return largest
+}
+function LCM(A, B) {
+
+    const multiplesOfA = []
+    const multiplesOfB = []
+
+    for (let i = 1; i <= A; i++) {
+        multiplesOfA.push(i * A)
+    }
+    for (let i = 1; i <= B; i++) {
+        multiplesOfB.push(i * B)
+    }
+
+    const common = []
+
+    for (let i = 0; i < multiplesOfA.length; i++) {
+        for (let j = 0; j < multiplesOfB.length; j++) {
+            if (multiplesOfA[i] === multiplesOfB[j]) {
+                common.push(multiplesOfA[i])
+            }
+        }
+    }
+
+    const lowest = Math.min(...common)
+
+    return lowest
+}
+
+findGCDAndLCM(6, 9); // 3 18
+findGCDAndLCM(54, 24); // 6 216
+```
+
+Better Solution: 
+
+Relationship between GCD and LCM:
+
+```
+GCD(a, b) × LCM(a, b) = a × b
+```
+
+```js
+function findGCDAndLCM(A, B) {
+  const gcd = GCD(A, B);
+  const lcm = (A * B) / gcd;
+  console.log(gcd, lcm);
+}
+
+// Euclidean algorithm for GCD
+function GCD(a, b) {
+  while (b !== 0) {
+    const temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
+}
+
+findGCDAndLCM(6, 9);   // 3 18
+findGCDAndLCM(54, 24); // 6 216
+```
+
+#### Lucky Numbers:
+
+Given two numbers A and B. Print all lucky numbers between A and B inclusive.
+
+Note: 
+A lucky number is a number that, contains only the digits 4 and 7
+
+example: 4, 7, 44, 47, 74, 77, 444, 474, 777, 744, ...
+
+| Input | Output |
+| ----- | ------ |
+| 4 20  | 4 7    |
+| 8 15  | -1     |
+
+Solutions: 
+
+```js
+function findLuckyNumber(A, B) {
+    let found = false
+    for (let i = A; i <= B; i++) {
+        const str = i.toString()
+
+        const isLucky = [...str].every(ch => ch === '4' || ch === '7')
+
+        if (isLucky) {
+            console.log(i)
+            found = true
+        }
+    }
+    if (!found) {
+        console.log(-1)
+    }
+}
+
+findLuckyNumber(4, 20); // 4 7
+findLuckyNumber(8, 15); // -1
+```
+
+```jsx
+function findLuckyNumber(A, B) {
+    
+    let found = false
+    
+    for (let i = A; i <= B; i++) {
+        let n = i;
+        let isLucky = true
+
+        while (n > 0) {
+            const digit = n % 10;
+
+            if (digit !== 4 && digit !== 7) {
+                isLucky = false
+                break
+            }
+
+            n = Math.floor(n / 10)
+        }
+
+        if (isLucky) {
+            console.log(i)
+            found = true;
+        }
+    }
+
+    if (!found) {
+        console.log(-1)
+    }
+}
+
+findLuckyNumber(4, 20); // 4 7
+findLuckyNumber(8, 15); // -1
+```
+
+```js
+function findLuckyNumber(A, B) {
+
+    let found = false
+    const luckyPattern = /^[47]+$/; // the entire string must be made up of only 4 and 7
+
+    for (let i = A; i <= B; i++) {
+        if (luckyPattern.test(i.toString())) {
+            console.log(i)
+            found = true
+        }
+    }
+
+    if (!found) {
+        console.log(-1)
+    }
+}
+
+findLuckyNumber(4, 20); // 4 7
+findLuckyNumber(8, 15); // -1
+```
+
+#### Numbers Histogram:
+
+Given 2 lines of input described as follow:
+
+- The first line contains a symbol S can be (+,−,∗,/).
+- The second line contains N numbers.
+
+| Input     | Output  |
+| --------- | ------- |
+| +         | +++++   |
+| 5 2 4 3 7 | ++      |
+|           | ++++    |
+|           | +++     |
+|           | +++++++ |
+
+My Solution: 
+
+```
+function printHistogram(S, N) {
+    for (let i = 0; i < N.length; i++) {
+        let sign = ''
+        for (let j = 1; j <= N[i]; j++) {
+            sign += S
+        }
+        console.log(sign)
+    }
+}
+
+printHistogram('+', [5, 2, 4, 3, 7]);
+
+/*
++++++
+++
+++++
++++
++++++++
+ */
+```
+
+Better Solution: 
+
+```js
+function printHistogram(S, N) {
+    for (const num of N) {
+        console.log(S.repeat(num));
+    }
+}
+
+printHistogram('+', [5, 2, 4, 3, 7]);
+```
+
+#### Shape 1:
+
+```
+4
+
+*
+**
+***
+****
+```
+
+My Solution: 
+
+```js
+function printPyramid(N) {
+
+    for (let i = 1; i <= N; i++) {
+        let star = ''
+        for (let j = 1; j <= i; j++) {
+            star += "*"
+        }
+        console.log(star)
+    }
+}
+
+printPyramid(4);
+```
+
+Better Solutions: 
+
+```js
+function printPyramid(N) {
+  for (let i = 1; i <= N; i++) {
+    console.log('*'.repeat(i));
+  }
+}
+
+printPyramid(4);
+```
+
+```
+4
+
+****
+***
+**
+*
+```
+
+My Solutions: 
+
+```js
+function printPyramid(N) {
+
+    for (let i = 1; i <= N; i++) {
+        let star = ""
+        for (let j = N; j >= i; j--) {
+            star += "*"
+        }
+        console.log(star)
+    }
+}
+
+printPyramid(4);
+```
+
+Better Solution: 
+
+```js
+function printPyramid(N) {
+
+    for (let i = N; i >= 1; i--) {
+        console.log("*".repeat(i))
+    }
+}
+
+printPyramid(4);
+```
+
+```
+4
+
+1
+12
+123
+1234
+```
+
+My Solution: 
+
+```js
+function printNumbersShapes(N) {
+
+    for (let i = 1; i <= N; i++) {
+        const numbers = []
+        for (let j = 1; j <= i; j++) {
+            numbers.push(j)
+        }
+        console.log(...numbers)
+    }
+}
+
+printNumbersShapes(4);
+
+```
+
+Better Solutions: 
+
+```js
+function printNumbersShapes(N) {
+    for (let i = 1; i <= N; i++) {
+        let line = ''
+        for (let j = 1; j <= i; j++) {
+            line += j
+        }
+        console.log(line)
+    }
+}
+
+printNumbersShapes(4);
+
+```
+
+```js
+function printNumbersShapes(N) {
+    const base = '123456789';
+    for (let i = 1; i <= N; i++) {
+        console.log(base.slice(0, i));
+    }
+}
+
+printNumbersShapes(4);
+
+```
+
+
+```
+4
+
+1234
+123
+12
+1
+```
+
+My Solution: 
+
+```js
+function printNumbersShapes(N) {
+
+    for (let i = N; i >= 1; i--) {
+        const numbers = []
+        for (let j = 1; j <= i; j++) {
+            numbers.push(j)
+        }
+        console.log(...numbers)
+    }
+}
+
+printNumbersShapes(4);
+```
+
+Better Solutions:
+
+```js
+function printReverseNumbers(N) {
+    for (let i = N; i >= 1; i--) {
+        let line = ''
+        for (let j = 1; j <= i; j++) {
+            line += j
+        }
+        console.log(line)
+    }
+}
+
+printReverseNumbers(4);
+```
+
+```js
+function printReverseNumbers(N) {
+    const base = '123456789';
+    for (let i = N; i >= 1; i--) {
+        console.log(base.slice(0, i));
+    }
+}
+
+printReverseNumbers(4);
+```
+
+```js
+const printReverseNumbers = N =>
+  Array.from({ length: N }, (_, i) => console.log('123456789'.slice(0, N - i)));
+
+printReverseNumbers(4);
+
+/*
+for (let i = 0; i < N; i++) {
+  console.log('123456789'.slice(0, N - i))
+}
+
+Same as: 
+
+ Array.from({ length: N }, (_, i) => console.log('123456789'.slice(0, N - i)));
+
+*/
+```
+
+#### Shape2:
+
+```
+4
+
+   *
+  ***
+ *****
+*******
+```
+
+![image](./images/problem-solving-loops/shape2-pattern1.png)
+
+My Solution: 
+
+```js
+function printShapes(N) {
+    for (let i = 1; i <= N; i++) {
+
+        let sign = ''
+        let star = ''
+
+        for (let j = i; j <= N - 1; j++) {
+            sign += ' '
+        }
+        for (let j = 1; j <= i * 2 - 1; j++) {
+            star += '*'
+        }
+        console.log(sign + star)
+
+    }
+}
+
+printShapes(4);
+```
+
+Better Solutions: 
+
+```js
+function printShapes(N) {
+  for (let i = 1; i <= N; i++) {
+    const spaces = ' '.repeat(N - i);
+    const stars = '*'.repeat(2 * i - 1);
+    console.log(spaces + stars);
+  }
+}
+
+printShapes(4);
+```
+
+```js
+function printShapes(N) {
+  Array.from({ length: N }, (_, i) =>
+    console.log(' '.repeat(N - i - 1) + '*'.repeat(2 * i + 1))
+  );
+}
+
+printShapes(4);
+```
+
+
+```
+4
+
+*******
+ *****
+  ***
+   *
+```
+
+![image](./images/problem-solving-loops/shape2-pattern2.png)
+
+My Solution: 
+
+```js
+function printShapes(N) {
+    for (let i = N; i >= 1; i--) {
+
+        let sign = ''
+        let star = ''
+
+        for (let j = i; j <= N - 1; j++) {
+            sign += ' '
+        }
+        for (let j = i * 2 - 1; j >= 1; j--) {
+            star += '*'
+        }
+        console.log(sign + star)
+
+    }
+}
+
+printShapes(4);
+```
+
+Better Solutions: 
+
+```js
+function printShapes(N) {
+  for (let i = N; i >= 1; i--) {
+    console.log(' '.repeat(N - i) + '*'.repeat(2 * i - 1));
+  }
+}
+
+printShapes(4);
+
+```
+
+```js
+function printShapes(N) {
+  Array.from({ length: N }, (_, i) =>
+    console.log(' '.repeat(i) + '*'.repeat(2 * (N - i) - 1))
+  );
+}
+
+printShapes(4);
+```
+
+
+```
+4
+
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+```
+
+![image](./images/problem-solving-loops/shape2-pattern3.png)
+
+My Solution: 
+
+```js
+function printShapes(N) {
+    for (let i = 1; i <= N; i++) {
+
+        let sign = ''
+        let star = ''
+
+        for (let j = i; j <= N - 1; j++) {
+            sign += ' '
+        }
+        for (let j = 1; j <= i * 2 - 1; j++) {
+            star += '*'
+        }
+        console.log(sign + star)
+    }
+
+    for (let i = N - 1; i >= 1; i--) {
+
+        let sign = ''
+        let star = ''
+
+        for (let j = i; j <= N - 1; j++) {
+            sign += ' '
+        }
+        for (let j = i * 2 - 1; j >= 1; j--) {
+            star += '*'
+        }
+        console.log(sign + star)
+
+    }
+}
+
+printShapes(4);
+```
+
+Better Solutions:
+
+```js
+function printShapes(N) {
+    // 🔹 Upper half
+    for (let i = 1; i <= N; i++) {
+        console.log(' '.repeat(N - i) + '*'.repeat(i * 2 - 1));
+    }
+
+    // 🔹 Lower half
+    for (let i = N - 1; i >= 1; i--) {
+        console.log(' '.repeat(N - i) + '*'.repeat(i * 2 - 1));
+    }
+}
+
+printShapes(4);
+```
+
+```js
+function printShapes(N) {
+    for (let row = 1; row <= 2 * N - 1; row++) {
+        let i = row <= N ? row : 2 * N - row; // mirror row number
+        console.log(' '.repeat(N - i) + '*'.repeat(i * 2 - 1));
+    }
+}
+
+printShapes(4);
+```
+
+```js
+function printDiamond(N) {
+  // Top half
+  Array.from({ length: N }, (_, i) =>
+    console.log(' '.repeat(N - i - 1) + '*'.repeat(2 * (i + 1) - 1))
+  );
+
+  // Bottom half
+  Array.from({ length: N - 1 }, (_, i) =>
+    console.log(' '.repeat(i + 1) + '*'.repeat(2 * (N - i - 2) + 1))
+  );
+}
+
+printDiamond(4);
+```
+#### Shape 3:
+
+Some day, an artist wanted to draw an X mark on the wall in a fashionable way. He wanted to do so by grouping snippets of slashes /, backslashes \, asterisks * and a capital X letter in an N×N square as shown in the sample. Can you help him?
+
+Input/Output:
+
+```
+5
+
+\***/
+*\*/*
+**X**
+*/*\*
+/***\
+```
+
+Explanation: 
+
+|       | j = 0 | j = 1 | j = 2 | j = 3 | j = 4 |
+| ----- | ----- | ----- | ----- | ----- | ----- |
+| i = 0 | \     | *     | *     | *     | /     |
+| i = 1 | *     | \     | *     | /     | *     |
+| i = 2 | *     | *     | X     | *     | *     |
+| i = 3 | *     | /     | *     | \     | *     |
+| i = 4 | /     | *     | *     | *     | \     |
+
+X = (i === center && j === center) = (2,2)  
+\ = (i === j) = (0,0) (1,1), (3,3), (4, 4)
+/ = (i + j === n - 1) = (0,4), (1, 3), (3, 1), (4, 0)  
+
+
+Solution: 
+
+```js
+function printDiamondShape(n) {
+    const center = Math.floor(n / 2)
+
+    for (let i = 0; i < n; i++) {
+        let shape = ""
+        for (let j = 0; j < n; j++) {
+
+            if (i === center && j === center) {
+                shape += "X"
+            }
+            else if (i === j) {
+                shape += "\\"
+            }
+            else if (i + j === n - 1) {
+                shape += "/"
+            }
+            else {
+                shape += "*"
+            }
+
+        }
+        console.log(shape)
+    }
+}
+
+printDiamondShape(5)
+```
+
+#### Digits:
+
+Given some numbers. Print the digits of that number from right to left separated by space.
+
+| Input  | Output      |
+| ------ | ----------- |
+| 4      |             |
+| 121    | 1 2 1       |
+| 39     | 9 3         |
+| 123456 | 6 5 4 3 2 1 |
+| 1200   | 0 0 2 1     |
+
+My Solutions: 
+
+```js
+function printDigits(...N) {
+    for (let i = 0; i < N.length; i++) {
+        console.log(N[i].toString().split("").reverse().join(""))
+    }
+}
+
+printDigits(121, 39, 123456, 1200);
+
+/*
+121
+93
+654321
+0021
+*/
+```
+
+```js
+function printDigits(...N) {
+    for (let num of N) {
+
+        let numArray = []
+
+        while (num !== 0) {
+            const remainder = num % 10;
+            numArray.push(remainder)
+            num = Math.floor(num / 10)
+        }
+
+        console.log(numArray.join(" "))
+    }
+
+}
+
+printDigits(121, 39, 123456, 1200);
+
+/*
+1 2 1
+9 3
+6 5 4 3 2 1
+0 0 2 1
+*/
+```
+
+#### Sequence of Numbers and Sum:
+
+Given multiple lines each line contains two numbers N and M. For each line print a single line contains:
+
+- The numbers between N and M inclusive separated by single space.
+- The message " sum =".
+- The summation of all numbers between N and M inclusive.
+
+Note: The program should be TERMINATED as soon as any of these two numbers is less than or equal to zero and don't print any thing.
+
+| Input | Output          |
+| ----- | --------------- |
+| 5 2   | 2 3 4 5 sum =14 |
+| 5 7   | 5 6 7 sum =18   |
+| 5 -1  |                 |
+| 5 2   | 2 3 4 5 sum =14 |
+| 6 3   | 3 4 5 6 sum =18 |
+| 5 0   |                 |
+
+
+My Solution: 
+
+```js
+function sumOfNumbers(numbers) {
+
+    const pairNumbers = []
+
+    for (let i = 0; i < numbers.length; i = i + 2) {
+        if (!(numbers[i] <= 0) && !(numbers[i + 1] <= 0)) {
+            pairNumbers.push([numbers[i], numbers[i + 1]])
+        }
+    }
+
+    for (let pairNumber of pairNumbers) {
+        const max = Math.max(...pairNumber)
+        const min = Math.min(...pairNumber)
+
+        let numberStr = ''
+        let sum = 0
+        for (let i = min; i <= max; i++) {
+            numberStr += ` ${i}`
+            sum += i;
+        }
+        console.log(`${numberStr} sum =${sum}`)
+    }
+
+}
+
+sumOfNumbers([5, 2, 5, 7, 5, -1]);
+
+/*
+2 3 4 5 sum =14
+5 6 7 sum =18
+*/
+```
+
+Better Solutions: 
+
+```js
+function sumOfNumbers(numbers) {
+  for (let i = 0; i < numbers.length; i += 2) {
+    const N = numbers[i];
+    const M = numbers[i + 1];
+
+    if (N <= 0 || M <= 0) break;
+
+    const start = Math.min(N, M);
+    const end = Math.max(N, M);
+
+    let sum = 0;
+    const sequence = [];
+
+    for (let j = start; j <= end; j++) {
+      sequence.push(j);
+      sum += j;
+    }
+
+    console.log(sequence.join(" ") + " sum =" + sum);
+  }
+}
+
+// Test
+sumOfNumbers([5, 2, 5, 7, 5, -1]);
+```
+
+```js
+function sumOfNumbers(numbers) {
+  for (let i = 0; i < numbers.length; i += 2) {
+    const N = numbers[i];
+    const M = numbers[i + 1];
+
+    if (N <= 0 || M <= 0) break;
+
+    const start = Math.min(N, M);
+    const end = Math.max(N, M);
+    const len = end - start + 1;
+
+    const sequence = Array.from({ length: len }, (_, idx) => start + idx);
+    const sum = sequence.reduce((acc, val) => acc + val, 0);
+
+    console.log(sequence.join(" ") + " sum =" + sum);
+  }
+}
+```
+
+#### Sum of Consecutive Odd Numbers:
+
+Given two numbers X and Y. Print the sum of all odd numbers between them, excluding X and Y.
+
+| Input | Output |
+| ----- | ------ |
+| 3     |        |
+| 5 6   | 0      |
+| 10 4  | 21     |
+| 4 9   | 12     |
+
+My Solution: 
+
+```js
+function sumOfOddNumbers(N, ...numbers) {
+
+    for (let i = 0; i < N * 2 - 1; i = i + 2) {
+        let min = Math.min(numbers[i], numbers[i + 1])
+        let max = Math.max(numbers[i], numbers[i + 1])
+        let sum = 0
+
+        for (let j = min + 1; j <= max - 1; j++) {
+            if (j % 2 === 1) {
+                sum += j
+            }
+        }
+        console.log(sum)
+    }
+
+}
+
+sumOfOddNumbers(3, 5, 6, 10, 4, 4, 9);
+
+/*
+0
+21
+12
+*/
+```
+
+#### Some Sums:
+
+Given three numbers N, A, B. Print the summation of the numbers between 1 and N whose sum of digits is between A and B inclusive.
+
+| Input    | Output |
+| -------- | ------ |
+| 20 2 5   | 84     |
+| 10 1 2   | 13     |
+| 100 4 16 | 4554   |
+
+My Solution: 
+
+```js
+function sumOfDigits(N, A, B) {
+
+    let sum = 0
+
+    for (let i = 1; i <= N; i++) {
+        let sumOfDigits = 0;
+
+        let t = i
+
+        while (t !== 0) {
+            sumOfDigits += t % 10
+            t = Math.floor(t / 10)
+        }
+
+
+        for (let j = A; j <= B; j++) {
+            if (sumOfDigits === j) {
+                sum += i
+                break
+            }
+        }
+
+    }
+
+    console.log(sum)
+
+}
+
+sumOfDigits(20, 2, 5); // 84
+```
+
+Better Solution: 
+
+```js
+function sumOfDigits(N, A, B) {
+  let sum = 0;
+
+  for (let i = 1; i <= N; i++) {
+    let digitSum = 0;
+    let t = i;
+
+    while (t !== 0) {
+      digitSum += t % 10;
+      t = Math.floor(t / 10);
+    }
+
+    if (digitSum >= A && digitSum <= B) {
+      sum += i;
+    }
+  }
+
+  console.log(sum);
+}
+
+sumOfDigits(20, 2, 5); // 84
+```
+
+#### PUM:
+
+Given a number N. Print N lines that describes PUM game.
+
+But here’s the pattern:
+
+- The numbers are consecutive.
+- After every 3 numbers, you skip one number (that’s replaced by the word “PUM”).
+
+| Input | Output       |
+| ----- | ------------ |
+| 7     | 1 2 3 PUM    |
+|       | 5 6 7 PUM    |
+|       | 9 10 11 PUM  |
+|       | 13 14 15 PUM |
+|       | 17 18 19 PUM |
+|       | 21 22 23 PUM |
+|       | 25 26 27 PUM |
+| 3     | 1 2 3 PUM    |
+|       | 5 6 7 PUM    |
+|       | 9 10 11 PUM  |
+
+My Solution: 
+
+```js
+function printPum(N) {
+
+    let number = 0;
+
+    for (let i = 0; i < N; i++) {
+
+        const pumAry = []
+
+        for (let j = 1; j <= 4; j++) {
+            number++
+            pumAry.push(number)
+        }
+
+        pumAry[pumAry.length - 1] = "PUM"
+
+        console.log(pumAry.join(" "))
+    }
+}
+
+printPum(7);
+
+/*
+1 2 3 PUM
+5 6 7 PUM
+9 10 11 PUM
+13 14 15 PUM
+17 18 19 PUM
+21 22 23 PUM
+25 26 27 PUM
+*/
+```
+
+Better Solution: 
+
+```js
+function printPum(N) {
+    let num = 1;
+
+    for (let i = 0; i < N; i++) {
+        console.log(`${num} ${num + 1} ${num + 2} PUM`);
+        num += 4; // skip one number (3 printed + 1 skipped)
+    }
+}
+
+printPum(7);
+```
+
+```js
+function printPum(N) {
+  let num = 1;
+
+  for (let i = 0; i < N; i++) {
+    const line = Array.from({ length: 3 }, (_, j) => num + j).join(" ");
+    console.log(`${line} PUM`);
+    num += 4;
+  }
+}
+```
+
+```js
+const printPum = N => {
+  Array.from({ length: N }, (_, i) => {
+    const start = i * 4 + 1;
+    console.log(`${start} ${start + 1} ${start + 2} PUM`);
+  });
+};
+```
+
+#### Convert To Decimal 2:
+
+Given a number N. Print the result of doing the following operation on N:
+
+- Convert N to its binary representation.
+- Count number of ones in the above binary representation.
+- Print the equivalent decimal number that its binary representation has only the number of ones that were counted above. 
+
+For example: (10)decimal = (1010)binary has 2 ones "11", after converting "11" to decimal number it will become 3.
+
+Note: 
+
+Decimal to Binary: 29<sub>10</sub>
+
+![image](./images/problem-solving-loops/decimal-to-binary.png)
+
+Binary to Decimal: 11101<sub>2</sub>
+
+![image](./images/problem-solving-loops/binary-to-decimal.png)
+
+
+| Input | Output |
+| ----- | ------ |
+| 3     |        |
+| 10    | 3      |
+| 7     | 7      |
+| 8     | 1      |
+
+
+My Solution:
+
+```js
+function printDecimal(...numbers) {
+
+    for (let num of numbers) {
+        let temp = num;
+        let binary = []
+        while (temp !== 0) {
+            const remainder = temp % 2;
+            if (remainder === 1) {
+                binary.push(remainder)
+            }
+            temp = Math.floor(temp / 2)
+        }
+
+
+        let power = binary.length - 1
+        let sum = 0
+        for (let b of binary) {
+            sum += 2 ** power
+            power--;
+        }
+        console.log(sum)
+    }
+
+}
+
+printDecimal(10, 7, 8);
+
+/*
+3
+7
+1
+*/
+```
+
+Better Solution: 
+
+```js
+function printDecimal(...numbers) {
+  for (let num of numbers) {
+    const count = num.toString(2).split('1').length - 1; // count '1's
+    const result = parseInt('1'.repeat(count) || '0', 2); // convert back to decimal
+    console.log(result);
+  }
+}
+
+printDecimal(10, 7, 8);
+/*
+3
+7
+1
+*/
+```
+
+| Expression        | Meaning                          | Example Output   |
+| ----------------- | -------------------------------- | ---------------- |
+| `num.toString(2)` | Convert to binary string         | `"1010"`         |
+| `.split('1')`     | Split by `'1'` → removes `'1's`  | `["", "0", "0"]` |
+| `.length - 1`     | Count how many `'1's` were found | `2`              |
+
+
+#### Easy Fibonacci:
+
+Given a number N. Print first N numbers of the Fibonacci sequence.
+
+Note: In order to create the Fibonacci sequence use the following function:
+- fib(1) = 0.
+- fib(2) = 1.
+- Then: fib(n) = fib(n - 1) + fib(n - 2). (fib(3) = fib(3 -1 ) + fib(3 - 2) = fib(2) + fib(1) = 1 + 0 = 1 )
+
+| Input | Output |
+| ----- | ------ |
+| 7     | 0      |
+|       | 1      |
+|       | 1      |
+|       | 2      |
+|       | 3      |
+|       | 5      |
+|       | 8      |
+
+My Solution: 
+
+```js
+function printFibonacci(N) {
+
+    const fib = [0, 1]
+
+    for (let i = 2; i < N; i++) {
+        let fib1 = fib[fib.length - 2]
+        let fib2 = fib[fib.length - 1]
+
+        fib.push(fib2 + fib1)
+    }
+    console.log(fib.join(" "))
+}
+
+printFibonacci(7);
+
+/*
+0 1 1 2 3 5 8
+*/
+
+```
+Better Solution: 
+
+```js
+function printFibonacci(N) {
+  const fib = [0, 1];
+
+  for (let i = 2; i < N; i++) {
+    fib.push(fib[i - 1] + fib[i - 2]);
+  }
+
+  console.log(fib.join(" "));
+}
+
+printFibonacci(7);
+```
+
+```js
+function printFibonacci(N) {
+  let a = 0, b = 1;
+
+  for (let i = 1; i <= N; i++) {
+    console.log(a);
+    const next = a + b;
+    a = b;
+    b = next;
+  }
+}
+
+printFibonacci(7);
+```
+
+#### Three Numbers:
+
+Given two numbers K and S. Determine how many different values of X,Y and Z such that (0 ≤ X,Y,Z ≤ K) and X+Y+Z=S.
+
+| Input | Output |
+| ----- | ------ |
+| 2 1   | 3      |
+| 9 4   | 15     |
+
+
+Solutions: 
+
+```js
+function matchCombinator(k, s) {
+    let count = 0;
+
+    for (let x = 0; x <= k; x++) {
+        for (let y = 0; y <= k; y++) {
+            const z = s - (x + y)
+
+            if (z >= 0 && z <= k) {
+                count++;
+            }
+        }
+    }
+    console.log(count)
+
+}
+
+matchCombinator(2, 1) // 3
+```
+
+Explanation: 
+
+| X (outer loop)    | Y (inner loop) | Z = 1 - (X + Y)  | z >= 0 && z <= k           | count = 0; |
+| ----------------- | -------------- | ---------------- | -------------------------- | ---------- |
+| 0 (1st iteration) | 0              | 1 = 1 - (0 + 0)  | (1 >= 0 && 1 <= 2) count++ | count = 1  |
+|                   | 1              | 0 = 1 - (0 + 1)  | (0 >= 0 && 0 <= 2) count++ | count = 2  |
+|                   | 2              | -1 = 1 - (0 + 2) | (-1 >= 0 && -1 <= 2)       |            |
+|                   |                |                  |                            |            |
+| 1 (2nd iteration) | 0              | 0 = 1 - (1 + 0)  | (0 >= 0 && 0 <= 2) count++ | count = 3  |
+|                   | 1              | -1 = 1 - (1 + 1) | (-1 >= 0 && -1 <= 2)       |            |
+|                   | 2              | -2 = 1 - (1 + 2) | (-2 >= 0 && -2 <= 2)       |            |
+|                   |                |                  |                            |            |
+| 2 (3rd iteration) | 0              | -1 = 1 - (2 + 0) | (-1 >= 0 && -1 <= 2)       |            |
+|                   | 1              | -2 = 1 - (2 + 1) | (-2 >= 0 && -2 <= 2)       |            |
+|                   | 2              | -3 = 1 - (2 + 2) | (-3 >= 0 && -3 <= 2)       |            |
+
+
+```js
+function matchCombinatorTripleLoop(K, S) {
+    let count = 0;
+
+    for (let x = 0; x <= K; x++) {
+        for (let y = 0; y <= K; y++) {
+            for (let z = 0; z <= K; z++) {
+                if (x + y + z === S) count++;
+            }
+        }
+    }
+
+    console.log(count);
+}
+
+matchCombinatorTripleLoop(2, 1); // 3
+```
+
