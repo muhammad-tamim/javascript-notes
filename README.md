@@ -142,6 +142,7 @@
     - [Character Classes \[ \]:](#character-classes--)
     - [Metacharacters:](#metacharacters)
     - [Assertions:](#assertions)
+    - [Groups:](#groups)
 - [Part 2: DOM](#part-2-dom)
   - [Introduction To the DOM](#introduction-to-the-dom)
     - [DOM Collection:](#dom-collection)
@@ -9626,6 +9627,61 @@ let text = "Hello W3Schools";
 let pattern = /(?<!Hello )W3Schools/;
 let result = pattern.test(text);
 console.log(result) // false
+```
+
+### Groups:
+A group allows you to treat multiple characters as a single unit.
+
+
+```js
+const regex = /(ab)/g;
+
+console.log('abab'.match(regex)); // [ 'ab', 'ab' ]
+```
+
+- capturing gropu:
+
+```js
+const regex = /(\w+)@(\w+)\.(\w+)/;
+const text = "My email is test@gmail.com";
+
+console.log(text.match(regex)[0]); // test@gmail.com
+```
+
+```js
+const result = "2025-01-02".match(/(\d{4})-(\d{2})-(\d{2})/);
+
+console.log(result[0]) // 2025-01-02
+console.log(result[1]); // 2025
+console.log(result[2]); // 01
+console.log(result[3]); // 02
+```
+
+```js
+const text = "2025-01-02";
+const regex = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/;
+
+const result = text.match(regex);
+
+console.log(result.groups.year); // 2025
+console.log(result.groups.month); // 01
+console.log(result.groups.day); // 02
+```
+
+- non-capturing gropus: Sometimes you need grouping without capturing
+
+```js
+const text = "cat cats";
+const regex = /cat(?:s)?/g;
+
+console.log(text.match(regex)); // ['cat', 'cats']
+```
+- Alternation `|`
+
+Acts like logical OR.
+
+```js
+console.log(/(cat|dog)/.test("dog")); // true
 ```
 
 # Part 2: DOM

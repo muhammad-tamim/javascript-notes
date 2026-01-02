@@ -1,5 +1,4 @@
-let text = "Haha, haha, haha.";
-const pattern = /(haha)+/;
+const text = "cat cats";
+const regex = /cat(?:s)?/g;
 
-let result = text.match(pattern);
-console.log(result) // false
+console.log(text.match(regex)); // ['cat', 'cats']
