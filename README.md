@@ -143,6 +143,7 @@
     - [Metacharacters:](#metacharacters)
     - [Assertions:](#assertions)
     - [Groups:](#groups)
+    - [Quantifiers:](#quantifiers)
 - [Part 2: DOM](#part-2-dom)
   - [Introduction To the DOM](#introduction-to-the-dom)
     - [DOM Collection:](#dom-collection)
@@ -9682,6 +9683,41 @@ Acts like logical OR.
 
 ```js
 console.log(/(cat|dog)/.test("dog")); // true
+```
+
+### Quantifiers:
+Quantifiers define the numbers of characters or expressions to match.
+
+| Quantifier | Meaning         |
+| ---------- | --------------- |
+| *          | 0 or more       |
+| +          | 1 or more       |
+| ?          | 0 or 1          |
+| {n}        | Exactly n       |
+| {n,}       | At least n      |
+| {n,m}      | Between n and m |
+
+
+```js
+console.log(/a*/.test("")); // true
+console.log(/a+/.test("aaa")); // true
+console.log(/a{2}/.test("aa")); // true
+```
+
+```js
+let text = "Hellooo World! Hello W3Schools!";
+const pattern = /lo+/g;
+
+let result = text.match(pattern);
+console.log(result) // [ 'looo', 'lo' ]
+```
+
+```js
+let text = "Hellooo World! Hello W3Schools!";
+const pattern = /lo*/g;
+
+let result = text.match(pattern);
+console.log(result) // [ 'l', 'looo', 'l', 'l', 'lo', 'l' ]
 ```
 
 # Part 2: DOM

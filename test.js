@@ -1,4 +1,5 @@
-const text = "cat cats";
-const regex = /cat(?:s)?/g;
+let text = "Hellooo World! Hello W3Schools!";
+const pattern = /lo*/g;
 
-console.log(text.match(regex)); // ['cat', 'cats']
+let result = text.match(pattern);
+console.log(result) // [ 'l', 'looo', 'l', 'l', 'lo', 'l' ]
