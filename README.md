@@ -141,6 +141,7 @@
     - [Methods:](#methods)
     - [Character Classes \[ \]:](#character-classes--)
     - [Metacharacters:](#metacharacters)
+    - [Assertions:](#assertions)
 - [Part 2: DOM](#part-2-dom)
   - [Introduction To the DOM](#introduction-to-the-dom)
     - [DOM Collection:](#dom-collection)
@@ -9511,6 +9512,120 @@ const pattern = /\W/g;
 
 let result = text.match(pattern);
 console.log(result) // [ ' ', '%', '!' ]
+```
+
+### Assertions:
+Regular Expression assertions test whether a specific condition is true at a certain position in the string, without including any characters in the match.
+
+- ^	(String boundary) Matches the beginning of a string
+- $	(String boundary) Matches the end of a string
+- \b (Word boundary) Matches the beginning or end of a word
+- \B (Word boundary) Matches NOT the beginning or end of a word
+- (?=...) (Lookahead) Matches the subsequent string
+- (?!...) (Lookahead) Matches NOT the subsequent string
+- (?<=...) (Lookbehind) Matches the previous string
+- (?<!...) (Lookbehind)	Matches NOT the previous string
+
+examples:
+
+```js
+const pattern = /^W3Schools/;
+let text = "W3Schools Tutorial";
+
+let result = pattern.test(text);
+console.log(result) // true
+```
+
+```js
+const pattern = /^W3Schools/;
+let text = "Hello W3Schools";
+
+let result = pattern.test(text);
+console.log(result) // false
+```
+
+```js
+const pattern = /W3Schools$/;
+let text = "Hello W3Schools";
+
+let result = pattern.test(text);
+console.log(result) // true
+```
+
+```js
+const pattern = /W3Schools$/;
+let text = "W3Schools tutorial";
+
+let result = pattern.test(text);
+console.log(result) // false
+```
+
+```js
+let text = "HELLO, LOOK AT YOU!";
+
+let result = text.search(/\bLO/);
+console.log(result) // 7
+
+/*
+Index:  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+Text :  H E L L O ,   L O  O  K     A  T     Y  O  U  !
+*/
+```
+
+```js
+let text = "HELLO, LOOK AT YOU!";
+
+let result = text.search(/LO\b/);
+console.log(result) // 3
+
+/*
+Index:  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+Text :  H E L L O ,   L O  O  K     A  T     Y  O  U  !
+*/
+```
+
+Match "W3schools" if "W3Schools" is followed by " Tutorials":
+
+```js
+let text = "W3Schools Tutorials";
+let pattern = /W3Schools(?= Tutorials)/;
+
+let result = pattern.test(text);
+console.log(result) // true
+```
+
+```js
+let text = "W3Schools Tutorials";
+
+let pattern = /W3Schools(?! Tutorials)/;
+let result = pattern.test(text);
+console.log(result) // false
+```
+
+```js
+let text = "W3Schools world";
+
+let pattern = /W3Schools(?! Tutorials)/;
+let result = pattern.test(text);
+console.log(result) // true
+```
+
+Match "W3Scools" if "W3Schools" is preceded by "Hello ":
+
+```js
+let text = "Hello W3Schools";
+let pattern = /(?<=Hello )W3Schools/;
+
+let result = pattern.test(text);
+console.log(result) // true
+```
+
+```js
+let text = "Hello W3Schools";
+
+let pattern = /(?<!Hello )W3Schools/;
+let result = pattern.test(text);
+console.log(result) // false
 ```
 
 # Part 2: DOM

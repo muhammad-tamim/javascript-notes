@@ -1,5 +1,5 @@
-let text = "Give 100%!";
-const pattern = /\W/g;
+let text = "Haha, haha, haha.";
+const pattern = /(haha)+/;
 
 let result = text.match(pattern);
-console.log(result) // ['G', 'i', 'v', 'e', ' ', '%', '!']
+console.log(result) // false
