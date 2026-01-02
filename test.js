@@ -1,5 +1,8 @@
-let text = "Hellooo World! Hello W3Schools!";
-const pattern = /lo*/g;
+function summation(arr) {
+    return Math.abs(
+        arr.reduce((sum, element) => sum + element, 0)
+    );
+}
 
-let result = text.match(pattern);
-console.log(result) // [ 'l', 'looo', 'l', 'l', 'lo', 'l' ]
+console.log(summation([7, 2, 1, 3]));   // 13
+console.log(summation([-1, 2, -3]));   // 2

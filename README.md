@@ -279,6 +279,8 @@
       - [Convert To Decimal 2:](#convert-to-decimal-2)
       - [Easy Fibonacci:](#easy-fibonacci)
       - [Three Numbers:](#three-numbers)
+  - [Arrays:](#arrays)
+      - [Summation:](#summation)
 
 ---
 
@@ -13340,3 +13342,46 @@ function matchCombinatorTripleLoop(K, S) {
 matchCombinatorTripleLoop(2, 1); // 3
 ```
 
+
+## Arrays:
+
+#### Summation:
+Given a array of numbers. Print the absolute summation of these numbers.
+
+absolute value : means to remove any negative sign in front of a number. EX: |-5| = 5 , |7| = 7
+
+| Input   | Output |
+| ------- | ------ |
+| 7 2 1 3 | 13     |
+| -1 2 -3 | 2      |
+
+Note: -1 + 2 + -3 = -2 and it absolute is 2 so the answer is 2.
+
+My Solution: 
+
+```js
+function summation(arr) {
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return Math.abs(sum);
+}
+
+console.log(summation([7, 2, 1, 3])) // 13
+console.log(summation([-1, 2, -3])) // 2
+```
+
+Better Solution: 
+
+````js
+function summation(arr) {
+    return Math.abs(
+        arr.reduce((sum, element) => sum + element, 0)
+    );
+}
+
+console.log(summation([7, 2, 1, 3]));   // 13
+console.log(summation([-1, 2, -3]));   // 2
+```
