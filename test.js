@@ -1,8 +1,7 @@
-function summation(arr) {
-    return Math.abs(
-        arr.reduce((sum, element) => sum + element, 0)
-    );
+function findIdx(arr, X) {
+    return arr.findIndex(element => element === X);
 }
 
-console.log(summation([7, 2, 1, 3]));   // 13
-console.log(summation([-1, 2, -3]));   // 2
+console.log(findIdx([3, 0, 1], 0)); // 1
+console.log(findIdx([1, 3, 0, 4, 5], 10)); // -1
+console.log(findIdx([2, 3, 2, 1], 2)); // 0

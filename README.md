@@ -281,6 +281,7 @@
       - [Three Numbers:](#three-numbers)
   - [Arrays:](#arrays)
       - [Summation:](#summation)
+      - [Searching:](#searching)
 
 ---
 
@@ -13375,7 +13376,7 @@ console.log(summation([-1, 2, -3])) // 2
 
 Better Solution: 
 
-````js
+```js
 function summation(arr) {
     return Math.abs(
         arr.reduce((sum, element) => sum + element, 0)
@@ -13384,4 +13385,59 @@ function summation(arr) {
 
 console.log(summation([7, 2, 1, 3]));   // 13
 console.log(summation([-1, 2, -3]));   // 2
+```
+
+#### Searching:
+Given an array of numbers. Determine if the number X exists in array or not and print its position (0-index). Print the position of X in the first time you find it. If it doesn't exist print -1.
+
+Note: X may be found once or more than once and may not be found.
+
+| Input     | Output |
+| --------- | ------ |
+| 3 0 1     | 1      |
+| 0         |        |
+|           |        |
+| 1 3 0 4 5 | -1     |
+| 10        |        |
+|           |        |
+| 2 3 2 1   | 0      |
+| 2         |        |
+
+
+My Solution: 
+
+```js
+function findIdx(arr, X) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === X) {
+            return i
+        }
+    }
+    return -1;
+}
+console.log(findIdx([3, 0, 1], 0)); // 1
+console.log(findIdx([1, 3, 0, 4, 5], 10)); // -1
+console.log(findIdx([2, 3, 2, 1], 2)); // 0
+```
+
+Better Solutions: 
+
+```js
+function findIdx(arr, X) {
+    return arr.indexOf(X);
+}
+
+console.log(findIdx([3, 0, 1], 0)); // 1
+console.log(findIdx([1, 3, 0, 4, 5], 10)); // -1
+console.log(findIdx([2, 3, 2, 1], 2)); // 0
+```
+
+```js
+function findIdx(arr, X) {
+    return arr.findIndex(element => element === X);
+}
+
+console.log(findIdx([3, 0, 1], 0)); // 1
+console.log(findIdx([1, 3, 0, 4, 5], 10)); // -1
+console.log(findIdx([2, 3, 2, 1], 2)); // 0
 ```
