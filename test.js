@@ -1,4 +1,4 @@
-function reversingArray(arr) {
+function palindromeOrNot(arr) {
 
     const reverseArr = []
 
@@ -6,9 +6,26 @@ function reversingArray(arr) {
         reverseArr.push(arr[i])
     }
 
-    return reverseArr
+    let isPalindrome = false
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === reverseArr[i]) {
+            isPalindrome = true
+        }
+        else {
+            isPalindrome = false
+            break
+        }
+    }
+
+    if (isPalindrome) {
+        return console.log("YES")
+    }
+    else {
+        return console.log("NO")
+    }
 
 }
 
-console.log(reversingArray([5, 1, 3, 2]).join(" ")); // 2 3 1 5
-console.log(reversingArray([1, 2, 3, 4, 5]).join(" ")); // 5 4 3 2 1
+palindromeOrNot([1, 3, 2, 3, 1]); // YES
+palindromeOrNot([1, 2, 3, 4,]); // NO

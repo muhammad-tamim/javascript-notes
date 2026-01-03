@@ -286,6 +286,7 @@
       - [Positions in array:](#positions-in-array)
       - [Lowest Number:](#lowest-number)
       - [Reversing:](#reversing)
+      - [Palindrome Array:](#palindrome-array)
 
 ---
 
@@ -13658,3 +13659,95 @@ function reverseArray(arr) {
 console.log(reversingArray([5, 1, 3, 2]).join(" ")); // 2 3 1 5
 console.log(reversingArray([1, 2, 3, 4, 5]).join(" ")); // 5 4 3 2 1 
 ```
+
+#### Palindrome Array:
+Given an array of numbers. Determine if it's palindrome or not.
+
+Note:
+An array is called palindrome if it reads the same backward and forward, for example, arrays { 1 } and { 1,2,3,2,1 } are palindromes, while arrays { 1,12 } and { 4,7,5,4 } are not.
+
+| Input     | Output |
+| --------- | ------ |
+| 1 3 2 3 1 | YES    |
+| 1 2 3 4   | NO     |
+
+My Solution: 
+
+```js
+function palindromeOrNot(arr) {
+
+    const reverseArr = []
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reverseArr.push(arr[i])
+    }
+
+    let isPalindrome = false
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === reverseArr[i]) {
+            isPalindrome = true
+        }
+        else {
+            isPalindrome = false
+            break
+        }
+    }
+
+    if (isPalindrome) {
+        return console.log("YES")
+    }
+    else {
+        return console.log("NO")
+    }
+
+}
+
+palindromeOrNot([1, 3, 2, 3, 1]); // YES
+palindromeOrNot([1, 2, 3, 4,]); // NO
+```
+
+Better Soluitons: 
+
+```js
+function isPalindrome(arr) {
+    const reversed = [];
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reversed.push(arr[i]);
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== reversed[i]) {
+            return "NO";
+        }
+    }
+
+    return "YES";
+}
+
+console.log(isPalindrome([1, 3, 2, 3, 1])); // YES
+console.log(isPalindrome([1, 2, 3, 4]));    // NO
+```
+
+```js
+function isPalindrome(arr) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left < right) {
+        if (arr[left] !== arr[right]) {
+            return "NO";
+        }
+        left++;
+        right--;
+    }
+
+    return "YES";
+}
+
+console.log(isPalindrome([1, 3, 2, 3, 1])); // YES
+console.log(isPalindrome([1, 2, 3, 4]));    // NO
+```
+
+
