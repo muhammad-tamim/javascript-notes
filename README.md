@@ -284,6 +284,7 @@
       - [Searching:](#searching)
       - [Replacement:](#replacement)
       - [Positions in array:](#positions-in-array)
+      - [Lowest Number:](#lowest-number)
 
 ---
 
@@ -13549,4 +13550,57 @@ A[0] = 1
 A[1] = 2
 A[3] = 0
 */
+```
+
+#### Lowest Number:
+Given an array of numbers. Print the lowest number and its position (1 index).
+
+Note: if there are more than one answer print first one's position.
+
+| Input     | Output |
+| --------- | ------ |
+| 1 2 3     | 1 1    |
+| 5 6 2 3 2 | 2 3    |
+
+My Solution: 
+
+```js
+function findLowestNumberAndPosition(arr) {
+    let lowestNumber = arr[0]
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] <= lowestNumber) {
+            lowestNumber = arr[i]
+        }
+    }
+
+    const lowestIndex = arr.indexOf(lowestNumber) + 1
+
+    console.log(lowestNumber, lowestIndex)
+}
+
+
+findLowestNumberAndPosition([1, 2, 3]); // 1 1
+findLowestNumberAndPosition([5, 6, 2, 3, 2]); // 2 3
+```
+
+Better Solutions: 
+
+```js
+function findLowestNumberAndPosition(arr) {
+    let min = arr[0];
+    let position = 1; // 1-based index
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+            position = i + 1;
+        }
+    }
+
+    console.log(min, position);
+}
+
+findLowestNumberAndPosition([1, 2, 3]);       // 1 1
+findLowestNumberAndPosition([5, 6, 2, 3, 2]); // 2 3
 ```
