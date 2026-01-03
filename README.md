@@ -282,7 +282,8 @@
   - [Arrays:](#arrays)
       - [Summation:](#summation)
       - [Searching:](#searching)
-      - [Replacement](#replacement)
+      - [Replacement:](#replacement)
+      - [Positions in array:](#positions-in-array)
 
 ---
 
@@ -13443,7 +13444,7 @@ console.log(findIdx([1, 3, 0, 4, 5], 10)); // -1
 console.log(findIdx([2, 3, 2, 1], 2)); // 0
 ```
 
-#### Replacement
+#### Replacement:
 Given an array A of N numbers. Print the array after doing the following operations:
 - Replace every positive number by 1.
 - Replace every negative number by 2.
@@ -13499,4 +13500,53 @@ function replacePosAndNeg(arr) {
 }
 
 console.log(replacePosAndNeg([1, -2, 0, 3, 4])); // [ 1, 2, 0, 1, 1 ]
+```
+
+#### Positions in array:
+Given an array A of N numbers. Print all array positions that store a number less than or equal to 10 and the number stored in that position.
+
+| Input        | Output   |
+| ------------ | -------- |
+| 1 2 100 0 30 | A[0] = 1 |
+|              | A[1] = 2 |
+|              | A[3] = 0 |
+
+My Solution: 
+
+```js
+function printPositions(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] <= 10) {
+            console.log(`A[${i}] = ${arr[i]}`)
+        }
+    }
+}
+
+printPositions([1, 2, 100, 0, 30]);
+
+/*
+A[0] = 1
+A[1] = 2
+A[3] = 0
+*/
+```
+
+Better Solutions:
+
+```js
+function printPositions(arr) {
+    arr.forEach((value, index) => {
+        if (value <= 10) {
+            console.log(`A[${index}] = ${value}`);
+        }
+    });
+}
+
+printPositions([1, 2, 100, 0, 30]);
+
+/*
+A[0] = 1
+A[1] = 2
+A[3] = 0
+*/
 ```
