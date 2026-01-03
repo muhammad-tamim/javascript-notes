@@ -282,6 +282,7 @@
   - [Arrays:](#arrays)
       - [Summation:](#summation)
       - [Searching:](#searching)
+      - [Replacement](#replacement)
 
 ---
 
@@ -13440,4 +13441,62 @@ function findIdx(arr, X) {
 console.log(findIdx([3, 0, 1], 0)); // 1
 console.log(findIdx([1, 3, 0, 4, 5], 10)); // -1
 console.log(findIdx([2, 3, 2, 1], 2)); // 0
+```
+
+#### Replacement
+Given an array A of N numbers. Print the array after doing the following operations:
+- Replace every positive number by 1.
+- Replace every negative number by 2.
+ 
+| Input      | Output    |
+| ---------- | --------- |
+| 1 -2 0 3 4 | 1 2 0 1 1 |
+
+My Solution: 
+
+```js
+function replacePosAndNeg(arr) {
+    let result = []
+
+    for (let element of arr) {
+        if (element > 0) {
+            result.push(1)
+        }
+        else if (element < 0) {
+            result.push(2)
+        }
+        else {
+            result.push(element)
+        }
+    }
+    return result
+}
+
+console.log(replacePosAndNeg([1, -2, 0, 3, 4])); // [ 1, 2, 0, 1, 1 ]
+```
+
+Better Solutions: 
+
+```js
+function replacePosAndNeg(arr) {
+    return arr.map(num => {
+        if (num > 0) return 1;
+        if (num < 0) return 2;
+        return 0;
+    });
+}
+
+console.log(replacePosAndNeg([1, -2, 0, 3, 4])); // [ 1, 2, 0, 1, 1 ]
+```
+
+```js
+function replacePosAndNeg(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) arr[i] = 1;
+        else if (arr[i] < 0) arr[i] = 2;
+    }
+    return arr;
+}
+
+console.log(replacePosAndNeg([1, -2, 0, 3, 4])); // [ 1, 2, 0, 1, 1 ]
 ```

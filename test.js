@@ -1,7 +1,9 @@
-function findIdx(arr, X) {
-    return arr.findIndex(element => element === X);
+function replacePosAndNeg(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) arr[i] = 1;
+        else if (arr[i] < 0) arr[i] = 2;
+    }
+    return arr;
 }
 
-console.log(findIdx([3, 0, 1], 0)); // 1
-console.log(findIdx([1, 3, 0, 4, 5], 10)); // -1
-console.log(findIdx([2, 3, 2, 1], 2)); // 0
+console.log(replacePosAndNeg([1, -2, 0, 3, 4])); // [ 1, 2, 0, 1, 1 ]
