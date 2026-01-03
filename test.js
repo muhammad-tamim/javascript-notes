@@ -1,17 +1,14 @@
-function findLowestNumberAndPosition(arr) {
-    let lowestNumber = arr[0]
+function reversingArray(arr) {
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] <= lowestNumber) {
-            lowestNumber = arr[i]
-        }
+    const reverseArr = []
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reverseArr.push(arr[i])
     }
 
-    const lowestIndex = arr.indexOf(lowestNumber) + 1
+    return reverseArr
 
-    console.log(lowestNumber, lowestIndex)
 }
 
-
-findLowestNumberAndPosition([1, 2, 3]); // 1 1
-findLowestNumberAndPosition([5, 6, 2, 3, 2]); // 2 3
+console.log(reversingArray([5, 1, 3, 2]).join(" ")); // 2 3 1 5
+console.log(reversingArray([1, 2, 3, 4, 5]).join(" ")); // 5 4 3 2 1

@@ -285,6 +285,7 @@
       - [Replacement:](#replacement)
       - [Positions in array:](#positions-in-array)
       - [Lowest Number:](#lowest-number)
+      - [Reversing:](#reversing)
 
 ---
 
@@ -13603,4 +13604,57 @@ function findLowestNumberAndPosition(arr) {
 
 findLowestNumberAndPosition([1, 2, 3]);       // 1 1
 findLowestNumberAndPosition([5, 6, 2, 3, 2]); // 2 3
+```
+
+#### Reversing:
+Given an array of numbers. Print the array in a reversed order.
+
+Note:
+*Don't use built-in-functions.
+
+| Input     | Output    |
+| --------- | --------- |
+| 5 1 3 2   | 2 3 1 5   |
+| 1 2 3 4 5 | 5 4 3 2 1 |
+
+My Solution: 
+
+```js
+function reversingArray(arr) {
+
+    const reverseArr = []
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reverseArr.push(arr[i])
+    }
+
+    return reverseArr
+
+}
+
+console.log(reversingArray([5, 1, 3, 2]).join(" ")); // 2 3 1 5
+console.log(reversingArray([1, 2, 3, 4, 5]).join(" ")); // 5 4 3 2 1
+```
+
+Better Solutions:
+
+```js
+function reverseArray(arr) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left < right) {
+        const temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+
+        left++;
+        right--;
+    }
+
+    return arr;
+}
+
+console.log(reversingArray([5, 1, 3, 2]).join(" ")); // 2 3 1 5
+console.log(reversingArray([1, 2, 3, 4, 5]).join(" ")); // 5 4 3 2 1 
 ```
