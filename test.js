@@ -1,23 +1,19 @@
-function findSmallestResult(T, N, A) {
+function findLuckyArray(arr) {
+    let min = arr[0];
+    let count = 1;
 
-    let resultArr = []
-
-    for (let i = T - 1; i < N - 1; i++) {
-        for (let j = i + 1; j < N; j++) {
-            const result = A[i] + A[j] + (j - i)
-            resultArr.push(result)
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+            count = 1;
+        } else if (arr[i] === min) {
+            count++;
         }
     }
 
-    let smallestResult = resultArr[0]
-
-    for (let result of resultArr) {
-        if (smallestResult >= result) {
-            smallestResult = result
-        }
-    }
-
-    console.log(smallestResult)
+    console.log(count % 2 ? "Lucky" : "Unlucky");
 }
 
-findSmallestResult(1, 4, [20, 1, 9, 4]) // 7
+
+findLuckyArray([8, 8, 9, 5, 9]) // Lucky
+findLuckyArray([3, 3, 3, 5, 3]) // Unlucky
