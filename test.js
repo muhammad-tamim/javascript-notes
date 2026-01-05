@@ -1,19 +1,23 @@
-function findLuckyArray(arr) {
-    let min = arr[0];
-    let count = 1;
+function findMaxSubArray(arr) {
+    let output = "";
 
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] < min) {
-            min = arr[i];
-            count = 1;
-        } else if (arr[i] === min) {
-            count++;
+    for (let i = 0; i < arr.length; i++) {
+
+        // max of current sub-array
+        let currentMax = arr[i];
+
+        for (let j = i; j < arr.length; j++) {
+
+            if (arr[j] > currentMax) {
+                currentMax = arr[j];
+            }
+
+            output += currentMax + " ";
         }
     }
 
-    console.log(count % 2 ? "Lucky" : "Unlucky");
+    console.log(output.trim());
 }
 
-
-findLuckyArray([8, 8, 9, 5, 9]) // Lucky
-findLuckyArray([3, 3, 3, 5, 3]) // Unlucky
+findMaxSubArray([1, 6, 3, 7]); // 1 6 6 7 6 6 7 3 7 7
+findMaxSubArray([3, 1, 2]);   // 3 3 3 1 2 2
