@@ -287,6 +287,7 @@
       - [Lowest Number:](#lowest-number)
       - [Reversing:](#reversing)
       - [Palindrome Array:](#palindrome-array)
+      - [Sorting:](#sorting)
 
 ---
 
@@ -13751,3 +13752,66 @@ console.log(isPalindrome([1, 2, 3, 4]));    // NO
 ```
 
 
+#### Sorting:
+Given an array of numbers. Print the numbers after sorting them.
+
+Note:
+- Don't use built-in-functions.
+- try to solve it with bubble sort algorithm or Selection Sort.
+
+| Input   | Output  |
+| ------- | ------- |
+| 3 1 2   | 1 2 3   |
+| 5 2 7 3 | 2 3 5 7 |
+
+
+My Solutions:
+
+- bubble sort:
+ 
+```js
+function bubbleSortAscending(arr) {
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // swap
+                let temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
+    }
+    console.log(arr)
+}
+
+bubbleSortAscending([3, 1, 2]) // [1, 2, 3]
+bubbleSortAscending([5, 2, 7, 3]) // [2, 3, 5, 7]
+```
+
+- selection sort:
+
+```js
+function selectionSortAscending(arr) {
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        let minIndex = i;
+
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        // swap
+        let temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+
+    console.log(arr); // [1, 2, 4, 5]
+}
+
+selectionSortAscending([3, 1, 2]) // [1, 2, 3]
+selectionSortAscending([5, 2, 7, 3]) // [2, 3, 5, 7]
+```
