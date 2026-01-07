@@ -291,6 +291,7 @@
       - [Lucky Array:](#lucky-array)
       - [Max Subarray:](#max-subarray)
       - [Replace MinMax:](#replace-minmax)
+      - [Check Code:](#check-code)
 
 ---
 
@@ -14048,4 +14049,70 @@ function replaceMinMax(arr) {
 }
 
 replaceMinMax([4, 1, 3, 10, 8]); // [4, 10, 3, 1, 8]
+```
+
+#### Check Code:
+Given two numbers A, B and a code S consisting of digits (0,1,2,...,9) and a symbol '-'. Determine if the code follows the following rules or not:
+- The position A + 1 in the code is the symbol '-'.
+- All other characters are one of the following digits: (0,1,2,...,9).
+
+| Input   | Output |
+| ------- | ------ |
+| 3 3     |        |
+| 269-665 | Yes    |
+| 1 1     |        |
+| 12-     | No     |
+| 1 2     |        |
+| 7444    | No     |
+
+My Solution: 
+
+```js
+function checkCode(A, B, arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (i === A) {
+            if (arr[i] !== '-') {
+                console.log("No");
+                return;
+            }
+        } else {
+            if (!(arr[i] >= 0 && arr[i] <= 9)) {
+                console.log("No");
+                return;
+            }
+        }
+    }
+
+    console.log("Yes");
+}
+
+checkCode(3, 3, [2, 6, 9, '-', 6, 6, 5]); // Yes
+checkCode(1, 1, [1, 2, '-']);            // No
+checkCode(1, 2, [7, 4, 4, 4]);            // No
+```
+
+```js
+function checkCode(A, B, arr) {
+    // Rule 1: dash position
+    if (arr[A] !== '-') {
+        console.log("No");
+        return;
+    }
+
+    // Rule 2: all others must be digits
+    for (let i = 0; i < arr.length; i++) {
+        if (i === A) continue;
+
+        if (!(arr[i] >= 0 && arr[i] <= 9)) {
+            console.log("No");
+            return;
+        }
+    }
+
+    console.log("Yes");
+}
+
+checkCode(3, 3, [2, 6, 9, '-', 6, 6, 5]); // Yes
+checkCode(1, 1, [1, 2, '-']);            // No
+checkCode(1, 2, [7, 4, 4, 4]);            // No
 ```
