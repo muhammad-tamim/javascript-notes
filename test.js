@@ -1,23 +1,23 @@
-function findMaxSubArray(arr) {
-    let output = "";
+function findMinAndMax(arr) {
+    let min = arr[0]
+    let max = arr[0]
 
     for (let i = 0; i < arr.length; i++) {
-
-        // max of current sub-array
-        let currentMax = arr[i];
-
-        for (let j = i; j < arr.length; j++) {
-
-            if (arr[j] > currentMax) {
-                currentMax = arr[j];
-            }
-
-            output += currentMax + " ";
+        if (arr[i] < min) {
+            min = arr[i]
+        }
+        if (arr[i] > max) {
+            max = arr[i]
         }
     }
 
-    console.log(output.trim());
+    const minIdx = arr.indexOf(min)
+    const maxIdx = arr.indexOf(max)
+
+    arr[minIdx] = max
+    arr[maxIdx] = min
+
+    console.log(arr)
 }
 
-findMaxSubArray([1, 6, 3, 7]); // 1 6 6 7 6 6 7 3 7 7
-findMaxSubArray([3, 1, 2]);   // 3 3 3 1 2 2
+findMinAndMax([4, 1, 3, 10, 8]); // [4, 10, 3, 1, 8]

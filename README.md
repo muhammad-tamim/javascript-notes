@@ -290,6 +290,7 @@
       - [Sorting:](#sorting)
       - [Lucky Array:](#lucky-array)
       - [Max Subarray:](#max-subarray)
+      - [Replace MinMax:](#replace-minmax)
 
 ---
 
@@ -13978,4 +13979,73 @@ function findMaxSubArray(arr) {
 
 findMaxSubArray([1, 6, 3, 7]); // 1 6 6 7 6 6 7 3 7 7
 findMaxSubArray([3, 1, 2]);   // 3 3 3 1 2 2
+```
+
+#### Replace MinMax:
+Given an array of numbers. Print the array after doing the following operations:
+- Find minimum number in these numbers.
+- Find maximum number in these numbers.
+- Swap minimum number with maximum number.
+
+| Input      | Output     |
+| ---------- | ---------- |
+| 4 1 3 10 8 | 4 10 3 1 8 |
+
+My Solutions:
+
+```js
+function findMinAndMax(arr) {
+    let min = arr[0]
+    let max = arr[0]
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i]
+        }
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+
+    const minIdx = arr.indexOf(min)
+    const maxIdx = arr.indexOf(max)
+
+    arr[minIdx] = max
+    arr[maxIdx] = min
+
+    console.log(arr)
+}
+
+findMinAndMax([4, 1, 3, 10, 8]); // [4, 10, 3, 1, 8]
+```
+
+Better Solutions:
+
+```js
+function replaceMinMax(arr) {
+    let min = arr[0];
+    let max = arr[0];
+    let minIdx = 0;
+    let maxIdx = 0;
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+            minIdx = i;
+        }
+        if (arr[i] > max) {
+            max = arr[i];
+            maxIdx = i;
+        }
+    }
+
+    // swap
+    let temp = arr[minIdx];
+    arr[minIdx] = arr[maxIdx];
+    arr[maxIdx] = temp;
+
+    console.log(arr);
+}
+
+replaceMinMax([4, 1, 3, 10, 8]); // [4, 10, 3, 1, 8]
 ```
