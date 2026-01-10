@@ -1,14 +1,14 @@
-const iconsOfSkills = [
-    ['js', 'react', 'node', 'express'],
-    ['react', 'ts', 'js'],
-    ['css', 'html', 'sql']
-]
+const players = [
+    { name: "Virat Kohli", score: 85 },
+    { name: "Joe Root", score: 72 },
+    { name: "Babar Azam", score: 101 },
+    { name: "Kane Williamson", score: 54 },
+    { name: "Steve Smith", score: 38 }
+];
 
-const flatSkills = iconsOfSkills.flat()
-console.log(flatSkills) // ['js', 'react', 'node', 'express', 'react', 'ts', 'js', 'css', 'html', 'sql']
+const bestScorer = players.reduce((bestPlayer, player) => {
+    if (bestPlayer.score > player.score) return bestPlayer
+    return player
+}, players[0])
 
-const removeDuplicate = new Set(flatSkills)
-console.log(removeDuplicate) // Set(8) { 'js', 'react', 'node', 'express', 'ts', 'css', 'html', 'sql' }
-
-const iconsArray = Array.from(removeDuplicate)
-console.log(iconsArray) // // ['js', 'react', 'node', 'express', 'ts', 'css', 'html', 'sql']
+console.log(bestScorer) // { name: 'Babar Azam', score: 101 }

@@ -3182,6 +3182,114 @@ Here,
     
 ![reduce](images/reduce.png)
 
+Examples: 
+
+```js
+const cartItems = [
+    { id: 1, name: 'T-shirt', price: 19, quantity: 2 },
+    { id: 2, name: 'Jeans', price: 49, quantity: 1 },
+    { id: 3, name: 'Sneakers', price: 89, quantity: 1 },
+    { id: 4, name: 'Socks (3-pack)', price: 5, quantity: 3 },
+    { id: 5, name: 'Hat', price: 14, quantity: 1 }
+];
+
+const subTotal = cartItems.reduce((subTotal, product) => subTotal + product.price * product.quantity, 0)
+
+// const subTotal = cartItems.reduce((subTotal, product) => {
+//     return subTotal + product.price * product.quantity
+// }, 0)
+
+console.log(subTotal) // 205 
+```
+
+```js
+const players = [
+    { name: "Virat Kohli", score: 85 },
+    { name: "Joe Root", score: 72 },
+    { name: "Babar Azam", score: 101 },
+    { name: "Kane Williamson", score: 54 },
+    { name: "Steve Smith", score: 38 }
+];
+
+const bestScorer = players.reduce((bestPlayer, player) => {
+    if (bestPlayer.score > player.score) return bestPlayer
+    return player
+}, players[0])
+
+console.log(bestScorer) // { name: 'Babar Azam', score: 101 }
+```
+
+**Lookup Table:**
+
+Note: A lookup table is a pattern that allows us to retrieve data in O(1) time using a key.
+
+```js
+const books = [
+    { id: "b-101", title: "Cracking the Coding Interview", author: "Gayle" },
+    { id: "b-102", title: "Clean Code", author: "Robert C. Martin" },
+    { id: "b-103", title: "Introduction to Algorithms", author: "Cormen" },
+    { id: "b-104", title: "Design Patterns", author: "Erich." }
+];
+
+const lookupTable = books.reduce((table, post) => {
+    table[post.id] = post
+
+    return table
+}, {})
+
+console.log(lookupTable)
+
+/*
+{
+  'b-101': { id: 'b-101', title: 'Cracking the Coding Interview', author: 'Gayle'},
+  'b-102': { id: 'b-102', title: 'Clean Code', author: 'Robert C. Martin' },
+  'b-103': { id: 'b-103', title: 'Introduction to Algorithms', author: 'Cormen'},
+  'b-104': { id: 'b-104', title: 'Design Patterns', author: 'Erich.' }
+}
+*/
+
+console.log(lookupTable["b-104"]) // { id: 'b-104', title: 'Design Patterns', author: 'Erich.' }
+```
+
+Time complexity for this code is: O(1)
+
+without lookup table: 
+
+```js
+const books = [
+    { id: "b-101", title: "Cracking the Coding Interview", author: "Gayle" },
+    { id: "b-102", title: "Clean Code", author: "Robert C. Martin" },
+    { id: "b-103", title: "Introduction to Algorithms", author: "Cormen" },
+    { id: "b-104", title: "Design Patterns", author: "Erich." }
+];
+
+const foundPost = books.find((book) => book.id === 'b-104')
+console.log(foundPost)
+```
+
+Time complexity of this code is: O(n)
+
+```js
+const surveyResponses = ['A', 'C', 'B', 'A', 'B', 'B', 'C', 'A', 'B', 'D', 'A', 'C', 'B', 'A']
+
+const count = surveyResponses.reduce((table, response) => {
+
+    // console.log(table, " : ", response)
+
+    if (table[response]) {
+        table[response]++
+        // table[response] = table[response] + 1
+    }
+    else {
+        table[response] = 1
+    }
+
+    return table;
+}, {})
+
+console.log(count) // { A: 5, C: 3, B: 5, D: 1 }
+```
+
 - some(callbackFunction): 
     
 ```js
