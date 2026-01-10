@@ -1,22 +1,14 @@
-function checkCode(A, B, arr) {
+const iconsOfSkills = [
+    ['js', 'react', 'node', 'express'],
+    ['react', 'ts', 'js'],
+    ['css', 'html', 'sql']
+]
 
-    let answer = true
+const flatSkills = iconsOfSkills.flat()
+console.log(flatSkills) // ['js', 'react', 'node', 'express', 'react', 'ts', 'js', 'css', 'html', 'sql']
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[A + 1 - 1] !== '-') {
-            answer = false
-            break
-        }
-        if ((arr[i] >= 0 && arr[i] <= 9) || (arr[i] === '-')) {
-            answer = true
-        }
-        else {
-            answer = false
-        }
-    }
-    console.log(answer ? "Yes" : "No")
-}
+const removeDuplicate = new Set(flatSkills)
+console.log(removeDuplicate) // Set(8) { 'js', 'react', 'node', 'express', 'ts', 'css', 'html', 'sql' }
 
-checkCode(3, 3, [2, 6, 9, '-', 6, 6, 5]); // Yes
-checkCode(1, 1, [1, 2, '-']); // No
-checkCode(1, 2, [7, 4, 4, 4]); // No
+const iconsArray = Array.from(removeDuplicate)
+console.log(iconsArray) // // ['js', 'react', 'node', 'express', 'ts', 'css', 'html', 'sql']
