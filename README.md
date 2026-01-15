@@ -281,6 +281,7 @@
       - [Replace MinMax:](#replace-minmax)
       - [Check Code:](#check-code)
       - [Fibonacci:](#fibonacci)
+      - [Minimize Number:](#minimize-number)
 
 ---
 
@@ -14140,3 +14141,146 @@ function Fibonacci(n) {
 ```
 - Time complexity: O(n)
 - Space complexity: O(1)
+
+#### Minimize Number:
+Given a number N and an array A of N positive numbers. Print maximum possible operations that can be performed. The operation is as follows: if all numbers are even then divide each of them by 2 otherwise, you can not perform any more operations. 
+
+| Input    | Output |
+| -------- | ------ |
+| 3        | 2      |
+| 8 12 40  | 3      |
+| 4        | 2      |
+| 5 6 8 10 | 0      |
+
+Note
+First example:
+
+Initially, [8,12,40] all those integers are even, You can perform the operation.
+
+- 1st operation [4,6,20]. Since all those integers are again even, You can perform the operation.
+- Second operation [2,3,10]. Now, there is an odd number 3. so you cannot perform the operation any more.
+
+Thus, you can perform the operation at most twice.
+
+Second example:
+
+Since there is an odd number 5. so You cannot perform the operation at all.
+
+
+solutions: 
+
+```js
+const fs = require('fs');
+const input = fs.readFileSync('input.txt', 'utf8').trim().split(/\s+/);
+
+const N = Number(input[0]);
+let A = [];
+for (let i = 0; i < N; i++) {
+    A.push(Number(input[i + 1]));
+}
+
+
+function findEven(arr) {
+    let count = 0
+
+    while (true) {
+        // check if all numbers are even
+        if (!arr.every(x => x % 2 === 0)) {
+            break;
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i] / 2
+        }
+        count++
+    }
+    console.log(count)
+}
+
+findEven(A)
+```
+- Time Complexity: O(n^2)
+- Space Complexity: O(1)
+
+```js
+const fs = require('fs');
+const input = fs.readFileSync('input.txt', 'utf8').trim().split(/\s+/);
+
+const N = Number(input[0]);
+let A = [];
+for (let i = 0; i < N; i++) {
+    A.push(Number(input[i + 1]));
+}
+
+
+function findEven(arr) {
+    let count = 0
+
+    while (true) {
+        let allEven = true;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 !== 0) {
+                allEven = false;
+                break;
+            }
+        }
+
+        if (!allEven) break;
+
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i] / 2;
+        }
+
+        count++;
+    }
+
+    console.log(count);
+}
+findEven(A)
+```
+
+- Time Complexity: O(n^2)
+- Space Complexity: O(1)
+
+Better Solution: 
+
+```js
+A = [8, 12, 40]
+
+- 8: 8 → 4 → 2 → 1 → stops → 3 divisions
+- 12: 12 → 6 → 3 → stops → 2 divisions
+- 40: 40 → 20 → 10 → 5 → stops → 3 divisions
+
+Minimum divisions = 2 → answer ✅
+```
+
+```js
+const fs = require('fs');
+const input = fs.readFileSync('input.txt', 'utf8').trim().split(/\s+/);
+
+const N = Number(input[0]);
+let A = [];
+for (let i = 0; i < N; i++) {
+    A.push(Number(input[i + 1]));
+}
+
+
+function findEven(arr) {
+    let minDivisions = Infinity;
+    for (let num of arr) {
+        let divisions = 0;
+        while (num % 2 === 0) {
+            num = num / 2;
+            divisions++;
+        }
+        if (divisions < minDivisions) minDivisions = divisions;
+    }
+    console.log(minDivisions);
+}
+
+findEven(A)
+```
+
+- Time Complexity: O(N * log(max(A)))
+- Space Complexity: O(1)
