@@ -280,6 +280,7 @@
       - [Max Subarray:](#max-subarray)
       - [Replace MinMax:](#replace-minmax)
       - [Check Code:](#check-code)
+      - [Fibonacci:](#fibonacci)
 
 ---
 
@@ -14071,3 +14072,71 @@ checkCode(3, 3, [2, 6, 9, '-', 6, 6, 5]); // Yes
 checkCode(1, 1, [1, 2, '-']);            // No
 checkCode(1, 2, [7, 4, 4, 4]);            // No
 ```
+
+#### Fibonacci:
+Given a number N. Print the Fibonacci number of N. 
+
+Note: In order to create the Fibonacci sequence use the following function:
+- fib(1) = 0.
+- fib(2) = 1.
+- fib(n) = fib(n - 1) + fib(n - 2).
+
+The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+
+| Input | Output |
+| ----- | ------ |
+| 1     | 0      |
+| 5     | 3      |
+
+My Solution: 
+
+```js
+function Fibonacci(N) {
+    let arr = []
+    let fibonacci = 0
+    for (let i = 1; i <= N; i++) {
+        if (i === 1) {
+            arr[0] = 0
+            fibonacci = 0
+        }
+        if (i === 2) {
+            arr[1] = 1
+            fibonacci = 1
+        }
+        if (i >= 3) {
+            fibonacci = arr[1] + arr[0]
+            arr[0] = arr[1]
+            arr[1] = fibonacci
+        }
+    }
+    console.log(fibonacci)
+}
+
+Fibonacci(2) // 1
+Fibonacci(5) // 3
+
+```
+- Time complexity: O(n)
+- Space complexity: O(1)
+
+Better Soltuion: 
+
+```js
+function Fibonacci(n) {
+    if (n === 1) return 0
+    if (n === 2) return 1
+
+    let prev = 0
+    let curr = 1
+
+    for (let i = 3; i <= n; i++) {
+        let next = prev + curr
+        prev = curr
+        curr = next
+    }
+
+    return curr
+}
+```
+- Time complexity: O(n)
+- Space complexity: O(1)

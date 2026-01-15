@@ -1,14 +1,23 @@
-const players = [
-    { name: "Virat Kohli", score: 85 },
-    { name: "Joe Root", score: 72 },
-    { name: "Babar Azam", score: 101 },
-    { name: "Kane Williamson", score: 54 },
-    { name: "Steve Smith", score: 38 }
-];
+function Fibonacci(N) {
+    let arr = []
+    let fibonacci = 0
+    for (let i = 1; i <= N; i++) {
+        if (i === 1) {
+            arr[0] = 0
+            fibonacci = 0
+        }
+        if (i === 2) {
+            arr[1] = 1
+            fibonacci = 1
+        }
+        if (i >= 3) {
+            fibonacci = arr[1] + arr[0]
+            arr[0] = arr[1]
+            arr[1] = fibonacci
+        }
+    }
+    console.log(fibonacci)
+}
 
-const bestScorer = players.reduce((bestPlayer, player) => {
-    if (bestPlayer.score > player.score) return bestPlayer
-    return player
-}, players[0])
-
-console.log(bestScorer) // { name: 'Babar Azam', score: 101 }
+Fibonacci(2)
+Fibonacci(5)
