@@ -1,13 +1,3 @@
-const fs = require('fs');
-const input = fs.readFileSync('input.txt', 'utf8').trim().split(/\s+/);
-
-const N = Number(input[0]);
-let A = [];
-for (let i = 0; i < N; i++) {
-    A.push(Number(input[i + 1]));
-}
-
-
 function findEven(arr) {
     let minDivisions = Infinity;
     for (let num of arr) {
@@ -20,5 +10,5 @@ function findEven(arr) {
     }
     console.log(minDivisions);
 }
-
-findEven(A)
+findEven([8, 12, 40]) // 2
+findEven([5, 6, 8, 10]) // 0

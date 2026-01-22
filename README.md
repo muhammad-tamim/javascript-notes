@@ -14147,9 +14147,9 @@ Given a number N and an array A of N positive numbers. Print maximum possible op
 
 | Input    | Output |
 | -------- | ------ |
-| 3        | 2      |
-| 8 12 40  | 3      |
-| 4        | 2      |
+| 3        |        |
+| 8 12 40  | 2      |
+| 4        |        |
 | 5 6 8 10 | 0      |
 
 Note
@@ -14170,16 +14170,6 @@ Since there is an odd number 5. so You cannot perform the operation at all.
 solutions: 
 
 ```js
-const fs = require('fs');
-const input = fs.readFileSync('input.txt', 'utf8').trim().split(/\s+/);
-
-const N = Number(input[0]);
-let A = [];
-for (let i = 0; i < N; i++) {
-    A.push(Number(input[i + 1]));
-}
-
-
 function findEven(arr) {
     let count = 0
 
@@ -14197,22 +14187,13 @@ function findEven(arr) {
     console.log(count)
 }
 
-findEven(A)
+findEven([8, 12, 40]) // 2
+findEven([5, 6, 8, 10]) // 0
 ```
 - Time Complexity: O(n^2)
 - Space Complexity: O(1)
 
 ```js
-const fs = require('fs');
-const input = fs.readFileSync('input.txt', 'utf8').trim().split(/\s+/);
-
-const N = Number(input[0]);
-let A = [];
-for (let i = 0; i < N; i++) {
-    A.push(Number(input[i + 1]));
-}
-
-
 function findEven(arr) {
     let count = 0
 
@@ -14237,7 +14218,9 @@ function findEven(arr) {
 
     console.log(count);
 }
-findEven(A)
+
+findEven([8, 12, 40]) // 2
+findEven([5, 6, 8, 10]) // 0
 ```
 
 - Time Complexity: O(n^2)
@@ -14256,16 +14239,6 @@ Minimum divisions = 2 → answer ✅
 ```
 
 ```js
-const fs = require('fs');
-const input = fs.readFileSync('input.txt', 'utf8').trim().split(/\s+/);
-
-const N = Number(input[0]);
-let A = [];
-for (let i = 0; i < N; i++) {
-    A.push(Number(input[i + 1]));
-}
-
-
 function findEven(arr) {
     let minDivisions = Infinity;
     for (let num of arr) {
@@ -14278,8 +14251,8 @@ function findEven(arr) {
     }
     console.log(minDivisions);
 }
-
-findEven(A)
+findEven([8, 12, 40]) // 2
+findEven([5, 6, 8, 10]) // 0
 ```
 
 - Time Complexity: O(N * log(max(A)))
