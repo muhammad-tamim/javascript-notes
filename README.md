@@ -80,12 +80,6 @@
     - [Quotes:](#quotes)
     - [String Methods:](#string-methods)
     - [Common Property / Methods for string / array:](#common-property--methods-for-string--array)
-  - [array](#array)
-    - [Array Methods:](#array-methods)
-      - [Adding / Removing Elements:](#adding--removing-elements)
-      - [Iteration / Transformation (Higher-order functions):](#iteration--transformation-higher-order-functions)
-      - [Others:](#others)
-    - [Common Property / Methods for string / array:](#common-property--methods-for-string--array-1)
   - [Objects](#objects)
     - [Dot Notation VS Bracket Notation:](#dot-notation-vs-bracket-notation)
     - [Objects References and cloning and marging:](#objects-references-and-cloning-and-marging)
@@ -97,6 +91,12 @@
     - [Optional Chaining (?)](#optional-chaining-)
     - [Date Object:](#date-object)
     - [Math Object:](#math-object)
+  - [array](#array)
+    - [Array Methods:](#array-methods)
+      - [Adding / Removing Elements:](#adding--removing-elements)
+      - [Iteration / Transformation (Higher-order functions):](#iteration--transformation-higher-order-functions)
+      - [Others:](#others)
+    - [Common Property / Methods for string / array:](#common-property--methods-for-string--array-1)
   - [Destructuring](#destructuring)
   - [Error Handling](#error-handling)
     - [Common JS Errors:](#common-js-errors)
@@ -2885,735 +2885,9 @@ console.log(numbers.at(0));   // 10
 console.log(numbers.at(-1));  // 40 (last item)
 ```
 
-
-## array 
-An array is a special type of object used to store multiple values of different data types in a single variable, organized as an ordered and indexed collection. That’s why arrays use square bracket notation like `arr[0]` to access elements — this syntax actually comes from object property access: `obj[key]`. In arrays, the variable `arr` is the object, and the index numbers are keys.
-
-**Array Declaration:**
-
-```js
-let fruits = []
-```
-
-**Array Initialization:**
-
-```js
-let fruits = ['apple', 'orange', 'plum']
-```
-
-**Array Assignment:**
-
-```js
-let fruits = ['apple', 'orange', 'plum'];
-fruits[2] = 'mango';
-console.log(fruits); // [ 'apple', 'orange', 'mango' ]
-```
-
-Since, array are object so it copied by reference, means Assigning an array to another variable does not create a new array. They both point to the same memory address:
-
-```js
-let fruits = ["Banana"]
-
-let arr = fruits; // copy by reference (two variables reference the same array)
-
-console.log(arr === fruits); // true
-
-arr.push("Pear"); // modify the array by reference
-
-console.log(fruits); // [ 'Banana', 'Pear' ] - 2 items now
-console.log(arr); // [ 'Banana', 'Pear' ] - 2 items now
-```
-
-### Array Methods:
-
-#### Adding / Removing Elements:
-
-- push/pop and unshift/shift:
-
-| Operation                                        | Method    |
-| ------------------------------------------------ | --------- |
-| Adds element to end and returns the new length   | push()    |
-| Remove the last element and returns the element  | pop()     |
-| Adds element to start and returns the new length | unshift() |
-| Remove the first element and returns the element | shift()   |
-    
-```js
-let fruits = ["Apple", "Orange", "Plum"];
-
-console.log(fruits.push('Mango')) // 4
-console.log(fruits); // [ 'Apple', 'Orange', 'Plum', 'Mango' ]
-console.log(fruits.pop()); // Mango
-console.log(fruits); // [ 'Apple', 'Orange', 'Plum' ]
-
-console.log(fruits.unshift('Mango')) // 4
-console.log(fruits); // [ 'Mango', 'Apple', 'Orange', 'Plum' ]
-console.log(fruits.shift()); // Mango
-console.log(fruits); // [ 'Apple', 'Orange', 'Plum' ]   
-```
-    
-**Why push/pop run fast and unshift/shift are slow?**
-    
-![push/pop/unshift/shift](images/image8.png)
-    
-push() and pop() are fast because they work at the end of an array, where JavaScript can simply add or remove an item without affecting the positions of other elements.
-    
-On the other hand, shift() and unshift() are slow because they work at the beginning of the array. When you remove the first item with shift(), JavaScript has to move every remaining element one position to the left. Similarly, when you use unshift() to add an item to the beginning, all existing elements must shift one position to the right. These shifts take more time and processing, especially when the array is large.
-    
-- splice(start, deleteCount, ...items) –modifies the original array by adding, removing, or replacing elements and returns removed items:
-    
-```js
-let arr = ["I", "study", "JavaScript"];
-// from index 1 remove 1 element
-console.log(arr.splice(1, 1));  // [ 'study' ]
-console.log(arr); // [ 'I', 'JavaScript' ]
-
-
-let arr2 = ["I", "study", "JavaScript", "right", "now"];
-// remove first 3 elements and replace them with another
-console.log(arr2.splice(0, 3, "Let's", "dance")); // [ 'I', 'study', 'JavaScript' ]
-console.log(arr2) // ["Let's", "dance", "right", "now"]
-
-
-let arr3 = ["I", "study", "JavaScript"];
-// from index 2, delete 0, then insert "complex" and "language"
-console.log(arr3.splice(2, 0, "complex", "language")); // []
-console.log(arr3); // [ 'I', 'study', 'complex', 'language', 'JavaScript' ]
-
-
-let arr4 = [1, 2, 5];
-// from index -1 (one step from the end) delete 0 elements, then insert 3 and 4
-console.log(arr4.splice(-1, 0, 3, 4));[]
-console.log(arr4); // [ 1, 2, 3, 4, 5 ]
-```
-
-Note: 
-- splice(): modifies the original array by adding, removing, or replacing elements.
-- slice(): doesn't modifies the original array, it returns a shallow copy of the original array after sliceing.
-
-
-#### Iteration / Transformation (Higher-order functions):
-
-| Method      | Purpose                                                                                    |
-| ----------- | ------------------------------------------------------------------------------------------ |
-| map()       | Returns a new array by applying a callback function to each element of the original array. |
-| forEach()   | Same as Map() but no return value                                                          |
-| filter()    | Returns a new array of elements for which the callback function returns true               |
-| find()      | Returns the first element for which the callback function returns true, or undefined.      |
-| findIndex() | Returns the index of the first element for which the callback function returns true.       |
-| reduce()    | Uses a callback function to combine all elements into a single value.                      |
-| some()      | Returns true if the callback function returns true for any element.                        |
-| every()     | Returns true if the callback function returns true for all elements.                       |
-
-
-- map(callbackFunction):
-    
-```js
-let arr = [1, 2, 3]
-let arr2 = arr.map(n => n * 2);
-console.log(arr) // [ 1, 2, 3 ]
-console.log(arr2) // [ 2, 4, 6 ]
-```
-    
-```js
-// using map for just printf (not recommended)
-const numbers = [1, 2, 3, 4, 5];
-
-const newNumber = numbers.map(number => console.log(number))
-
-console.log(newNumber) // [ undefined, undefined, undefined, undefined, undefined ]
-```
-    
-```js
-// using map for both element and index
-const names = ["tamim", "nasrin", "maria"];
-
-const newNames = names.map((element, index) => console.log(element, index))
-
-/*
-tamim 0
-nasrin 1
-maria 2
- */
-```
-    
-```js
-const products = [
-    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
-    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
-    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
-    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
-    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
-]
-
-const productNames = products.map(product => product.name);
-console.log(productNames)
-
-// [ 'iPhone', 'Galaxy S23', 'Pixel 8', 'OnePlus 11', 'Xperia 5' ]
-```
-
-- forEach(callbackFunction): 
-    
-```js
-let arr = [1, 2, 3]
-arr.forEach(n => console.log(n * 2)); // 2 4 6       
-```
-    
-```js
-const products = [
-    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
-    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
-    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
-    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
-    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
-]
-
-products.forEach(product => console.log(product))
-
-/*
-    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
-    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
-    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
-    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
-    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
-*/   
-```
-    
-- filter(callbackFunction):
-    
-```js
-let arr = [1, 2, 3, 4]
-let arr2 = arr.filter(n => n % 2 === 0);
-console.log(arr) // [ 1, 2, 3, 4 ]
-console.log(arr2) // [ 2, 4 ]
-```
-    
-```js
-const products = [
-    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
-    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
-    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
-    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
-    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
-]
-
-const filterProducts = products.filter(product => product.price >= 1000)
-console.log(filterProducts);
-
-/*
-    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
-    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
-*/
-
-const expensiveProducts = products.filter(product => product.price >= 5000);
-console.log(expensiveProducts); // []
-```
-
-- find(callbackFunction):
-    
-```js
-let arr = [1, 2, 3, 4, 5];
-const result = arr.find(n => n > 2);
-console.log(result); // 3  
-```
-    
-```js
-const products = [
-    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
-    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
-    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
-    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
-    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
-]
-
-const foundProduct = products.find(product => product.brand === "apple");
-console.log(foundProduct)
-
-/*
-    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
-*/
-
-const foundColor = products.find(product => product.color === "pink");
-console.log(foundColor) // undefined
-```
-    
-- findIndex(callbackFunction):
-    
-```js
-const users = [
-  { id: 1, name: "Tamim" },
-  { id: 2, name: "Rafi" },
-  { id: 3, name: "Amin" }
-];
-
-// Find index of user with id 2
-const index = users.findIndex(user => user.id === 2);
-console.log(index); // 1
-```
-    
-- reduce(callbackFunction):
-    
-Syntax:
-    
-```js
-reduce((accumulator, currentValue) => ..., initialValue);
-```
-    
-here, 
-- Accumulator: The running total or result so far
-- CurrentValue: THe current element being processed
-- InititalValue: The starting value of the accumulator (optional: because if we don’t provide an initialValue, JavaScript will automatically use the first element of the array as the starting accumulator.)
-
-```js
-const numbers = [1, 2, 3, 4];
-
-// without reduce method
-let acc = 0;
-for (let i = 0; i < numbers.length; i++) {
-    acc = acc + numbers[i];
-}
-console.log(acc); // Output: 10
-
-// with reduce method
-const result = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-console.log(result); // Output: 10
-```
-Here,  
-- accumulator = keeps the result
-- 0 = The staring value of accumulator
-- currentValue = the current element of the array
-    
-![reduce](images/reduce.png)
-
-Examples: 
-
-```js
-const cartItems = [
-    { id: 1, name: 'T-shirt', price: 19, quantity: 2 },
-    { id: 2, name: 'Jeans', price: 49, quantity: 1 },
-    { id: 3, name: 'Sneakers', price: 89, quantity: 1 },
-    { id: 4, name: 'Socks (3-pack)', price: 5, quantity: 3 },
-    { id: 5, name: 'Hat', price: 14, quantity: 1 }
-];
-
-const subTotal = cartItems.reduce((subTotal, product) => subTotal + product.price * product.quantity, 0)
-
-// const subTotal = cartItems.reduce((subTotal, product) => {
-//     return subTotal + product.price * product.quantity
-// }, 0)
-
-console.log(subTotal) // 205 
-```
-
-```js
-const players = [
-    { name: "Virat Kohli", score: 85 },
-    { name: "Joe Root", score: 72 },
-    { name: "Babar Azam", score: 101 },
-    { name: "Kane Williamson", score: 54 },
-    { name: "Steve Smith", score: 38 }
-];
-
-const bestScorer = players.reduce((bestPlayer, player) => {
-    if (bestPlayer.score > player.score) return bestPlayer
-    return player
-}, players[0])
-
-console.log(bestScorer) // { name: 'Babar Azam', score: 101 }
-```
-
-**Lookup Table:**
-
-Note: A lookup table is a pattern that allows us to retrieve data in O(1) time using a key.
-
-```js
-const books = [
-    { id: "b-101", title: "Cracking the Coding Interview", author: "Gayle" },
-    { id: "b-102", title: "Clean Code", author: "Robert C. Martin" },
-    { id: "b-103", title: "Introduction to Algorithms", author: "Cormen" },
-    { id: "b-104", title: "Design Patterns", author: "Erich." }
-];
-
-const lookupTable = books.reduce((table, post) => {
-    table[post.id] = post
-
-    return table
-}, {})
-
-console.log(lookupTable)
-
-/*
-{
-  'b-101': { id: 'b-101', title: 'Cracking the Coding Interview', author: 'Gayle'},
-  'b-102': { id: 'b-102', title: 'Clean Code', author: 'Robert C. Martin' },
-  'b-103': { id: 'b-103', title: 'Introduction to Algorithms', author: 'Cormen'},
-  'b-104': { id: 'b-104', title: 'Design Patterns', author: 'Erich.' }
-}
-*/
-
-console.log(lookupTable["b-104"]) // { id: 'b-104', title: 'Design Patterns', author: 'Erich.' }
-```
-
-Time complexity for this code is: O(1)
-
-without lookup table: 
-
-```js
-const books = [
-    { id: "b-101", title: "Cracking the Coding Interview", author: "Gayle" },
-    { id: "b-102", title: "Clean Code", author: "Robert C. Martin" },
-    { id: "b-103", title: "Introduction to Algorithms", author: "Cormen" },
-    { id: "b-104", title: "Design Patterns", author: "Erich." }
-];
-
-const foundPost = books.find((book) => book.id === 'b-104')
-console.log(foundPost)
-```
-
-Time complexity of this code is: O(n)
-
-```js
-const surveyResponses = ['A', 'C', 'B', 'A', 'B', 'B', 'C', 'A', 'B', 'D', 'A', 'C', 'B', 'A']
-
-const count = surveyResponses.reduce((table, response) => {
-
-    // console.log(table, " : ", response)
-
-    if (table[response]) {
-        table[response]++
-        // table[response] = table[response] + 1
-    }
-    else {
-        table[response] = 1
-    }
-
-    return table;
-}, {})
-
-console.log(count) // { A: 5, C: 3, B: 5, D: 1 }
-```
-
-- some(callbackFunction): 
-    
-```js
-const users = [
-  { name: "Tamim", online: false },
-  { name: "Rafi", online: true },
-  { name: "Amin", online: false }
-];
-
-const anyOnline = users.some(user => user.online);
-
-console.log(anyOnline); // true → because Rafi is online
-```
-    
-- every(callbackFunction):
-    
-```js
-const products = [
-  { name: "Laptop", inStock: true },
-  { name: "Mouse", inStock: true },
-  { name: "Keyboard", inStock: true }
-];
-
-const allInStock = products.every(product => product.inStock);
-
-console.log(allInStock); // true → all items are available
-```
-
-```js
-function findLuckyNumber(A, B) {
-    let found = false
-    for (let i = A; i <= B; i++) {
-        const str = i.toString()
-
-        const isLucky = [...str].every(ch => ch === '4' || ch === '7')
-
-        if (isLucky) {
-            console.log(i)
-            found = true
-        }
-    }
-    if (!found) {
-        console.log(-1)
-    }
-}
-
-findLuckyNumber(4, 20); // 4 7
-findLuckyNumber(8, 15); // -1
-```
-
-#### Others:
-
-- reverse() – Reverses the array:
-    
-```js
-let arr = [1, 2, 3];
-console.log(arr.reverse()) // [ 3, 2, 1 ]
-```
-- sort – return a new sorted array:
-    
-```js
-let arr = [3, 1, 2];
-console.log(arr.sort())  // default lexicographic: [1,2,3]
-    
-// but in this case default sort fails:
-let arr2 = [1, 2, 15];
-console.log(arr2.sort()) // [ 1, 15, 2 ]
-```
-    
-The order became 1, 15, 2. Incorrect. But why?
-    
-In JavaScript, the default behavior of sort() is lexicographic (dictionary-like) sorting. This means:
-    
-- It converts elements to strings.
-- Then it compares those strings using Unicode (UTF-16) code unit values.
-   
-thats why, "1" vs "2" → "1" comes first "2" vs "15" → "1" comes before "2" so "15" comes before "2" So the result becomes: [1, 15, 2]
-    
-To fix it, we need to use a custom compare function to sort it by js sort() method. js sort() method used this custom function internally to determine the correct sorting.
-    
-```js
-let arr2 = [1, 2, 15];
-console.log(arr2.sort((a, b) => a - b)); // [1, 2, 15] --> ascending order
-```
-How it works:
-    
-`(a, b) => a - b this function returns:`
-- Negative number (a - b < 0) → keep a before b
-- Positive number (a - b > 0) → place b before a
-- Zero (a - b === 0) → leave a and b unchanged
-
-```js
-let arr2 = [1, 2, 15];
-console.log(arr2.sort((a, b) => b - a)); // [15, 2, 1] --> descending order
-```
-
-
-- fill(value, start, end) – Fills array with value:
-    
-```js
-const arr = [1, 2, 3, 4, 5];
-
-arr.fill(0, 1, 4);
-
-console.log(arr); // [1, 0, 0, 0, 5]
-```
-    
-- flat(depth): Returns a new array after concatenating all the nested arrays up to the given depth:
-    
-```js
-// Default depth (1)
-
-const arr = [1, 2, [3, 4]];
-const flatArr = arr.flat();
-console.log(flatArr); // Output: [1, 2, 3, 4] 
-
-// Deeper nesting with depth = 2
-
-const arr = [1, 2, [3, 4, [5, 6]]];
-const flatArr = arr.flat(2);
-console.log(flatArr); // Output: [1, 2, 3, 4, 5, 6]
-
-// Infinite depth (Infinity)
-
-const arr = [1, [2, [3, [4]]]];
-const flatArr = arr.flat(Infinity);
-console.log(flatArr); // Output: [1, 2, 3, 4]
-```
-
-Example: 
-
-```js
-const iconsOfSkills = [
-    ['js', 'react', 'node', 'express'],
-    ['react', 'ts', 'js'],
-    ['css', 'html', 'sql']
-]
-
-const flatSkills = iconsOfSkills.flat()
-console.log(flatSkills) // ['js', 'react', 'node', 'express', 'react', 'ts', 'js', 'css', 'html', 'sql']
-
-const removeDuplicate = new Set(flatSkills)
-console.log(removeDuplicate) // Set(8) { 'js', 'react', 'node', 'express', 'ts', 'css', 'html', 'sql' }
-
-const iconsArray = Array.from(removeDuplicate)
-console.log(iconsArray) // // ['js', 'react', 'node', 'express', 'ts', 'css', 'html', 'sql']
-```
-
-
-- Array.isArray(value) – Return true if value is an array, else false:
-    
-```js
-const arr = [1, 2]
-const result = Array.isArray(arr);
-console.log(result) // true       
-```
-
-- Array.form() - creates a new shallow-copied array from an array-like object (such as a NodeList, arguments, or { length: 5 }) or an iterable object (like a String, Array, Set, or Map).
-
-Syntax: 
-
-```
-Array.from(arrayLike or iterables, mapLikeFunction, thisArg)
-```
-
-Examples: 
-
-You can generate arrays without loops using Array.form() method:
-
-```js
-const numbers = Array.from({ length: 5 }, (_, i) => i + 1);
-console.log(numbers); // [1, 2, 3, 4, 5]
-```
-here, 
-- Array.from({ length: 5 }) → Creates an array of length 5 filled with undefined values:
-  - [undefined, undefined, undefined, undefined, undefined]
-- (_, i) => i + 1 → Works like a map function, replacing each undefined with its index + 1.
- 
-```js
-const alphabets = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
-console.log(alphabets); // ['A', 'B', 'C', ..., 'Z']
-```
-
-```js
-const arr = Array.from([1, 2, 3], (x) => x * 2);
-console.log(arr);  // [2, 4, 6]
-```
-
-
-```js
-const arr = Array.from(['a', 'b', 'c'], (value, index) => `${index}: ${value}`);
-console.log(arr); // ['0: a', '1: b', '2: c']
-
-```
-
-```js
-const obj = { multiplier: 10 };
-
-const arr = Array.from([1, 2, 3], function (x) {
-  return x * this.multiplier;
-}, obj);
-
-console.log(arr); // [10, 20, 30]
-```
-
-### Common Property / Methods for string / array:
-
-- .length (property): returns the length of an array or string:
-
-```js
-// String
-const str = "JavaScript";
-
-// Array
-const arr = [10, 20, 30, 40];
-console.log(arr.length); // 4 → total items
-```
-
-- includes() - returns true or false if an element/string exist:
-
-```js
-// String
-const text = "I love JavaScript";
-console.log(text.includes("love")); // true
-console.log(text.includes("Love")); // false (case-sensitive)
-
-// Array
-const numbers = [1, 2, 3, 4];
-console.log(numbers.includes(3));  // true
-console.log(numbers.includes(5));  // false
-```
-
-- indexOf() — Returns the index of the first occurrence, -1 if not found.
-
-```js
-// String
-const msg = "banana";
-console.log(msg.indexOf("a"));     // 1 → first "a"
-console.log(msg.indexOf("a", 2));  // 3 → next "a" after index 2
-console.log(msg.indexOf("z"));     // -1 → not found
-
-// Array
-const arr = [10, 20, 30, 10];
-console.log(arr.indexOf(10));      // 0 → first occurrence
-console.log(arr.indexOf(10, 1));   // 3 → next occurrence after index 1
-console.log(arr.indexOf(50));      // -1 → not found
-```
-
-- lastIndexOf() — Returns the last occurrence index of a substring/element, -1 if not found.
-
-```js
-// String
-const text = "banana";
-console.log(text.lastIndexOf("a")); // 5 → last "a"
-console.log(text.lastIndexOf("n")); // 4
-console.log(text.lastIndexOf("z")); // -1 → not found
-
-// Array
-const nums = [10, 20, 30, 20, 10];
-console.log(nums.lastIndexOf(20)); // 3 → last occurrence
-console.log(nums.lastIndexOf(10)); // 4
-console.log(nums.lastIndexOf(99)); // -1 → not found
-```
-
-- slice(start, end) — Extracts a portion of an array/string and returns a new array.
-
-```js
-// String
-const str = "JavaScript";
-console.log(str.slice(0, 4));    // "Java"
-console.log(str.slice(-6));      // "Script"
-
-// Array
-const arr = [1, 2, 3, 4, 5];
-console.log(arr.slice(1, 4));    // [2, 3, 4]
-console.log(arr.slice(-2));      // [4, 5]
-```
-
-- split() and join()- 
-  - split() → converts a string to array
-  - join() → converts an array to string
-
-```js
-const str = "Hello";
-const split = str.split("")
-console.log(split) // [ 'H', 'e', 'l', 'l', 'o' ]
-
-const join = split.join("");
-console.log(join) // Hello
-```
-
-- concat() — Joins multiple strings or arrays together:
-
-```js
-// String
-const s1 = "Hello";
-const s2 = "World";
-console.log(s1.concat(" ", s2)); // "Hello World"
-
-// Array
-const arr1 = [1, 2];
-const arr2 = [3, 4];
-console.log(arr1.concat(arr2)); // [1, 2, 3, 4]
-```
-
-- at(index) — Returns the element/character at the given index:
-
-```js
-// String
-const text = "JavaScript";
-console.log(text.at(0));   // "J"
-console.log(text.at(-1));  // "t" (last character)
-
-// Array
-const numbers = [10, 20, 30, 40];
-console.log(numbers.at(0));   // 10
-console.log(numbers.at(-1));  // 40 (last item)
-```
-
 ## Objects
 
-An object is a collection of key-value pairs (property). where key is a string or symbol, and value can be anything.
+An object is a unordered collection of key-value pairs (property). where key is a string or symbol, and value can be anything.
 
 - key + value = property
 
@@ -4388,6 +3662,732 @@ console.log(Math.floor(Math.random() * 100)); // Random integer between 0 (inclu
 ```
 
 
+
+
+## array 
+An array is a ordered collection of key-value pairs. where keys are auto generated as index(0, 1, 2) and value can by anything as element. So internally we can called an array is a special type of object. That’s why arrays use square bracket notation like `arr[0]` to access elements — this syntax actually comes from object property access: `obj[key]`.
+
+**Array Declaration:**
+
+```js
+let fruits = []
+```
+
+**Array Initialization:**
+
+```js
+let fruits = ['apple', 'orange', 'plum']
+```
+
+**Array Assignment:**
+
+```js
+let fruits = ['apple', 'orange', 'plum'];
+fruits[2] = 'mango';
+console.log(fruits); // [ 'apple', 'orange', 'mango' ]
+```
+
+Since, array are object so it copied by reference, means Assigning an array to another variable does not create a new array. They both point to the same memory address:
+
+```js
+let fruits = ["Banana"]
+
+let arr = fruits; // copy by reference (two variables reference the same array)
+
+console.log(arr === fruits); // true
+
+arr.push("Pear"); // modify the array by reference
+
+console.log(fruits); // [ 'Banana', 'Pear' ] - 2 items now
+console.log(arr); // [ 'Banana', 'Pear' ] - 2 items now
+```
+
+### Array Methods:
+
+#### Adding / Removing Elements:
+
+- push/pop and unshift/shift:
+
+| Operation                                        | Method    |
+| ------------------------------------------------ | --------- |
+| Adds element to end and returns the new length   | push()    |
+| Remove the last element and returns the element  | pop()     |
+| Adds element to start and returns the new length | unshift() |
+| Remove the first element and returns the element | shift()   |
+    
+```js
+let fruits = ["Apple", "Orange", "Plum"];
+
+console.log(fruits.push('Mango')) // 4
+console.log(fruits); // [ 'Apple', 'Orange', 'Plum', 'Mango' ]
+console.log(fruits.pop()); // Mango
+console.log(fruits); // [ 'Apple', 'Orange', 'Plum' ]
+
+console.log(fruits.unshift('Mango')) // 4
+console.log(fruits); // [ 'Mango', 'Apple', 'Orange', 'Plum' ]
+console.log(fruits.shift()); // Mango
+console.log(fruits); // [ 'Apple', 'Orange', 'Plum' ]   
+```
+    
+**Why push/pop run fast and unshift/shift are slow?**
+    
+![push/pop/unshift/shift](images/image8.png)
+    
+push() and pop() are fast because they work at the end of an array, where JavaScript can simply add or remove an item without affecting the positions of other elements.
+    
+On the other hand, shift() and unshift() are slow because they work at the beginning of the array. When you remove the first item with shift(), JavaScript has to move every remaining element one position to the left. Similarly, when you use unshift() to add an item to the beginning, all existing elements must shift one position to the right. These shifts take more time and processing, especially when the array is large.
+    
+- splice(start, deleteCount, ...items) –modifies the original array by adding, removing, or replacing elements and returns removed items:
+    
+```js
+let arr = ["I", "study", "JavaScript"];
+// from index 1 remove 1 element
+console.log(arr.splice(1, 1));  // [ 'study' ]
+console.log(arr); // [ 'I', 'JavaScript' ]
+
+
+let arr2 = ["I", "study", "JavaScript", "right", "now"];
+// remove first 3 elements and replace them with another
+console.log(arr2.splice(0, 3, "Let's", "dance")); // [ 'I', 'study', 'JavaScript' ]
+console.log(arr2) // ["Let's", "dance", "right", "now"]
+
+
+let arr3 = ["I", "study", "JavaScript"];
+// from index 2, delete 0, then insert "complex" and "language"
+console.log(arr3.splice(2, 0, "complex", "language")); // []
+console.log(arr3); // [ 'I', 'study', 'complex', 'language', 'JavaScript' ]
+
+
+let arr4 = [1, 2, 5];
+// from index -1 (one step from the end) delete 0 elements, then insert 3 and 4
+console.log(arr4.splice(-1, 0, 3, 4));[]
+console.log(arr4); // [ 1, 2, 3, 4, 5 ]
+```
+
+Note: 
+- splice(): modifies the original array by adding, removing, or replacing elements.
+- slice(): doesn't modifies the original array, it returns a shallow copy of the original array after sliceing.
+
+
+#### Iteration / Transformation (Higher-order functions):
+
+| Method      | Purpose                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------ |
+| map()       | Returns a new array by applying a callback function to each element of the original array. |
+| forEach()   | Same as Map() but no return value                                                          |
+| filter()    | Returns a new array of elements for which the callback function returns true               |
+| find()      | Returns the first element for which the callback function returns true, or undefined.      |
+| findIndex() | Returns the index of the first element for which the callback function returns true.       |
+| reduce()    | Uses a callback function to combine all elements into a single value.                      |
+| some()      | Returns true if the callback function returns true for any element.                        |
+| every()     | Returns true if the callback function returns true for all elements.                       |
+
+
+- map(callbackFunction):
+    
+```js
+let arr = [1, 2, 3]
+let arr2 = arr.map(n => n * 2);
+console.log(arr) // [ 1, 2, 3 ]
+console.log(arr2) // [ 2, 4, 6 ]
+```
+    
+```js
+// using map for just printf (not recommended)
+const numbers = [1, 2, 3, 4, 5];
+
+const newNumber = numbers.map(number => console.log(number))
+
+console.log(newNumber) // [ undefined, undefined, undefined, undefined, undefined ]
+```
+    
+```js
+// using map for both element and index
+const names = ["tamim", "nasrin", "maria"];
+
+const newNames = names.map((element, index) => console.log(element, index))
+
+/*
+tamim 0
+nasrin 1
+maria 2
+ */
+```
+    
+```js
+const products = [
+    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
+    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
+    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
+    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
+    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
+]
+
+const productNames = products.map(product => product.name);
+console.log(productNames)
+
+// [ 'iPhone', 'Galaxy S23', 'Pixel 8', 'OnePlus 11', 'Xperia 5' ]
+```
+
+- forEach(callbackFunction): 
+    
+```js
+let arr = [1, 2, 3]
+arr.forEach(n => console.log(n * 2)); // 2 4 6       
+```
+    
+```js
+const products = [
+    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
+    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
+    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
+    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
+    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
+]
+
+products.forEach(product => console.log(product))
+
+/*
+    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
+    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
+    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
+    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
+    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
+*/   
+```
+    
+- filter(callbackFunction):
+    
+```js
+let arr = [1, 2, 3, 4]
+let arr2 = arr.filter(n => n % 2 === 0);
+console.log(arr) // [ 1, 2, 3, 4 ]
+console.log(arr2) // [ 2, 4 ]
+```
+    
+```js
+const products = [
+    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
+    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
+    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
+    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
+    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
+]
+
+const filterProducts = products.filter(product => product.price >= 1000)
+console.log(filterProducts);
+
+/*
+    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
+    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
+*/
+
+const expensiveProducts = products.filter(product => product.price >= 5000);
+console.log(expensiveProducts); // []
+```
+
+- find(callbackFunction):
+    
+```js
+let arr = [1, 2, 3, 4, 5];
+const result = arr.find(n => n > 2);
+console.log(result); // 3  
+```
+    
+```js
+const products = [
+    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
+    { id: 2, name: "Galaxy S23", color: "black", price: 1000, brand: "samsung" },
+    { id: 3, name: "Pixel 8", color: "white", price: 900, brand: "google" },
+    { id: 4, name: "OnePlus 11", color: "green", price: 800, brand: "oneplus" },
+    { id: 5, name: "Xperia 5", color: "blue", price: 950, brand: "sony" }
+]
+
+const foundProduct = products.find(product => product.brand === "apple");
+console.log(foundProduct)
+
+/*
+    { id: 1, name: "iPhone", color: "golden", price: 1200, brand: "apple" },
+*/
+
+const foundColor = products.find(product => product.color === "pink");
+console.log(foundColor) // undefined
+```
+    
+- findIndex(callbackFunction):
+    
+```js
+const users = [
+  { id: 1, name: "Tamim" },
+  { id: 2, name: "Rafi" },
+  { id: 3, name: "Amin" }
+];
+
+// Find index of user with id 2
+const index = users.findIndex(user => user.id === 2);
+console.log(index); // 1
+```
+    
+- reduce(callbackFunction):
+    
+Syntax:
+    
+```js
+reduce((accumulator, currentValue) => ..., initialValue);
+```
+    
+here, 
+- Accumulator: The running total or result so far
+- CurrentValue: THe current element being processed
+- InititalValue: The starting value of the accumulator (optional: because if we don’t provide an initialValue, JavaScript will automatically use the first element of the array as the starting accumulator.)
+
+```js
+const numbers = [1, 2, 3, 4];
+
+// without reduce method
+let acc = 0;
+for (let i = 0; i < numbers.length; i++) {
+    acc = acc + numbers[i];
+}
+console.log(acc); // Output: 10
+
+// with reduce method
+const result = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(result); // Output: 10
+```
+Here,  
+- accumulator = keeps the result
+- 0 = The staring value of accumulator
+- currentValue = the current element of the array
+    
+![reduce](images/reduce.png)
+
+Examples: 
+
+```js
+const cartItems = [
+    { id: 1, name: 'T-shirt', price: 19, quantity: 2 },
+    { id: 2, name: 'Jeans', price: 49, quantity: 1 },
+    { id: 3, name: 'Sneakers', price: 89, quantity: 1 },
+    { id: 4, name: 'Socks (3-pack)', price: 5, quantity: 3 },
+    { id: 5, name: 'Hat', price: 14, quantity: 1 }
+];
+
+const subTotal = cartItems.reduce((subTotal, product) => subTotal + product.price * product.quantity, 0)
+
+// const subTotal = cartItems.reduce((subTotal, product) => {
+//     return subTotal + product.price * product.quantity
+// }, 0)
+
+console.log(subTotal) // 205 
+```
+
+```js
+const players = [
+    { name: "Virat Kohli", score: 85 },
+    { name: "Joe Root", score: 72 },
+    { name: "Babar Azam", score: 101 },
+    { name: "Kane Williamson", score: 54 },
+    { name: "Steve Smith", score: 38 }
+];
+
+const bestScorer = players.reduce((bestPlayer, player) => {
+    if (bestPlayer.score > player.score) return bestPlayer
+    return player
+}, players[0])
+
+console.log(bestScorer) // { name: 'Babar Azam', score: 101 }
+```
+
+**Lookup Table:**
+
+Note: A lookup table is a pattern that allows us to retrieve data in O(1) time using a key.
+
+```js
+const books = [
+    { id: "b-101", title: "Cracking the Coding Interview", author: "Gayle" },
+    { id: "b-102", title: "Clean Code", author: "Robert C. Martin" },
+    { id: "b-103", title: "Introduction to Algorithms", author: "Cormen" },
+    { id: "b-104", title: "Design Patterns", author: "Erich." }
+];
+
+const lookupTable = books.reduce((table, post) => {
+    table[post.id] = post
+
+    return table
+}, {})
+
+console.log(lookupTable)
+
+/*
+{
+  'b-101': { id: 'b-101', title: 'Cracking the Coding Interview', author: 'Gayle'},
+  'b-102': { id: 'b-102', title: 'Clean Code', author: 'Robert C. Martin' },
+  'b-103': { id: 'b-103', title: 'Introduction to Algorithms', author: 'Cormen'},
+  'b-104': { id: 'b-104', title: 'Design Patterns', author: 'Erich.' }
+}
+*/
+
+console.log(lookupTable["b-104"]) // { id: 'b-104', title: 'Design Patterns', author: 'Erich.' }
+```
+
+Time complexity for this code is: O(1)
+
+without lookup table: 
+
+```js
+const books = [
+    { id: "b-101", title: "Cracking the Coding Interview", author: "Gayle" },
+    { id: "b-102", title: "Clean Code", author: "Robert C. Martin" },
+    { id: "b-103", title: "Introduction to Algorithms", author: "Cormen" },
+    { id: "b-104", title: "Design Patterns", author: "Erich." }
+];
+
+const foundPost = books.find((book) => book.id === 'b-104')
+console.log(foundPost)
+```
+
+Time complexity of this code is: O(n)
+
+```js
+const surveyResponses = ['A', 'C', 'B', 'A', 'B', 'B', 'C', 'A', 'B', 'D', 'A', 'C', 'B', 'A']
+
+const count = surveyResponses.reduce((table, response) => {
+
+    // console.log(table, " : ", response)
+
+    if (table[response]) {
+        table[response]++
+        // table[response] = table[response] + 1
+    }
+    else {
+        table[response] = 1
+    }
+
+    return table;
+}, {})
+
+console.log(count) // { A: 5, C: 3, B: 5, D: 1 }
+```
+
+- some(callbackFunction): 
+    
+```js
+const users = [
+  { name: "Tamim", online: false },
+  { name: "Rafi", online: true },
+  { name: "Amin", online: false }
+];
+
+const anyOnline = users.some(user => user.online);
+
+console.log(anyOnline); // true → because Rafi is online
+```
+    
+- every(callbackFunction):
+    
+```js
+const products = [
+  { name: "Laptop", inStock: true },
+  { name: "Mouse", inStock: true },
+  { name: "Keyboard", inStock: true }
+];
+
+const allInStock = products.every(product => product.inStock);
+
+console.log(allInStock); // true → all items are available
+```
+
+```js
+function findLuckyNumber(A, B) {
+    let found = false
+    for (let i = A; i <= B; i++) {
+        const str = i.toString()
+
+        const isLucky = [...str].every(ch => ch === '4' || ch === '7')
+
+        if (isLucky) {
+            console.log(i)
+            found = true
+        }
+    }
+    if (!found) {
+        console.log(-1)
+    }
+}
+
+findLuckyNumber(4, 20); // 4 7
+findLuckyNumber(8, 15); // -1
+```
+
+#### Others:
+
+- reverse() – Reverses the array:
+    
+```js
+let arr = [1, 2, 3];
+console.log(arr.reverse()) // [ 3, 2, 1 ]
+```
+- sort – return a new sorted array:
+    
+```js
+let arr = [3, 1, 2];
+console.log(arr.sort())  // default lexicographic: [1,2,3]
+    
+// but in this case default sort fails:
+let arr2 = [1, 2, 15];
+console.log(arr2.sort()) // [ 1, 15, 2 ]
+```
+    
+The order became 1, 15, 2. Incorrect. But why?
+    
+In JavaScript, the default behavior of sort() is lexicographic (dictionary-like) sorting. This means:
+    
+- It converts elements to strings.
+- Then it compares those strings using Unicode (UTF-16) code unit values.
+   
+thats why, "1" vs "2" → "1" comes first "2" vs "15" → "1" comes before "2" so "15" comes before "2" So the result becomes: [1, 15, 2]
+    
+To fix it, we need to use a custom compare function to sort it by js sort() method. js sort() method used this custom function internally to determine the correct sorting.
+    
+```js
+let arr2 = [1, 2, 15];
+console.log(arr2.sort((a, b) => a - b)); // [1, 2, 15] --> ascending order
+```
+How it works:
+    
+`(a, b) => a - b this function returns:`
+- Negative number (a - b < 0) → keep a before b
+- Positive number (a - b > 0) → place b before a
+- Zero (a - b === 0) → leave a and b unchanged
+
+```js
+let arr2 = [1, 2, 15];
+console.log(arr2.sort((a, b) => b - a)); // [15, 2, 1] --> descending order
+```
+
+
+- fill(value, start, end) – Fills array with value:
+    
+```js
+const arr = [1, 2, 3, 4, 5];
+
+arr.fill(0, 1, 4);
+
+console.log(arr); // [1, 0, 0, 0, 5]
+```
+    
+- flat(depth): Returns a new array after concatenating all the nested arrays up to the given depth:
+    
+```js
+// Default depth (1)
+
+const arr = [1, 2, [3, 4]];
+const flatArr = arr.flat();
+console.log(flatArr); // Output: [1, 2, 3, 4] 
+
+// Deeper nesting with depth = 2
+
+const arr = [1, 2, [3, 4, [5, 6]]];
+const flatArr = arr.flat(2);
+console.log(flatArr); // Output: [1, 2, 3, 4, 5, 6]
+
+// Infinite depth (Infinity)
+
+const arr = [1, [2, [3, [4]]]];
+const flatArr = arr.flat(Infinity);
+console.log(flatArr); // Output: [1, 2, 3, 4]
+```
+
+Example: 
+
+```js
+const iconsOfSkills = [
+    ['js', 'react', 'node', 'express'],
+    ['react', 'ts', 'js'],
+    ['css', 'html', 'sql']
+]
+
+const flatSkills = iconsOfSkills.flat()
+console.log(flatSkills) // ['js', 'react', 'node', 'express', 'react', 'ts', 'js', 'css', 'html', 'sql']
+
+const removeDuplicate = new Set(flatSkills)
+console.log(removeDuplicate) // Set(8) { 'js', 'react', 'node', 'express', 'ts', 'css', 'html', 'sql' }
+
+const iconsArray = Array.from(removeDuplicate)
+console.log(iconsArray) // // ['js', 'react', 'node', 'express', 'ts', 'css', 'html', 'sql']
+```
+
+
+- Array.isArray(value) – Return true if value is an array, else false:
+    
+```js
+const arr = [1, 2]
+const result = Array.isArray(arr);
+console.log(result) // true       
+```
+
+- Array.form() - creates a new shallow-copied array from an array-like object (such as a NodeList, arguments, or { length: 5 }) or an iterable object (like a String, Array, Set, or Map).
+
+Syntax: 
+
+```
+Array.from(arrayLike or iterables, mapLikeFunction, thisArg)
+```
+
+Examples: 
+
+You can generate arrays without loops using Array.form() method:
+
+```js
+const numbers = Array.from({ length: 5 }, (_, i) => i + 1);
+console.log(numbers); // [1, 2, 3, 4, 5]
+```
+here, 
+- Array.from({ length: 5 }) → Creates an array of length 5 filled with undefined values:
+  - [undefined, undefined, undefined, undefined, undefined]
+- (_, i) => i + 1 → Works like a map function, replacing each undefined with its index + 1.
+ 
+```js
+const alphabets = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+console.log(alphabets); // ['A', 'B', 'C', ..., 'Z']
+```
+
+```js
+const arr = Array.from([1, 2, 3], (x) => x * 2);
+console.log(arr);  // [2, 4, 6]
+```
+
+
+```js
+const arr = Array.from(['a', 'b', 'c'], (value, index) => `${index}: ${value}`);
+console.log(arr); // ['0: a', '1: b', '2: c']
+
+```
+
+```js
+const obj = { multiplier: 10 };
+
+const arr = Array.from([1, 2, 3], function (x) {
+  return x * this.multiplier;
+}, obj);
+
+console.log(arr); // [10, 20, 30]
+```
+
+### Common Property / Methods for string / array:
+
+- .length (property): returns the length of an array or string:
+
+```js
+// String
+const str = "JavaScript";
+
+// Array
+const arr = [10, 20, 30, 40];
+console.log(arr.length); // 4 → total items
+```
+
+- includes() - returns true or false if an element/string exist:
+
+```js
+// String
+const text = "I love JavaScript";
+console.log(text.includes("love")); // true
+console.log(text.includes("Love")); // false (case-sensitive)
+
+// Array
+const numbers = [1, 2, 3, 4];
+console.log(numbers.includes(3));  // true
+console.log(numbers.includes(5));  // false
+```
+
+- indexOf() — Returns the index of the first occurrence, -1 if not found.
+
+```js
+// String
+const msg = "banana";
+console.log(msg.indexOf("a"));     // 1 → first "a"
+console.log(msg.indexOf("a", 2));  // 3 → next "a" after index 2
+console.log(msg.indexOf("z"));     // -1 → not found
+
+// Array
+const arr = [10, 20, 30, 10];
+console.log(arr.indexOf(10));      // 0 → first occurrence
+console.log(arr.indexOf(10, 1));   // 3 → next occurrence after index 1
+console.log(arr.indexOf(50));      // -1 → not found
+```
+
+- lastIndexOf() — Returns the last occurrence index of a substring/element, -1 if not found.
+
+```js
+// String
+const text = "banana";
+console.log(text.lastIndexOf("a")); // 5 → last "a"
+console.log(text.lastIndexOf("n")); // 4
+console.log(text.lastIndexOf("z")); // -1 → not found
+
+// Array
+const nums = [10, 20, 30, 20, 10];
+console.log(nums.lastIndexOf(20)); // 3 → last occurrence
+console.log(nums.lastIndexOf(10)); // 4
+console.log(nums.lastIndexOf(99)); // -1 → not found
+```
+
+- slice(start, end) — Extracts a portion of an array/string and returns a new array.
+
+```js
+// String
+const str = "JavaScript";
+console.log(str.slice(0, 4));    // "Java"
+console.log(str.slice(-6));      // "Script"
+
+// Array
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.slice(1, 4));    // [2, 3, 4]
+console.log(arr.slice(-2));      // [4, 5]
+```
+
+- split() and join()- 
+  - split() → converts a string to array
+  - join() → converts an array to string
+
+```js
+const str = "Hello";
+const split = str.split("")
+console.log(split) // [ 'H', 'e', 'l', 'l', 'o' ]
+
+const join = split.join("");
+console.log(join) // Hello
+```
+
+- concat() — Joins multiple strings or arrays together:
+
+```js
+// String
+const s1 = "Hello";
+const s2 = "World";
+console.log(s1.concat(" ", s2)); // "Hello World"
+
+// Array
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+console.log(arr1.concat(arr2)); // [1, 2, 3, 4]
+```
+
+- at(index) — Returns the element/character at the given index:
+
+```js
+// String
+const text = "JavaScript";
+console.log(text.at(0));   // "J"
+console.log(text.at(-1));  // "t" (last character)
+
+// Array
+const numbers = [10, 20, 30, 40];
+console.log(numbers.at(0));   // 10
+console.log(numbers.at(-1));  // 40 (last item)
+```
 
 ## Destructuring
 
